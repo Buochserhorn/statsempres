@@ -99,6 +99,17 @@ ETH Zürich \\ % Your institution for the title page
 \setbeamertemplate{section in toc}[sections numbered] % removes the ugly balls
 
 
+%%%%%%%% ------------%%%%%%%%%%-----------%%%%%%%%%%%------------%%%%%%%%%%-----------
+\newcommand{\R}{\mathbb{R}}
+
+
+
+%%%%%%%%%%% ----------%%%%%%%%%%-----------%%%%%%%%%%------------%%%%%%%%%--------------
+
+
+
+
+
 
 \begin{document}
 
@@ -137,7 +148,36 @@ ETH Zürich \\ % Your institution for the title page
 \section{ADMM}
 %------------------------------------------------
 
+\begin{frame}
+\frametitle{Alternating Direction Method of Multipliers (ADMM)}
+Problem 
+\[\underset{\beta\in\R^m, \theta\in\R^n}{\text{minimize}}f(\beta)+g(\theta)\quad\text{subject to}\ \mathbf{A}\beta+\mathbf{B}\theta=c\]
+Augmented Lagrangian
+\[L_{\rho}(\beta,\theta,\mu):=f(\beta)+g(\theta)+\left\langle\mu,\mathbf{A}\beta+\mathbf{B}\theta-c\right\rangle+\frac{\rho}{2}||\mathbf{A}\beta+\mathbf{B}\theta-c||_2^2\]
+\end{frame}
 
+\begin{frame}
+\frametitle{Dual variable update}
+\begin{align*}
+\beta^{t+1}&=\arg\min_{\beta\in\R^m}L_{\rho}(\beta,\theta^t,\mu^t)\\
+\theta^{t+1}&=\arg\min_{\theta\in\R^m}L_{\rho}(\beta^{t+1},\theta,\mu^t)\\
+\mu^{t+1}&=\mu^t+\rho(\mathbf{A}\beta^{t+1}+\mathbf{B}\theta^{t+1}-c)
+\end{align*}
+\end{frame}
+
+\begin{frame}
+\frametitle{ADMM for the Lasso}
+Problem in Lagrangian form
+\[\underset{\beta\in\R^p,\theta\in\R^p}{\text{minimize}}\left\{\frac{1}{2}||\mathbf{y}-\mathbf{X}\beta||_2^2+\lambda||\theta||_1\right\}\quad \text{such that}\ \beta-\theta=0 \]
+Update
+\begin{align*}
+\beta^{t+1}&=(\mathbf{X}^T\mathbf{X}+\rho\mathbf{I})^{-1}(\mathbf{X}^T\mathbf{y}+\rho\theta^t-\mu^t)\\
+\theta^{t+1}&=\mathcal{S}_{\lambda/\rho}(\beta^{t+1}+\mu^t/\rho)\\
+\mu^{t+1}&=\mu^t+\rho(\beta^{t+1}-\theta^{t+1})
+\end{align*}
+where $\mathcal{S}_{\lambda/\rho}(z)=\text{sign}(z)(|z|-\frac{\lambda}{\rho})_+$.
+% soft-thresholding parameter
+\end{frame}
 
 %------------------------------------------------
 \section{Min-Max Algorithms}
@@ -154,6 +194,36 @@ ETH Zürich \\ % Your institution for the title page
 %------------------------------------------------
 \section{Screening Rules}
 %------------------------------------------------
+
+\begin{frame}
+\frametitle{Dual Polytope Projection (DPP)}
+Suppose we want to calculate a lasso solution at $\lambda<\lambda_{\max}$. The DPP rule discards the $j^{th}$ variable if 
+\[\left|\mathbf{x}_j^T\mathbf{y}\right|<\lambda_{\max}-||\mathbf{x}_j||_2||\mathbf{y}||_2\frac{\lambda_{\max}-\lambda}{\lambda}\]
+
+\vspace{5pt}
+{\hspace{5pt}\Large Sequential DPP rule}
+\vspace{15pt}
+
+Suppose we have the lasso solution $\hat\beta(\lambda')$ at $\lambda'$ and want to screen variables for solutions at $\lambda<\lambda'$. We discard the $j^{th}$ variable if 
+\[\left|\mathbf{x}_j^T(\mathbf{y}-\mathbf{X}\hat{\beta}(\lambda'))\right|<\lambda'-||\mathbf{x}_j||_2||\mathbf{y}||_2\frac{\lambda_{\max}-\lambda}{\lambda}\]
+\end{frame}
+
+\begin{frame}
+\frametitle{Global Strong Rule}
+Suppose we want to calculate a lasso solution at $\lambda<\lambda_{\max}$. The global strong rule discards the $j^{th}$ variable if 
+\[\left|\mathbf{x}_j^T\mathbf{y}\right|<\lambda-(\lambda_{\max}-\lambda)=2\lambda-\lambda_{\max}\]
+
+\vspace{5pt}
+{\hspace{5pt}\Large Sequential Strong Rule}
+\vspace{15pt}
+
+Suppose we have the lasso solution $\hat\beta(\lambda')$ at $\lambda'$ and want to screen variables for solutions at $\lambda<\lambda'$. We discard the $j^{th}$ variable if 
+\[\left|\mathbf{x}_j^T(\mathbf{y}-\mathbf{X}\hat{\beta}(\lambda'))\right|<2\lambda-\lambda'\]
+\end{frame}
+
+
+
+
 
 \begin{frame}
 \frametitle{Paragraphs of Text}
