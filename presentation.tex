@@ -101,6 +101,7 @@ ETH Zürich \\ % Your institution for the title page
 \setbeamertemplate{section in toc}[sections numbered] % removes the ugly balls
 %\setbeameroption{show notes}
 \setbeameroption{show notes on second screen=right}
+\setbeamertemplate{enumerate items}[default] % to get rid of some more ugly balls
 
 
 %%%%%%%% ------------%%%%%%%%%%-----------%%%%%%%%%%%------------%%%%%%%%%%-----------
@@ -115,7 +116,7 @@ ETH Zürich \\ % Your institution for the title page
 %%%%%%%%%%% ----------%%%%%%%%%%-----------%%%%%%%%%%------------%%%%%%%%%--------------
 
 
-
+\usepackage{hyperref}
 
 
 
@@ -236,8 +237,8 @@ Computational cost: Initially $\mathcal{O}(p^3)$, which is a lot, for the SVD(si
 \begin{figure}
 %\includegraphics[width=\textwidth]{img/minmaxalgo.png}
 %\caption{Figure 5.10 from \cite{Has15}}
-\includegraphics[width=\textwidth]{img/minmaxalgo2.png}
-\caption{Figure 5.10 from \cite{DL15}}
+\includegraphics[height=150pt]{img/minmaxalgo2.png}
+\caption{Figure from \cite{DL15}}
 \end{figure}
 
 \end{frame}
@@ -245,7 +246,7 @@ Computational cost: Initially $\mathcal{O}(p^3)$, which is a lot, for the SVD(si
 \begin{frame}
 \frametitle{MMA analytically I}
 Def. 
-$\Psi:\R^p\times\R^p\to\R$ \underline{majorizes} $f$ at $\beta\in\R^p$ if \[\forall\theta\in\R^p\quad \Psi(\beta,\theta)\ge f(\beta)\]
+$\Psi:\R^p\times\R^p\to\R$ {\color{blue}majorizes} $f$ at $\beta\in\R^p$ if \[\forall\theta\in\R^p\quad \Psi(\beta,\theta)\ge f(\beta)\]
 with equality for $\theta=\beta$.
 \vspace{10pt}
 
@@ -264,7 +265,7 @@ This scheme generates a sequence of $\beta$'s for which the cost $f(\beta^t)$ is
 where 
 \begin{itemize}
 \setlength{\itemindent}{20pt}
-\item[(i) \& (iii)] Definiton of \underline{majorize}
+\item[(i) \& (iii)] Definiton of majorize
 \item[(ii)] $\beta^{t+1}$ is a minimizer of $\beta\mapsto\Psi(\beta,\beta^t)$
 \end{itemize}
 \end{frame}
@@ -278,18 +279,43 @@ for inequalities: show previous slide
 \section{Alternating Minimizations}
 %------------------------------------------------
 
+
 \begin{frame}
 \frametitle{Biconvexity}
 Let's consider an example \dots
 
 \vspace{5pt}
-\url{http://www.wolframalpha.com/input/?i=3D+plot+(1-xy)\%5E2,+x+in+\%5B-2,2\%5D,+y+in+\%5B-2,2\%5D}
+%\url{http://www.wolframalpha.com/input/?i=3D+plot+(1-xy)\%5E2,+x+in+\%5B-2,2\%5D,+y+in+\%5B-2,2\%5D}
+{\color{blue}\href{http://www.wolframalpha.com/input/?i=3D+plot+(1-xy)\%5E2,+x+in+\%5B-2,2\%5D,+y+in+\%5B-2,2\%5D}{$f(\alpha,\beta)=(1-^\alpha\beta)^2$}}
 
-\vspace{15pt}
-Def. A function $f(x,y):\R^m\times\R^n\to\R$ is biconvex, if $f(x,y)$ is convex for each $x\in\R^m$ and $f(x,y)$ is convex for each $y\in\R^n$.
+\note{
+Mathematica: \texttt{3D plot (1-xy)\^{}2, x in [-2,2], y in [-2,2]}
+
+The formula is a link.
+}
+
+\vspace{30pt}
+\only<2>{Def. A function $f(\alpha,\beta):\R^m\times\R^n\to\R$ is {\color{gray}biconvex}, if for each $\alpha\in\R^m$ the function $\alpha\mapsto f(\alpha,\beta)$ is convex  and for each $\beta\in\R^n$ the function $\beta\mapsto f(\alpha,\beta)$ is convex.
+\vspace{5pt}
+Analoguosly, a set $\mathcal{C}\subseteq\mathcal{A}\times\mathcal{B}$, for $\mathcal{A, B}$ convex sets, is called \underline{biconvex}, if it is convex}
 \end{frame}
-\note{Mathematica: \texttt{3D plot (1-xy)\^{}2, x in [-2,2], y in [-2,2]}}
 
+\begin{frame}
+\frametitle{Alternate Convex Search}
+
+Block coordinate descent applied to $\alpha$ and $\beta$ blocks
+\begin{enumerate}
+\item Initialize $(\alpha^0,\beta^0)$ at some point in the biconvex set to minimize over
+\item For $t=0,1,2,\dots$
+	\begin{enumerate}[(i)]
+	\item Fix $\beta=\beta^t$ and update $\alpha^{t+1}\in\argmin\limits_{\alpha\in\mathcal{C}_{\beta^t}}f(\alpha,\beta^t)$
+	\item Fix $\alpha=\alpha^{t+1}$ and update $\beta^{t+1}\in\argmin\limits_{\alpha\in\mathcal{C}_{\alpha^{t+1}}}f(\alpha^{t+1},\beta)$
+	\end{enumerate}
+\end{enumerate}
+\vspace{10pt}
+
+For a function bounded from below, the algorithm converges to a partial optimum (i.e. as biconvexity, only optimal in one coordinate if the other coordinate is fixed).
+\end{frame}
 
 %------------------------------------------------
 \section{Screening Rules}

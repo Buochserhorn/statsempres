@@ -4,4 +4,4 @@
 \beamer@sectionintoc {4}{ADMM}{3}{0}{4}
 \beamer@sectionintoc {5}{Minor-Max Algorithms}{7}{0}{5}
 \beamer@sectionintoc {6}{Alternating Minimizations}{11}{0}{6}
-\beamer@sectionintoc {7}{Screening Rules}{12}{0}{7}
+\beamer@sectionintoc {7}{Screening Rules}{14}{0}{7}
