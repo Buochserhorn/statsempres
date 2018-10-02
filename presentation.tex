@@ -79,6 +79,7 @@
 \usepackage{graphicx} % Allows including images
 \usepackage{booktabs} % Allows the use of \toprule, \midrule and \bottomrule in tables
 \usepackage{pgfpages}
+\usepackage{amsmath}
 
 %----------------------------------------------------------------------------------------
 %	TITLE PAGE
@@ -106,6 +107,8 @@ ETH Zürich \\ % Your institution for the title page
 \newcommand{\R}{\mathbb{R}}
 \newcommand{\Norm}[1]{\left\lVert#1\right\rVert}
 \newcommand{\norm}[1]{\left\lvert#1\right\rvert}
+\DeclareMathOperator*{\argmin}{arg\,min}
+\DeclareMathOperator*{\argmax}{arg\,max}
 
 
 
@@ -168,8 +171,8 @@ Augmented Lagrangian
 \begin{frame}
 \frametitle{Dual variable update}
 \begin{align*}
-\beta^{t+1}&=\arg\min_{\beta\in\R^m}L_{\rho}(\beta,\theta^t,\mu^t)\\
-\theta^{t+1}&=\arg\min_{\theta\in\R^m}L_{\rho}(\beta^{t+1},\theta,\mu^t)\\
+\beta^{t+1}&=\argmin_{\beta\in\R^m}L_{\rho}(\beta,\theta^t,\mu^t)\\
+\theta^{t+1}&=\argmin_{\theta\in\R^m}L_{\rho}(\beta^{t+1},\theta,\mu^t)\\
 \mu^{t+1}&=\mu^t+\rho(\mathbf{A}\beta^{t+1}+\mathbf{B}\theta^{t+1}-c)
 \end{align*}
 \end{frame}
@@ -177,14 +180,18 @@ Augmented Lagrangian
 \begin{frame}
 \frametitle{ADMM - Why?}
 \begin{itemize}
-\item convex problems with nondifferentiable constraints
-\item blockwise computation
+\item[-] convex problems with nondifferentiable constraints
+\item[-] blockwise computation
 	\begin{itemize}
-	\item sample blocks
-	\item feature blocks
+	\item[-] sample blocks
+	\item[-] feature blocks
 	\end{itemize}
 \end{itemize}
 \end{frame}
+
+\note{
+Detailsfor blockwise computation in Exercise 5.12.
+}
 
 \begin{frame}
 \frametitle{ADMM for the Lasso}
@@ -211,9 +218,9 @@ Computational cost: Initially $\mathcal{O}(p^3)$, which is a lot, for the SVD(si
 \begin{frame}
 \frametitle{Minorization-Maximization Algorithms (MMA)}
 \begin{itemize}
-\item Problem: minimize $f(\beta)$ over $\beta\in\R^p$\\ for $f$ possibly non-convex
-\item Introduce additional variable $\theta$
-\item Use $\theta$ to majorize (bound from above) the objective function to be minimized
+\item[-] Problem: minimize $f(\beta)$ over $\beta\in\R^p$\\ for $f$ possibly non-convex
+\item[-] Introduce additional variable $\theta$
+\item[-] Use $\theta$ to majorize (bound from above) the objective function to be minimized
 \end{itemize}
 
 
@@ -227,21 +234,61 @@ Computational cost: Initially $\mathcal{O}(p^3)$, which is a lot, for the SVD(si
 \begin{frame}
 \frametitle{MMA visually}
 \begin{figure}
-\includegraphics[width=\textwidth]{img/minmaxalgo.png}
-\caption{Figure 5.10 from \cite{Has15}}
+%\includegraphics[width=\textwidth]{img/minmaxalgo.png}
+%\caption{Figure 5.10 from \cite{Has15}}
+\includegraphics[width=\textwidth]{img/minmaxalgo2.png}
+\caption{Figure 5.10 from \cite{DL15}}
 \end{figure}
 
 \end{frame}
 
 \begin{frame}
-\frametitle{MMA analytically}
+\frametitle{MMA analytically I}
+Def. 
+$\Psi:\R^p\times\R^p\to\R$ \underline{majorizes} $f$ at $\beta\in\R^p$ if \[\forall\theta\in\R^p\quad \Psi(\beta,\theta)\ge f(\beta)\]
+with equality for $\theta=\beta$.
+\vspace{10pt}
 
+Minor-Max algorithm
+\begin{itemize}
+\item[-] initialize $\beta^0$
+\item[-] update with $\beta^{t+1}=\argmin\limits_{\beta\in\R^p}\Psi(\beta,\beta^t)$
+\end{itemize}
 \end{frame}
+
+\begin{frame}
+\frametitle{MMA analytically II}
+This scheme generates a sequence of $\beta$'s for which the cost $f(\beta^t)$ is nonincreasing, because
+\[f(\beta^t)\stackrel{(i)}{=}\Psi(\beta^t,\beta^t)\stackrel{(ii)}{\ge}\Psi(\beta^{t+1},\beta^t)\stackrel{(iii)}{\ge} f(\beta^{t+1})\]
+
+where 
+\begin{itemize}
+\setlength{\itemindent}{20pt}
+\item[(i) \& (iii)] Definiton of \underline{majorize}
+\item[(ii)] $\beta^{t+1}$ is a minimizer of $\beta\mapsto\Psi(\beta,\beta^t)$
+\end{itemize}
+\end{frame}
+
+\note{
+for inequalities: show previous slide
+}
+
 
 %------------------------------------------------
 \section{Alternating Minimizations}
 %------------------------------------------------
 
+\begin{frame}
+\frametitle{Biconvexity}
+Let's consider an example \dots
+
+\vspace{5pt}
+\url{http://www.wolframalpha.com/input/?i=3D+plot+(1-xy)\%5E2,+x+in+\%5B-2,2\%5D,+y+in+\%5B-2,2\%5D}
+
+\vspace{15pt}
+Def. A function $f(x,y):\R^m\times\R^n\to\R$ is biconvex, if $f(x,y)$ is convex for each $x\in\R^m$ and $f(x,y)$ is convex for each $y\in\R^n$.
+\end{frame}
+\note{Mathematica: \texttt{3D plot (1-xy)\^{}2, x in [-2,2], y in [-2,2]}}
 
 
 %------------------------------------------------
@@ -282,15 +329,35 @@ Suppose we have the lasso solution $\hat\beta(\lambda')$ at $\lambda'$ and want 
 \newblock Statistical learning with sparsity: the Lasso and
 generalizations
 \newblock \emph{CRC Press;} Boca Raton, FL%12(3), 45 -- 678.
+\bibitem[de Leeuw, 2015]{DL15} Jan De Leeuw (2015)
+\newblock Block Relaxation Methods in Statistics
+\newblock \url{doi.org/10.13140/RG.2.1.3101.9607} (last accessed: 02.10.18)
 \end{thebibliography}
 }
 \end{frame}
 %Source: Trevor Hastie, Robert Tibshirani, and Martin Wainwright. Statistical learning with sparsity: the Lasso and generalizations. CRC Press, 2015.
+%@unknown{unknown,
+%author = {De Leeuw, Jan},
+%year = {2015},
+%month = {12},
+%pages = {},
+%title = {Block Relaxation Methods in Statistics - Part II}
+%}
 
 %------------------------------------------------
+\begin{frame}
+\Huge{\centerline{Comments \dots}}
+\Huge{\centerline{Questions \dots}}
+\Huge{\centerline{Suggestions \dots}}
+\end{frame}
+
 
 \begin{frame}
-\Huge{\centerline{The End}}
+\Huge{\centerline{That's it.}}
+\Huge{\centerline{Thanks for listening.}}
+\vspace{20pt}
+\large{\centerline{Fill out your feedback sheets!}}
+%\Huge{\centerline{The End}}
 \end{frame}
 
 %----------------------------------------------------------------------------------------
