@@ -20,43 +20,45 @@
 \headcommand {\beamer@framepages {4}{4}}
 \headcommand {\slideentry {4}{0}{3}{5/5}{}{0}}
 \headcommand {\beamer@framepages {5}{5}}
-\headcommand {\beamer@sectionpages {3}{5}}
-\headcommand {\beamer@subsectionpages {3}{5}}
-\headcommand {\sectionentry {5}{Min-Max Algorithms}{6}{Min-Max Algorithms}{0}}
-\headcommand {\beamer@sectionpages {6}{5}}
-\headcommand {\beamer@subsectionpages {6}{5}}
-\headcommand {\sectionentry {6}{Alternating Minimizations}{6}{Alternating Minimizations}{0}}
-\headcommand {\beamer@sectionpages {6}{5}}
-\headcommand {\beamer@subsectionpages {6}{5}}
-\headcommand {\sectionentry {7}{Screening Rules}{6}{Screening Rules}{0}}
-\headcommand {\slideentry {7}{0}{1}{6/6}{}{0}}
+\headcommand {\slideentry {4}{0}{4}{6/6}{}{0}}
 \headcommand {\beamer@framepages {6}{6}}
-\headcommand {\slideentry {7}{0}{2}{7/7}{}{0}}
+\headcommand {\beamer@sectionpages {3}{6}}
+\headcommand {\beamer@subsectionpages {3}{6}}
+\headcommand {\sectionentry {5}{Min-Max Algorithms}{7}{Min-Max Algorithms}{0}}
+\headcommand {\beamer@sectionpages {7}{6}}
+\headcommand {\beamer@subsectionpages {7}{6}}
+\headcommand {\sectionentry {6}{Alternating Minimizations}{7}{Alternating Minimizations}{0}}
+\headcommand {\beamer@sectionpages {7}{6}}
+\headcommand {\beamer@subsectionpages {7}{6}}
+\headcommand {\sectionentry {7}{Screening Rules}{7}{Screening Rules}{0}}
+\headcommand {\slideentry {7}{0}{1}{7/7}{}{0}}
 \headcommand {\beamer@framepages {7}{7}}
-\headcommand {\slideentry {7}{0}{3}{8/8}{}{0}}
+\headcommand {\slideentry {7}{0}{2}{8/8}{}{0}}
 \headcommand {\beamer@framepages {8}{8}}
-\headcommand {\slideentry {7}{0}{4}{9/9}{}{0}}
+\headcommand {\slideentry {7}{0}{3}{9/9}{}{0}}
 \headcommand {\beamer@framepages {9}{9}}
-\headcommand {\slideentry {7}{0}{5}{10/10}{}{0}}
+\headcommand {\slideentry {7}{0}{4}{10/10}{}{0}}
 \headcommand {\beamer@framepages {10}{10}}
-\headcommand {\slideentry {7}{0}{6}{11/11}{}{0}}
+\headcommand {\slideentry {7}{0}{5}{11/11}{}{0}}
 \headcommand {\beamer@framepages {11}{11}}
-\headcommand {\slideentry {7}{0}{7}{12/12}{}{0}}
+\headcommand {\slideentry {7}{0}{6}{12/12}{}{0}}
 \headcommand {\beamer@framepages {12}{12}}
-\headcommand {\slideentry {7}{0}{8}{13/13}{}{0}}
+\headcommand {\slideentry {7}{0}{7}{13/13}{}{0}}
 \headcommand {\beamer@framepages {13}{13}}
-\headcommand {\slideentry {7}{0}{9}{14/14}{}{0}}
+\headcommand {\slideentry {7}{0}{8}{14/14}{}{0}}
 \headcommand {\beamer@framepages {14}{14}}
-\headcommand {\slideentry {7}{0}{10}{15/15}{}{0}}
+\headcommand {\slideentry {7}{0}{9}{15/15}{}{0}}
 \headcommand {\beamer@framepages {15}{15}}
-\headcommand {\slideentry {7}{0}{11}{16/16}{}{0}}
+\headcommand {\slideentry {7}{0}{10}{16/16}{}{0}}
 \headcommand {\beamer@framepages {16}{16}}
-\headcommand {\slideentry {7}{0}{12}{17/17}{}{0}}
+\headcommand {\slideentry {7}{0}{11}{17/17}{}{0}}
 \headcommand {\beamer@framepages {17}{17}}
-\headcommand {\slideentry {7}{0}{13}{18/18}{}{0}}
+\headcommand {\slideentry {7}{0}{12}{18/18}{}{0}}
 \headcommand {\beamer@framepages {18}{18}}
-\headcommand {\beamer@partpages {1}{18}}
-\headcommand {\beamer@subsectionpages {6}{18}}
-\headcommand {\beamer@sectionpages {6}{18}}
-\headcommand {\beamer@documentpages {18}}
-\headcommand {\gdef \inserttotalframenumber {18}}
+\headcommand {\beamer@partpages {1}{19}}
+\headcommand {\beamer@subsectionpages {7}{19}}
+\headcommand {\beamer@sectionpages {7}{19}}
+\headcommand {\beamer@documentpages {19}}
+\headcommand {\gdef \inserttotalframenumber {19}}
+\headcommand {\slideentry {7}{0}{13}{19/19}{}{0}}
+\headcommand {\beamer@framepages {19}{19}}
