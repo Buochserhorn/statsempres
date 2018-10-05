@@ -167,16 +167,29 @@ Augmented Lagrangian
 \[L_{\rho}(\beta,\theta,\mu):=f(\beta)+g(\theta)+\left\langle\mu,\mathbf{A}\beta+\mathbf{B}\theta-c\right\rangle+\frac{\rho}{2}||\mathbf{A}\beta+\mathbf{B}\theta-c||_2^2\]
 \end{frame}
 
-\note{Augmented: scalar product with $\mu$ gets added}
+\note{
+Method of Multipliers b/c $\rho$ und $\mu$
+
+Augmented: scalar product with $\mu$ gets added
+
+
+}
 
 \begin{frame}
-\frametitle{Dual variable update}
+\frametitle{Iterative Algorithm}
+\framesubtitle{Alternating Direction Method of Multipliers}
 \begin{align*}
 \beta^{t+1}&=\argmin_{\beta\in\R^m}L_{\rho}(\beta,\theta^t,\mu^t)\\
 \theta^{t+1}&=\argmin_{\theta\in\R^m}L_{\rho}(\beta^{t+1},\theta,\mu^t)\\
 \mu^{t+1}&=\mu^t+\rho(\mathbf{A}\beta^{t+1}+\mathbf{B}\theta^{t+1}-c)
 \end{align*}
 \end{frame}
+
+\note{
+first two steps is why it is called alternating direction ... cause once we do it in the $\beta$ and once we do it in the $\theta$ direction
+
+last step is called a dual variable update, this dual has nothing to do with two, but is connected to what is called a dual problem
+}
 
 \begin{frame}
 \frametitle{ADMM - Why?}
