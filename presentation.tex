@@ -80,6 +80,8 @@
 \usepackage{booktabs} % Allows the use of \toprule, \midrule and \bottomrule in tables
 \usepackage{pgfpages}
 \usepackage{amsmath}
+\usepackage{pgfplots}
+\usepackage{tikz}
 
 %----------------------------------------------------------------------------------------
 %	TITLE PAGE
@@ -153,6 +155,69 @@ ETH Zürich \\ % Your institution for the title page
 
 
 
+
+%------------------------------------------------
+\section{Digression: Duality}
+%------------------------------------------------
+
+\begin{frame}
+\frametitle{Digression: Duality in optimization}
+
+%\begin{tabular}{lcc}
+%\toprule
+%&Primal&Dual\\\midrule
+%Optimize&$\min f(x)$&$\max q(\lambda,\mu)$\\\midrule
+%Constraints&$g_i(x)\le0, h_j(x)=0, x\in X$&$\lambda\ge0$\\\midrule
+%Function&$L(x,\lambda,\mu):=f(x)+\sum_i\lambda_i g_i(x)+\sum_j\mu_j h_j(x)$&$q(\lambda,\mu)=\inf\limits_{x\in X} L(x,\lambda,\mu)$\\
+%&$L(x,\lambda,\mu):=f(x)+\lambda^Tg(x)+\mu^T h(x)$&\\\midrule
+%\end{tabular}
+
+
+
+%\vspace{15pt}
+%Why though? - \textbf{Dual problem is always convex!}
+
+\end{frame}
+\note{In various section, I came across terms like "dual" and "dual problem"}
+
+\begin{frame}
+\begin{tabular}{ll}
+\toprule[1.5pt]
+\multicolumn{2}{c}{Primal}\\\midrule
+Optimize&$\min f(x)$\\\midrule
+Constraints&$g_i(x)\le0, h_j(x)=0, x\in X$\\\midrule
+Function&$L(x,\lambda,\mu):=f(x)+\sum_i\lambda_i g_i(x)+\sum_j\mu_j h_j(x)$\\\midrule
+%&$L(x,\lambda,\mu):=f(x)+\lambda^Tg(x)+\mu^T h(x)$\\\midrule
+\multicolumn{2}{c}{Dual}\\\midrule
+Function&$q(\lambda,\mu)=\inf\limits_{x\in X} L(x,\lambda,\mu)$\\\midrule
+Constraints&$\lambda\ge0$\\\midrule
+Optimize&$\max q(\lambda,\mu)$\\\midrule
+\end{tabular}
+\vspace{15pt}
+
+Why though? - \textbf{Dual problem is always convex!}
+
+\end{frame}
+
+\note{
+$x\in X$ for e.g. solutions in a cone or integer solutions
+
+%$g$ and $h$ are now in vector notation
+
+Terms: Primal problem, Lagrange function with dual variables/Lagrange-multipliers, dual function, dual problem
+
+
+Dual problem is always convex! - I don't know much about optimization yet, but
+they really like convexity.
+
+The second advantage is that all local optima are global optima. That allows local search algorithms to guarantee optimal solutions. And local search is often faster.
+
+(Convexity confers two advantages. The first is that, in a constrained problem, a convex feasible region makes it easier to ensure that you do not generate infeasible solutions while searching for an optimum.)
+
+}
+
+
+
 %------------------------------------------------
 \section{ADMM}
 %------------------------------------------------
@@ -176,19 +241,29 @@ Augmented: scalar product with $\mu$ gets added
 }
 
 \begin{frame}
-\frametitle{Iterative Algorithm}
+\frametitle{Dual Ascent Step}
 \framesubtitle{Alternating Direction Method of Multipliers}
 \begin{align*}
 \beta^{t+1}&=\argmin_{\beta\in\R^m}L_{\rho}(\beta,\theta^t,\mu^t)\\
 \theta^{t+1}&=\argmin_{\theta\in\R^m}L_{\rho}(\beta^{t+1},\theta,\mu^t)\\
 \mu^{t+1}&=\mu^t+\rho(\mathbf{A}\beta^{t+1}+\mathbf{B}\theta^{t+1}-c)
 \end{align*}
+
+\begin{figure}
+\includegraphics{img/dualascentstep.pdf}
+\caption{My own illustration of the dual ascent step in the ADMM algorithm utilising dual decomposition according to \cite{GT12}.}
+\end{figure}
+
 \end{frame}
 
 \note{
 first two steps is why it is called alternating direction ... cause once we do it in the $\beta$ and once we do it in the $\theta$ direction
 
 last step is called a dual variable update, this dual has nothing to do with two, but is connected to what is called a dual problem
+
+dual ascent step, we are working in the dual problem as "min L", thus convex problem, thus "dual decomposition" into subproblems which is possible by "18-dual-uses.pdf",p. 22, 
+
+think of it as only the last line, sending $\mu$ to the updaters for $\beta$ and $\theta$
 }
 
 \begin{frame}
@@ -378,6 +453,12 @@ generalizations
 \bibitem[de Leeuw, 2015]{DL15} Jan De Leeuw (2015)
 \newblock Block Relaxation Methods in Statistics
 \newblock \url{doi.org/10.13140/RG.2.1.3101.9607} (last accessed: 02.10.18)
+%\bibitem[de Leeuw, 2015]{DL15} Jan De Leeuw (2015)
+%\newblock Block Relaxation Methods in Statistics
+%\newblock \url{doi.org/10.13140/RG.2.1.3101.9607} (last accessed: 02.10.18)
+\bibitem[Gordon and Tibshirani, 2012]{GT12} Geoff Gordon and Ryan Tibshirani (2012)
+\newblock Uses of Duality
+\newblock \url{https://www.cs.cmu.edu/~ggordon/10725-F12/slides/18-dual-uses.pdf} (last accessed: 14.10.18) 
 \end{thebibliography}
 }
 \end{frame}

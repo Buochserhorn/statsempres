@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6800 64-bit) (preloaded format=pdflatex 2018.9.24)  4 OCT 2018 10:29
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6800 64-bit) (preloaded format=pdflatex 2018.9.24)  14 OCT 2018 12:29
 entering extended mode
 **./presentation.tex
 (presentation.tex
@@ -802,25 +802,238 @@ LaTeX Info: Redefining \addtolength on input line 81.
 \pgfphysicalwidth=\dimen261
 \pgfpages@shipoutbox=\box53
 )
-\pgfpages@box@1=\box54
-\pgfpages@box@2=\box55
+("C:\Users\Janosch Ott\AppData\Local\Programs\MiKTeX 2.9\tex\latex\pgfplots\pgf
+plots.sty"
+("C:\Users\Janosch Ott\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgfplots\p
+gfplots.revision.tex")
+Package: pgfplots 2018/03/28 v1.16 Data Visualization (1.16)
+
+("C:\Users\Janosch Ott\AppData\Local\Programs\MiKTeX 2.9\tex\latex\pgf\frontend
+layer\tikz.sty"
+("C:\Users\Janosch Ott\AppData\Local\Programs\MiKTeX 2.9\tex\latex\pgf\basiclay
+er\pgf.sty"
+Package: pgf 2015/08/07 v3.0.1a (rcs-revision 1.15)
+
+("C:\Users\Janosch Ott\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\module
+s\pgfmoduleshapes.code.tex"
+File: pgfmoduleshapes.code.tex 2014/03/21  (rcs-revision 1.35)
+\pgfnodeparttextbox=\box54
+)
+("C:\Users\Janosch Ott\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\module
+s\pgfmoduleplot.code.tex"
+File: pgfmoduleplot.code.tex 2015/08/03  (rcs-revision 1.13)
+)
+("C:\Users\Janosch Ott\AppData\Local\Programs\MiKTeX 2.9\tex\latex\pgf\compatib
+ility\pgfcomp-version-0-65.sty"
+Package: pgfcomp-version-0-65 2007/07/03 v3.0.1a (rcs-revision 1.7)
+\pgf@nodesepstart=\dimen262
+\pgf@nodesepend=\dimen263
+)
+("C:\Users\Janosch Ott\AppData\Local\Programs\MiKTeX 2.9\tex\latex\pgf\compatib
+ility\pgfcomp-version-1-18.sty"
+Package: pgfcomp-version-1-18 2007/07/23 v3.0.1a (rcs-revision 1.1)
+))
+("C:\Users\Janosch Ott\AppData\Local\Programs\MiKTeX 2.9\tex\latex\pgf\utilitie
+s\pgffor.sty"
+("C:\Users\Janosch Ott\AppData\Local\Programs\MiKTeX 2.9\tex\latex\pgf\utilitie
+s\pgfkeys.sty"
+("C:\Users\Janosch Ott\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\utilit
+ies\pgfkeys.code.tex"))
+("C:\Users\Janosch Ott\AppData\Local\Programs\MiKTeX 2.9\tex\latex\pgf\math\pgf
+math.sty"
+("C:\Users\Janosch Ott\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\math\p
+gfmath.code.tex"))
+("C:\Users\Janosch Ott\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\utilit
+ies\pgffor.code.tex"
+Package: pgffor 2013/12/13 v3.0.1a (rcs-revision 1.25)
+
+("C:\Users\Janosch Ott\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\math\p
+gfmath.code.tex")
+\pgffor@iter=\dimen264
+\pgffor@skip=\dimen265
+\pgffor@stack=\toks43
+\pgffor@toks=\toks44
+))
+("C:\Users\Janosch Ott\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\fronte
+ndlayer\tikz\tikz.code.tex"
+Package: tikz 2015/08/07 v3.0.1a (rcs-revision 1.151)
+
+("C:\Users\Janosch Ott\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\librar
+ies\pgflibraryplothandlers.code.tex"
+File: pgflibraryplothandlers.code.tex 2013/08/31 v3.0.1a (rcs-revision 1.20)
+\pgf@plot@mark@count=\count168
+\pgfplotmarksize=\dimen266
+)
+\tikz@lastx=\dimen267
+\tikz@lasty=\dimen268
+\tikz@lastxsaved=\dimen269
+\tikz@lastysaved=\dimen270
+\tikzleveldistance=\dimen271
+\tikzsiblingdistance=\dimen272
+\tikz@figbox=\box55
+\tikz@figbox@bg=\box56
+\tikz@tempbox=\box57
+\tikz@tempbox@bg=\box58
+\tikztreelevel=\count169
+\tikznumberofchildren=\count170
+\tikznumberofcurrentchild=\count171
+\tikz@fig@count=\count172
+
+("C:\Users\Janosch Ott\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\module
+s\pgfmodulematrix.code.tex"
+File: pgfmodulematrix.code.tex 2013/09/17  (rcs-revision 1.8)
+\pgfmatrixcurrentrow=\count173
+\pgfmatrixcurrentcolumn=\count174
+\pgf@matrix@numberofcolumns=\count175
+)
+\tikz@expandcount=\count176
+
+("C:\Users\Janosch Ott\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\fronte
+ndlayer\tikz\libraries\tikzlibrarytopaths.code.tex"
+File: tikzlibrarytopaths.code.tex 2008/06/17 v3.0.1a (rcs-revision 1.2)
+)))
+("C:\Users\Janosch Ott\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgfplots\p
+gfplots.code.tex"
+("C:\Users\Janosch Ott\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgfplots\p
+gfplotscore.code.tex"
+\t@pgfplots@toka=\toks45
+\t@pgfplots@tokb=\toks46
+\t@pgfplots@tokc=\toks47
+\pgfplots@tmpa=\dimen273
+\c@pgfplots@coordindex=\count177
+\c@pgfplots@scanlineindex=\count178
+
+("C:\Users\Janosch Ott\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgfplots\s
+ys\pgfplotssysgeneric.code.tex"))
+("C:\Users\Janosch Ott\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgfplots\l
+ibs\pgfplotslibrary.code.tex")
+("C:\Users\Janosch Ott\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgfplots\o
+ldpgfcompatib\pgfplotsoldpgfsupp_loader.code.tex"
+("C:\Users\Janosch Ott\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\librar
+ies\pgflibraryfpu.code.tex")
+Package pgfplots: loading complementary arithmetics for your pgf version...
+
+("C:\Users\Janosch Ott\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgfplots\o
+ldpgfcompatib\pgfplotsoldpgfsupp_pgflibraryfpu.code.tex")
+("C:\Users\Janosch Ott\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgfplots\o
+ldpgfcompatib\pgfplotsoldpgfsupp_pgfmathfloat.code.tex"
+\c@pgfmathroundto@lastzeros=\count179
+)
+("C:\Users\Janosch Ott\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgfplots\o
+ldpgfcompatib\pgfplotsoldpgfsupp_leq.code.tex"))
+("C:\Users\Janosch Ott\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgfplots\u
+til\pgfplotsutil.code.tex"
+("C:\Users\Janosch Ott\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgfplots\l
+iststructure\pgfplotsliststructure.code.tex")
+("C:\Users\Janosch Ott\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgfplots\l
+iststructure\pgfplotsliststructureext.code.tex")
+("C:\Users\Janosch Ott\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgfplots\l
+iststructure\pgfplotsarray.code.tex"
+\c@pgfplotsarray@tmp=\count180
+)
+("C:\Users\Janosch Ott\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgfplots\l
+iststructure\pgfplotsmatrix.code.tex")
+("C:\Users\Janosch Ott\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgfplots\n
+umtable\pgfplotstableshared.code.tex"
+\c@pgfplotstable@counta=\count181
+\t@pgfplotstable@a=\toks48
+)
+("C:\Users\Janosch Ott\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgfplots\l
+iststructure\pgfplotsdeque.code.tex")
+("C:\Users\Janosch Ott\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgfplots\u
+til\pgfplotsbinary.code.tex"
+("C:\Users\Janosch Ott\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgfplots\u
+til\pgfplotsbinary.data.code.tex"))
+("C:\Users\Janosch Ott\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgfplots\u
+til\pgfplotsutil.verb.code.tex")
+("C:\Users\Janosch Ott\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgfplots\l
+ibs\pgflibrarypgfplots.surfshading.code.tex"
+\c@pgfplotslibrarysurf@no=\count182
+
+("C:\Users\Janosch Ott\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgfplots\s
+ys\pgflibrarypgfplots.surfshading.pgfsys-pdftex.def")))
+("C:\Users\Janosch Ott\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgfplots\u
+til\pgfplotscolormap.code.tex"
+("C:\Users\Janosch Ott\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgfplots\u
+til\pgfplotscolor.code.tex"))
+("C:\Users\Janosch Ott\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgfplots\p
+gfplotsstackedplots.code.tex")
+("C:\Users\Janosch Ott\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgfplots\p
+gfplotsplothandlers.code.tex"
+("C:\Users\Janosch Ott\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgfplots\p
+gfplotsmeshplothandler.code.tex"
+("C:\Users\Janosch Ott\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgfplots\p
+gfplotsmeshplotimage.code.tex")))
+("C:\Users\Janosch Ott\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgfplots\p
+gfplots.scaling.code.tex")
+("C:\Users\Janosch Ott\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgfplots\p
+gfplotscoordprocessing.code.tex")
+("C:\Users\Janosch Ott\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgfplots\p
+gfplots.errorbars.code.tex")
+("C:\Users\Janosch Ott\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgfplots\p
+gfplots.markers.code.tex")
+("C:\Users\Janosch Ott\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgfplots\p
+gfplotsticks.code.tex")
+("C:\Users\Janosch Ott\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgfplots\p
+gfplots.paths.code.tex")
+("C:\Users\Janosch Ott\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\fronte
+ndlayer\tikz\libraries\tikzlibrarydecorations.code.tex"
+("C:\Users\Janosch Ott\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\module
+s\pgfmoduledecorations.code.tex"
+\pgfdecoratedcompleteddistance=\dimen274
+\pgfdecoratedremainingdistance=\dimen275
+\pgfdecoratedinputsegmentcompleteddistance=\dimen276
+\pgfdecoratedinputsegmentremainingdistance=\dimen277
+\pgf@decorate@distancetomove=\dimen278
+\pgf@decorate@repeatstate=\count183
+\pgfdecorationsegmentamplitude=\dimen279
+\pgfdecorationsegmentlength=\dimen280
+)
+\tikz@lib@dec@box=\box59
+)
+("C:\Users\Janosch Ott\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\fronte
+ndlayer\tikz\libraries\tikzlibrarydecorations.pathmorphing.code.tex"
+("C:\Users\Janosch Ott\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\librar
+ies\decorations\pgflibrarydecorations.pathmorphing.code.tex"))
+("C:\Users\Janosch Ott\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\fronte
+ndlayer\tikz\libraries\tikzlibrarydecorations.pathreplacing.code.tex"
+("C:\Users\Janosch Ott\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\librar
+ies\decorations\pgflibrarydecorations.pathreplacing.code.tex"))
+\pgfplots@numplots=\count184
+\pgfplots@xmin@reg=\dimen281
+\pgfplots@xmax@reg=\dimen282
+\pgfplots@ymin@reg=\dimen283
+\pgfplots@ymax@reg=\dimen284
+\pgfplots@zmin@reg=\dimen285
+\pgfplots@zmax@reg=\dimen286
+)
+("C:\Users\Janosch Ott\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\fronte
+ndlayer\tikz\libraries\tikzlibraryplotmarks.code.tex"
+File: tikzlibraryplotmarks.code.tex 2008/01/09 v3.0.1a (rcs-revision 1.1)
+
+("C:\Users\Janosch Ott\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\librar
+ies\pgflibraryplotmarks.code.tex"
+File: pgflibraryplotmarks.code.tex 2015/08/03 v3.0.1a (rcs-revision 1.14)
+)))
+\pgfpages@box@1=\box60
+\pgfpages@box@2=\box61
  (presentation.aux)
 \openout1 = `presentation.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 123.
-LaTeX Font Info:    ... okay on input line 123.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 123.
-LaTeX Font Info:    ... okay on input line 123.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 123.
-LaTeX Font Info:    ... okay on input line 123.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 123.
-LaTeX Font Info:    ... okay on input line 123.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 123.
-LaTeX Font Info:    ... okay on input line 123.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 123.
-LaTeX Font Info:    ... okay on input line 123.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 123.
-LaTeX Font Info:    ... okay on input line 123.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 125.
+LaTeX Font Info:    ... okay on input line 125.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 125.
+LaTeX Font Info:    ... okay on input line 125.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 125.
+LaTeX Font Info:    ... okay on input line 125.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 125.
+LaTeX Font Info:    ... okay on input line 125.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 125.
+LaTeX Font Info:    ... okay on input line 125.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 125.
+LaTeX Font Info:    ... okay on input line 125.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 125.
+LaTeX Font Info:    ... okay on input line 125.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -860,17 +1073,17 @@ LaTeX Font Info:    ... okay on input line 123.
 ("C:\Users\Janosch Ott\AppData\Local\Programs\MiKTeX 2.9\tex\context\base\supp-
 pdf.mkii"
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count168
-\scratchdimen=\dimen262
-\scratchbox=\box56
-\nofMPsegments=\count169
-\nofMParguments=\count170
-\everyMPshowfont=\toks43
-\MPscratchCnt=\count171
-\MPscratchDim=\dimen263
-\MPnumerator=\count172
-\makeMPintoPDFobject=\count173
-\everyMPtoPDFconversion=\toks44
+\scratchcounter=\count185
+\scratchdimen=\dimen287
+\scratchbox=\box62
+\nofMPsegments=\count186
+\nofMParguments=\count187
+\everyMPshowfont=\toks49
+\MPscratchCnt=\count188
+\MPscratchDim=\dimen288
+\MPnumerator=\count189
+\makeMPintoPDFobject=\count190
+\everyMPtoPDFconversion=\toks50
 )
 ("C:\Users\Janosch Ott\AppData\Local\Programs\MiKTeX 2.9\tex\latex\oberdiek\eps
 topdf-base.sty"
@@ -887,8 +1100,8 @@ Package grfext Info: Graphics extension search list:
 G,.JBIG2,.JB2,.eps]
 (grfext)             \AppendGraphicsExtensions on input line 456.
 ) ABD: EveryShipout initializing macros
-\AtBeginShipoutBox=\box57
-Package hyperref Info: Link coloring OFF on input line 123.
+\AtBeginShipoutBox=\box63
+Package hyperref Info: Link coloring OFF on input line 125.
 
 ("C:\Users\Janosch Ott\AppData\Local\Programs\MiKTeX 2.9\tex\latex\hyperref\nam
 eref.sty"
@@ -898,67 +1111,67 @@ Package: nameref 2016/05/21 v2.44 Cross-referencing by name of section
 ettitlestring.sty"
 Package: gettitlestring 2016/05/16 v1.5 Cleanup title references (HO)
 )
-\c@section@level=\count174
+\c@section@level=\count191
 )
-LaTeX Info: Redefining \ref on input line 123.
-LaTeX Info: Redefining \pageref on input line 123.
-LaTeX Info: Redefining \nameref on input line 123.
+LaTeX Info: Redefining \ref on input line 125.
+LaTeX Info: Redefining \pageref on input line 125.
+LaTeX Info: Redefining \nameref on input line 125.
  (presentation.out) (presentation.out)
 \@outlinefile=\write5
 \openout5 = `presentation.out'.
 
 LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
-(Font)                  OT1/cmr/m/n --> OT1/cmss/m/n on input line 123.
+(Font)                  OT1/cmr/m/n --> OT1/cmss/m/n on input line 125.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
-(Font)                  OT1/cmr/bx/n --> OT1/cmss/bx/n on input line 123.
+(Font)                  OT1/cmr/bx/n --> OT1/cmss/bx/n on input line 125.
 \symnumbers=\mathgroup6
 \sympureletters=\mathgroup7
 LaTeX Font Info:    Overwriting math alphabet `\mathrm' in version `normal'
-(Font)                  OT1/cmss/m/n --> OT1/cmr/m/n on input line 123.
-LaTeX Font Info:    Redeclaring math alphabet \mathbf on input line 123.
+(Font)                  OT1/cmss/m/n --> OT1/cmr/m/n on input line 125.
+LaTeX Font Info:    Redeclaring math alphabet \mathbf on input line 125.
 LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `normal'
-(Font)                  OT1/cmr/bx/n --> OT1/cmss/bx/n on input line 123.
+(Font)                  OT1/cmr/bx/n --> OT1/cmss/bx/n on input line 125.
 LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `bold'
-(Font)                  OT1/cmr/bx/n --> OT1/cmss/bx/n on input line 123.
-LaTeX Font Info:    Redeclaring math alphabet \mathsf on input line 123.
+(Font)                  OT1/cmr/bx/n --> OT1/cmss/bx/n on input line 125.
+LaTeX Font Info:    Redeclaring math alphabet \mathsf on input line 125.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `normal'
-(Font)                  OT1/cmss/m/n --> OT1/cmss/m/n on input line 123.
+(Font)                  OT1/cmss/m/n --> OT1/cmss/m/n on input line 125.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
-(Font)                  OT1/cmss/bx/n --> OT1/cmss/m/n on input line 123.
-LaTeX Font Info:    Redeclaring math alphabet \mathit on input line 123.
+(Font)                  OT1/cmss/bx/n --> OT1/cmss/m/n on input line 125.
+LaTeX Font Info:    Redeclaring math alphabet \mathit on input line 125.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `normal'
-(Font)                  OT1/cmr/m/it --> OT1/cmss/m/it on input line 123.
+(Font)                  OT1/cmr/m/it --> OT1/cmss/m/it on input line 125.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
-(Font)                  OT1/cmr/bx/it --> OT1/cmss/m/it on input line 123.
-LaTeX Font Info:    Redeclaring math alphabet \mathtt on input line 123.
+(Font)                  OT1/cmr/bx/it --> OT1/cmss/m/it on input line 125.
+LaTeX Font Info:    Redeclaring math alphabet \mathtt on input line 125.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `normal'
-(Font)                  OT1/cmtt/m/n --> OT1/cmtt/m/n on input line 123.
+(Font)                  OT1/cmtt/m/n --> OT1/cmtt/m/n on input line 125.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
-(Font)                  OT1/cmtt/m/n --> OT1/cmtt/m/n on input line 123.
+(Font)                  OT1/cmtt/m/n --> OT1/cmtt/m/n on input line 125.
 LaTeX Font Info:    Overwriting symbol font `numbers' in version `bold'
-(Font)                  OT1/cmss/m/n --> OT1/cmss/bx/n on input line 123.
+(Font)                  OT1/cmss/m/n --> OT1/cmss/bx/n on input line 125.
 LaTeX Font Info:    Overwriting symbol font `pureletters' in version `bold'
-(Font)                  OT1/cmss/m/it --> OT1/cmss/bx/it on input line 123.
+(Font)                  OT1/cmss/m/it --> OT1/cmss/bx/it on input line 125.
 LaTeX Font Info:    Overwriting math alphabet `\mathrm' in version `bold'
-(Font)                  OT1/cmss/bx/n --> OT1/cmr/bx/n on input line 123.
+(Font)                  OT1/cmss/bx/n --> OT1/cmr/bx/n on input line 125.
 LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `bold'
-(Font)                  OT1/cmss/bx/n --> OT1/cmss/bx/n on input line 123.
+(Font)                  OT1/cmss/bx/n --> OT1/cmss/bx/n on input line 125.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
-(Font)                  OT1/cmss/m/n --> OT1/cmss/bx/n on input line 123.
+(Font)                  OT1/cmss/m/n --> OT1/cmss/bx/n on input line 125.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
-(Font)                  OT1/cmss/m/it --> OT1/cmss/bx/it on input line 123.
+(Font)                  OT1/cmss/m/it --> OT1/cmss/bx/it on input line 125.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
-(Font)                  OT1/cmtt/m/n --> OT1/cmtt/bx/n on input line 123.
-LaTeX Font Info:    Redeclaring symbol font `pureletters' on input line 123.
+(Font)                  OT1/cmtt/m/n --> OT1/cmtt/bx/n on input line 125.
+LaTeX Font Info:    Redeclaring symbol font `pureletters' on input line 125.
 LaTeX Font Info:    Overwriting symbol font `pureletters' in version `normal'
 (Font)                  OT1/cmss/m/it --> OT1/mathkerncmss/m/sl on input line 1
-23.
+25.
 LaTeX Font Info:    Overwriting symbol font `pureletters' in version `bold'
 (Font)                  OT1/cmss/bx/it --> OT1/mathkerncmss/m/sl on input line 
-123.
+125.
 LaTeX Font Info:    Overwriting symbol font `pureletters' in version `bold'
 (Font)                  OT1/mathkerncmss/m/sl --> OT1/mathkerncmss/bx/sl on inp
-ut line 123.
+ut line 125.
 
 ("C:\Users\Janosch Ott\AppData\Local\Programs\MiKTeX 2.9\tex\latex\translator\t
 ranslator-basic-dictionary-English.dict"
@@ -983,74 +1196,80 @@ Dictionary: translator-numbers-dictionary, Language: English
 ("C:\Users\Janosch Ott\AppData\Local\Programs\MiKTeX 2.9\tex\latex\translator\t
 ranslator-theorem-dictionary-English.dict"
 Dictionary: translator-theorem-dictionary, Language: English 
-) (presentation.nav)
-(presentation.toc) [2{C:/Users/Janosch Ott/AppData/Local/MiKTeX/2.9/pdftex/conf
-ig/pdftex.map}
+)
+
+Package pgfplots Warning: running in backwards compatibility mode (unsuitable t
+ick labels; missing features). Consider writing \pgfplotsset{compat=1.16} into 
+your preamble.
+ on input line 125.
+
+(presentation.nav) (presentation.toc) [2{C:/Users/Janosch Ott/AppData/Local/MiK
+TeX/2.9/pdftex/config/pdftex.map}
 
 pdfTeX warning (ext4): destination with the same identifier (name{Navigation1})
  has been already used, duplicate ignored
 
 \pgfpages@shipoutshipoutbox ...physicalpagesizes }
                                                   \endgroup 
-l.132 \end{frame}
+l.134 \end{frame}
                  pdfTeX warning (ext4): destination with the same identifier (n
 ame{page.1}) has been already used, duplicate ignored
 
 \pgfpages@shipoutshipoutbox ...physicalpagesizes }
                                                   \endgroup 
-l.132 \end{frame}
+l.134 \end{frame}
                  
 
-]
-LaTeX Font Info:    Try loading font information for U+msa on input line 168.
-
-("C:\Users\Janosch Ott\AppData\Local\Programs\MiKTeX 2.9\tex\latex\amsfonts\ums
-a.fd"
-File: umsa.fd 2013/01/14 v3.01 AMS symbols A
-)
-LaTeX Font Info:    Try loading font information for U+msb on input line 168.
-
-("C:\Users\Janosch Ott\AppData\Local\Programs\MiKTeX 2.9\tex\latex\amsfonts\ums
-b.fd"
-File: umsb.fd 2013/01/14 v3.01 AMS symbols B
-)
-LaTeX Font Info:    Try loading font information for OT1+mathkerncmss on input 
-line 168.
-
-("C:\Users\Janosch Ott\AppData\Local\Programs\MiKTeX 2.9\tex\latex\sansmathacce
-nt\ot1mathkerncmss.fd"
-File: ot1mathkerncmss.fd 2013/03/27 Fontinst v1.933 font definitions for OT1/ma
-thkerncmss.
-) [3
+] [3
 
 pdfTeX warning (ext4): destination with the same identifier (name{Navigation2})
  has been already used, duplicate ignored
 
 \pgfpages@shipoutshipoutbox ...physicalpagesizes }
                                                   \endgroup 
-l.168 \end{frame}
+l.180 \end{frame}
                  pdfTeX warning (ext4): destination with the same identifier (n
 ame{page.2}) has been already used, duplicate ignored
 
 \pgfpages@shipoutshipoutbox ...physicalpagesizes }
                                                   \endgroup 
-l.168 \end{frame}
+l.180 \end{frame}
                  
 
-] [4
+]
+LaTeX Font Info:    Try loading font information for U+msa on input line 200.
+
+("C:\Users\Janosch Ott\AppData\Local\Programs\MiKTeX 2.9\tex\latex\amsfonts\ums
+a.fd"
+File: umsa.fd 2013/01/14 v3.01 AMS symbols A
+)
+LaTeX Font Info:    Try loading font information for U+msb on input line 200.
+
+("C:\Users\Janosch Ott\AppData\Local\Programs\MiKTeX 2.9\tex\latex\amsfonts\ums
+b.fd"
+File: umsb.fd 2013/01/14 v3.01 AMS symbols B
+)
+LaTeX Font Info:    Try loading font information for OT1+mathkerncmss on input 
+line 200.
+
+("C:\Users\Janosch Ott\AppData\Local\Programs\MiKTeX 2.9\tex\latex\sansmathacce
+nt\ot1mathkerncmss.fd"
+File: ot1mathkerncmss.fd 2013/03/27 Fontinst v1.933 font definitions for OT1/ma
+thkerncmss.
+) [4
 
 pdfTeX warning (ext4): destination with the same identifier (name{Navigation3})
  has been already used, duplicate ignored
 
 \pgfpages@shipoutshipoutbox ...physicalpagesizes }
                                                   \endgroup 
-l.179 \end{frame}
+l.200 \end{frame}
                  pdfTeX warning (ext4): destination with the same identifier (n
 ame{page.3}) has been already used, duplicate ignored
 
 \pgfpages@shipoutshipoutbox ...physicalpagesizes }
                                                   \endgroup 
-l.179 \end{frame}
+l.200 \end{frame}
                  
 
 ] [5
@@ -1060,29 +1279,35 @@ pdfTeX warning (ext4): destination with the same identifier (name{Navigation4})
 
 \pgfpages@shipoutshipoutbox ...physicalpagesizes }
                                                   \endgroup 
-l.191 \end{frame}
+l.233 \end{frame}
                  pdfTeX warning (ext4): destination with the same identifier (n
 ame{page.4}) has been already used, duplicate ignored
 
 \pgfpages@shipoutshipoutbox ...physicalpagesizes }
                                                   \endgroup 
-l.191 \end{frame}
+l.233 \end{frame}
                  
 
-] [6
+]
+<img/dualascentstep.pdf, id=162, 149.6501pt x 66.15013pt>
+File: img/dualascentstep.pdf Graphic file (type pdf)
+<use img/dualascentstep.pdf>
+Package pdftex.def Info: img/dualascentstep.pdf  used on input line 257.
+(pdftex.def)             Requested size: 149.64972pt x 66.14996pt.
+ [6
 
 pdfTeX warning (ext4): destination with the same identifier (name{Navigation5})
  has been already used, duplicate ignored
 
 \pgfpages@shipoutshipoutbox ...physicalpagesizes }
                                                   \endgroup 
-l.209 \end{frame}
+l.257 \end{frame}
                  pdfTeX warning (ext4): destination with the same identifier (n
 ame{page.5}) has been already used, duplicate ignored
 
 \pgfpages@shipoutshipoutbox ...physicalpagesizes }
                                                   \endgroup 
-l.209 \end{frame}
+l.257 \end{frame}
                  
 
 ] [7
@@ -1092,35 +1317,29 @@ pdfTeX warning (ext4): destination with the same identifier (name{Navigation6})
 
 \pgfpages@shipoutshipoutbox ...physicalpagesizes }
                                                   \endgroup 
-l.233 \end{frame}
+l.279 \end{frame}
                  pdfTeX warning (ext4): destination with the same identifier (n
 ame{page.6}) has been already used, duplicate ignored
 
 \pgfpages@shipoutshipoutbox ...physicalpagesizes }
                                                   \endgroup 
-l.233 \end{frame}
+l.279 \end{frame}
                  
 
-]
-<img/minmaxalgo2.png, id=184, 474.573pt x 431.81325pt>
-File: img/minmaxalgo2.png Graphic file (type png)
-<use img/minmaxalgo2.png>
-Package pdftex.def Info: img/minmaxalgo2.png  used on input line 244.
-(pdftex.def)             Requested size: 164.85751pt x 150.0pt.
- [8
+ <./img/dualascentstep.pdf>] [8
 
 pdfTeX warning (ext4): destination with the same identifier (name{Navigation7})
  has been already used, duplicate ignored
 
 \pgfpages@shipoutshipoutbox ...physicalpagesizes }
                                                   \endgroup 
-l.244 \end{frame}
+l.297 \end{frame}
                  pdfTeX warning (ext4): destination with the same identifier (n
 ame{page.7}) has been already used, duplicate ignored
 
 \pgfpages@shipoutshipoutbox ...physicalpagesizes }
                                                   \endgroup 
-l.244 \end{frame}
+l.297 \end{frame}
                  
 
 ] [9
@@ -1130,29 +1349,38 @@ pdfTeX warning (ext4): destination with the same identifier (name{Navigation8})
 
 \pgfpages@shipoutshipoutbox ...physicalpagesizes }
                                                   \endgroup 
-l.258 \end{frame}
+l.321 \end{frame}
                  pdfTeX warning (ext4): destination with the same identifier (n
 ame{page.8}) has been already used, duplicate ignored
 
 \pgfpages@shipoutshipoutbox ...physicalpagesizes }
                                                   \endgroup 
-l.258 \end{frame}
+l.321 \end{frame}
                  
 
- <./img/minmaxalgo2.png>] [10
+
+
+pdfTeX warning: pdflatex.exe: pop empty color page stack 0
+]
+<img/minmaxalgo2.png, id=257, 474.573pt x 431.81325pt>
+File: img/minmaxalgo2.png Graphic file (type png)
+<use img/minmaxalgo2.png>
+Package pdftex.def Info: img/minmaxalgo2.png  used on input line 332.
+(pdftex.def)             Requested size: 164.85751pt x 150.0pt.
+ [10
 
 pdfTeX warning (ext4): destination with the same identifier (name{Navigation9})
  has been already used, duplicate ignored
 
 \pgfpages@shipoutshipoutbox ...physicalpagesizes }
                                                   \endgroup 
-l.271 \end{frame}
+l.332 \end{frame}
                  pdfTeX warning (ext4): destination with the same identifier (n
 ame{page.9}) has been already used, duplicate ignored
 
 \pgfpages@shipoutshipoutbox ...physicalpagesizes }
                                                   \endgroup 
-l.271 \end{frame}
+l.332 \end{frame}
                  
 
 ] [11
@@ -1162,29 +1390,29 @@ pdfTeX warning (ext4): destination with the same identifier (name{Navigation10}
 
 \pgfpages@shipoutshipoutbox ...physicalpagesizes }
                                                   \endgroup 
-l.301 \end{frame}
+l.346 \end{frame}
                  pdfTeX warning (ext4): destination with the same identifier (n
 ame{page.10}) has been already used, duplicate ignored
 
 \pgfpages@shipoutshipoutbox ...physicalpagesizes }
                                                   \endgroup 
-l.301 \end{frame}
+l.346 \end{frame}
                  
 
-] [12
+ <./img/minmaxalgo2.png>] [12
 
 pdfTeX warning (ext4): destination with the same identifier (name{Navigation11}
 ) has been already used, duplicate ignored
 
 \pgfpages@shipoutshipoutbox ...physicalpagesizes }
                                                   \endgroup 
-l.301 \end{frame}
+l.359 \end{frame}
                  pdfTeX warning (ext4): destination with the same identifier (n
 ame{page.11}) has been already used, duplicate ignored
 
 \pgfpages@shipoutshipoutbox ...physicalpagesizes }
                                                   \endgroup 
-l.301 \end{frame}
+l.359 \end{frame}
                  
 
 ] [13
@@ -1194,15 +1422,18 @@ pdfTeX warning (ext4): destination with the same identifier (name{Navigation12}
 
 \pgfpages@shipoutshipoutbox ...physicalpagesizes }
                                                   \endgroup 
-l.318 \end{frame}
+l.389 \end{frame}
                  pdfTeX warning (ext4): destination with the same identifier (n
 ame{page.12}) has been already used, duplicate ignored
 
 \pgfpages@shipoutshipoutbox ...physicalpagesizes }
                                                   \endgroup 
-l.318 \end{frame}
+l.389 \end{frame}
                  
 
+
+
+pdfTeX warning: pdflatex.exe: pop empty color page stack 0
 ] [14
 
 pdfTeX warning (ext4): destination with the same identifier (name{Navigation13}
@@ -1210,13 +1441,13 @@ pdfTeX warning (ext4): destination with the same identifier (name{Navigation13}
 
 \pgfpages@shipoutshipoutbox ...physicalpagesizes }
                                                   \endgroup 
-l.328 \end{frame}
+l.389 \end{frame}
                  pdfTeX warning (ext4): destination with the same identifier (n
 ame{page.13}) has been already used, duplicate ignored
 
 \pgfpages@shipoutshipoutbox ...physicalpagesizes }
                                                   \endgroup 
-l.328 \end{frame}
+l.389 \end{frame}
                  
 
 ] [15
@@ -1226,13 +1457,13 @@ pdfTeX warning (ext4): destination with the same identifier (name{Navigation14}
 
 \pgfpages@shipoutshipoutbox ...physicalpagesizes }
                                                   \endgroup 
-l.342 \end{frame}
+l.406 \end{frame}
                  pdfTeX warning (ext4): destination with the same identifier (n
 ame{page.14}) has been already used, duplicate ignored
 
 \pgfpages@shipoutshipoutbox ...physicalpagesizes }
                                                   \endgroup 
-l.342 \end{frame}
+l.406 \end{frame}
                  
 
 ] [16
@@ -1242,13 +1473,13 @@ pdfTeX warning (ext4): destination with the same identifier (name{Navigation15}
 
 \pgfpages@shipoutshipoutbox ...physicalpagesizes }
                                                   \endgroup 
-l.355 \end{frame}
+l.416 \end{frame}
                  pdfTeX warning (ext4): destination with the same identifier (n
 ame{page.15}) has been already used, duplicate ignored
 
 \pgfpages@shipoutshipoutbox ...physicalpagesizes }
                                                   \endgroup 
-l.355 \end{frame}
+l.416 \end{frame}
                  
 
 ] [17
@@ -1258,13 +1489,13 @@ pdfTeX warning (ext4): destination with the same identifier (name{Navigation16}
 
 \pgfpages@shipoutshipoutbox ...physicalpagesizes }
                                                   \endgroup 
-l.370 \end{frame}
+l.430 \end{frame}
                  pdfTeX warning (ext4): destination with the same identifier (n
 ame{page.16}) has been already used, duplicate ignored
 
 \pgfpages@shipoutshipoutbox ...physicalpagesizes }
                                                   \endgroup 
-l.370 \end{frame}
+l.430 \end{frame}
                  
 
 ] [18
@@ -1274,30 +1505,62 @@ pdfTeX warning (ext4): destination with the same identifier (name{Navigation17}
 
 \pgfpages@shipoutshipoutbox ...physicalpagesizes }
                                                   \endgroup 
-l.385 \end{frame}
+l.443 \end{frame}
                  pdfTeX warning (ext4): destination with the same identifier (n
 ame{page.17}) has been already used, duplicate ignored
 
 \pgfpages@shipoutshipoutbox ...physicalpagesizes }
                                                   \endgroup 
-l.385 \end{frame}
+l.443 \end{frame}
                  
 
- <C:/Users/Janosch Ott/AppData/Local/Programs/MiKTeX 2.9/tex/latex/beamer/beame
-riconarticle.pdf>] [19
+] [19
 
 pdfTeX warning (ext4): destination with the same identifier (name{Navigation18}
 ) has been already used, duplicate ignored
 
 \pgfpages@shipoutshipoutbox ...physicalpagesizes }
                                                   \endgroup 
-l.394 \end{frame}
+l.464 \end{frame}
                  pdfTeX warning (ext4): destination with the same identifier (n
 ame{page.18}) has been already used, duplicate ignored
 
 \pgfpages@shipoutshipoutbox ...physicalpagesizes }
                                                   \endgroup 
-l.394 \end{frame}
+l.464 \end{frame}
+                 
+
+] [20
+
+pdfTeX warning (ext4): destination with the same identifier (name{Navigation19}
+) has been already used, duplicate ignored
+
+\pgfpages@shipoutshipoutbox ...physicalpagesizes }
+                                                  \endgroup 
+l.479 \end{frame}
+                 pdfTeX warning (ext4): destination with the same identifier (n
+ame{page.19}) has been already used, duplicate ignored
+
+\pgfpages@shipoutshipoutbox ...physicalpagesizes }
+                                                  \endgroup 
+l.479 \end{frame}
+                 
+
+ <C:/Users/Janosch Ott/AppData/Local/Programs/MiKTeX 2.9/tex/latex/beamer/beame
+riconarticle.pdf>] [21
+
+pdfTeX warning (ext4): destination with the same identifier (name{Navigation20}
+) has been already used, duplicate ignored
+
+\pgfpages@shipoutshipoutbox ...physicalpagesizes }
+                                                  \endgroup 
+l.488 \end{frame}
+                 pdfTeX warning (ext4): destination with the same identifier (n
+ame{page.20}) has been already used, duplicate ignored
+
+\pgfpages@shipoutshipoutbox ...physicalpagesizes }
+                                                  \endgroup 
+l.488 \end{frame}
                  
 
 ]
@@ -1310,39 +1573,39 @@ l.394 \end{frame}
 \tf@snm=\write8
 \openout8 = `presentation.snm'.
 
- [20
+ [22
 
-pdfTeX warning (ext4): destination with the same identifier (name{Navigation19}
+pdfTeX warning (ext4): destination with the same identifier (name{Navigation21}
 ) has been already used, duplicate ignored
 
 \pgfpages@shipoutshipoutbox ...physicalpagesizes }
                                                   \endgroup 
-l.528 \end{document}
+l.622 \end{document}
                     pdfTeX warning (ext4): destination with the same identifier
- (name{page.19}) has been already used, duplicate ignored
+ (name{page.21}) has been already used, duplicate ignored
 
 \pgfpages@shipoutshipoutbox ...physicalpagesizes }
                                                   \endgroup 
-l.528 \end{document}
+l.622 \end{document}
                     
 
 ]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 528.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 528.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 622.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 622.
  (presentation.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 528.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 528.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 622.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 622.
 Package rerunfilecheck Info: File `presentation.out' has not changed.
-(rerunfilecheck)             Checksum: F337DC1B1D28959C3C9E05FB1D857A28;374.
+(rerunfilecheck)             Checksum: DB89A3DD3D1839AB7690403721A17B87;429.
  ) 
 Here is how much of TeX's memory you used:
- 17500 strings out of 492972
- 344262 string characters out of 3123956
- 422834 words of memory out of 3000000
- 20915 multiletter control sequences out of 15000+200000
+ 30210 strings out of 492972
+ 747979 string characters out of 3123956
+ 980765 words of memory out of 3000000
+ 33425 multiletter control sequences out of 15000+200000
  19500 words of font info for 71 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 56i,15n,61p,781b,612s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 64i,15n,98p,781b,612s stack positions out of 5000i,500n,10000p,200000b,50000s
 <C:/Users/Janosch Ott/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/am
 sfonts/cm/cmex10.pfb><C:/Users/Janosch Ott/AppData/Local/Programs/MiKTeX 2.9/fo
 nts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/Janosch Ott/AppData/Local/Pro
@@ -1350,27 +1613,29 @@ grams/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi5.pfb><C:/Users/Janosch Ott
 /AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi7.pfb><C:
 /Users/Janosch Ott/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfont
 s/cm/cmmi8.pfb><C:/Users/Janosch Ott/AppData/Local/Programs/MiKTeX 2.9/fonts/ty
-pe1/public/amsfonts/cm/cmss10.pfb><C:/Users/Janosch Ott/AppData/Local/Programs/
-MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmss12.pfb><C:/Users/Janosch Ott/AppD
-ata/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmss17.pfb><C:/Use
-rs/Janosch Ott/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm
-/cmss8.pfb><C:/Users/Janosch Ott/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/
-public/amsfonts/cm/cmss9.pfb><C:/Users/Janosch Ott/AppData/Local/Programs/MiKTe
-X 2.9/fonts/type1/public/amsfonts/cm/cmssbx10.pfb><C:/Users/Janosch Ott/AppData
-/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmssi10.pfb><C:/Users
-/Janosch Ott/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/c
-mssi8.pfb><C:/Users/Janosch Ott/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/p
-ublic/amsfonts/cm/cmssi9.pfb><C:/Users/Janosch Ott/AppData/Local/Programs/MiKTe
-X 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/Janosch Ott/AppData/L
-ocal/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy7.pfb><C:/Users/Jan
-osch Ott/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy8
+pe1/public/amsfonts/cm/cmmi9.pfb><C:/Users/Janosch Ott/AppData/Local/Programs/M
+iKTeX 2.9/fonts/type1/public/amsfonts/cm/cmss10.pfb><C:/Users/Janosch Ott/AppDa
+ta/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmss12.pfb><C:/User
+s/Janosch Ott/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/
+cmss17.pfb><C:/Users/Janosch Ott/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/
+public/amsfonts/cm/cmss8.pfb><C:/Users/Janosch Ott/AppData/Local/Programs/MiKTe
+X 2.9/fonts/type1/public/amsfonts/cm/cmss9.pfb><C:/Users/Janosch Ott/AppData/Lo
+cal/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmssbx10.pfb><C:/Users/J
+anosch Ott/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cms
+si10.pfb><C:/Users/Janosch Ott/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/pu
+blic/amsfonts/cm/cmssi8.pfb><C:/Users/Janosch Ott/AppData/Local/Programs/MiKTeX
+ 2.9/fonts/type1/public/amsfonts/cm/cmssi9.pfb><C:/Users/Janosch Ott/AppData/Lo
+cal/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/Jan
+osch Ott/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy7
 .pfb><C:/Users/Janosch Ott/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public
-/amsfonts/cm/cmtt10.pfb><C:/Users/Janosch Ott/AppData/Local/Programs/MiKTeX 2.9
-/fonts/type1/public/amsfonts/cm/cmtt9.pfb><C:/Users/Janosch Ott/AppData/Local/P
-rograms/MiKTeX 2.9/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on presentation.pdf (19 pages, 492443 bytes).
+/amsfonts/cm/cmsy8.pfb><C:/Users/Janosch Ott/AppData/Local/Programs/MiKTeX 2.9/
+fonts/type1/public/amsfonts/cm/cmtt10.pfb><C:/Users/Janosch Ott/AppData/Local/P
+rograms/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmtt9.pfb><C:/Users/Janosch O
+tt/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/symbols/msbm10
+.pfb>
+Output written on presentation.pdf (21 pages, 526072 bytes).
 PDF statistics:
- 485 PDF objects out of 1000 (max. 8388607)
- 48 named destinations out of 1000 (max. 500000)
- 104 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 574 PDF objects out of 1000 (max. 8388607)
+ 54 named destinations out of 1000 (max. 500000)
+ 117 words of extra memory for PDF output out of 10000 (max. 10000000)
 
