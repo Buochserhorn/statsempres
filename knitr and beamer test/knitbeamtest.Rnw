@@ -1,0 +1,136 @@
+\documentclass{beamer}
+\mode<presentation> {
+
+% The Beamer class comes with a number of default slide themes
+% which change the colors and layouts of slides. Below this is a list
+% of all the themes, uncomment each in turn to see what they look like.
+
+%\usetheme{default}
+%\usetheme{AnnArbor}
+%\usetheme{Antibes}
+%\usetheme{Bergen}
+%\usetheme{Berkeley}
+%\usetheme{Berlin}
+%\usetheme{Boadilla} %like
+%\usetheme{CambridgeUS}
+%\usetheme{Copenhagen}
+%\usetheme{Darmstadt}
+%\usetheme{Dresden}
+%\usetheme{Frankfurt}
+%\usetheme{Goettingen} %like
+\usetheme{Hannover} %like
+%\usetheme{Ilmenau}
+%\usetheme{JuanLesPins}
+%\usetheme{Luebeck}
+%\usetheme{Madrid}
+%\usetheme{Malmoe}
+%\usetheme{Marburg}
+%\usetheme{Montpellier}
+%\usetheme{PaloAlto}
+%\usetheme{Pittsburgh}
+%\usetheme{Rochester}
+%\usetheme{Singapore}
+%\usetheme{Szeged}
+%\usetheme{Warsaw}
+
+% As well as themes, the Beamer class has a number of color themes
+% for any slide theme. Uncomment each of these in turn to see how it
+% changes the colors of your current slide theme.
+
+%\usecolortheme{albatross}
+%\usecolortheme{beaver}
+%\usecolortheme{beetle}
+%\usecolortheme{crane}
+%\usecolortheme{dolphin}
+%\usecolortheme{dove}
+%\usecolortheme{fly}
+%\usecolortheme{lily}
+%\usecolortheme{orchid}
+%\usecolortheme{rose}
+%\usecolortheme{seagull}
+%\usecolortheme{seahorse}
+%\usecolortheme{whale}
+%\usecolortheme{wolverine}
+
+%\setbeamertemplate{footline} % To remove the footer line in all slides uncomment this line
+%\setbeamertemplate{footline}[page number] % To replace the footer line in all slides with a simple slide count uncomment this line
+
+%\setbeamertemplate{navigation symbols}{} % To remove the navigation symbols from the bottom of all slides uncomment this line
+}
+
+\usepackage{graphicx} % Allows including images
+\usepackage{booktabs} % Allows the use of \toprule, \midrule and \bottomrule in tables
+\usepackage{pgfpages}
+\usepackage{amsmath}
+
+
+%----------------------------------------------------------------------------------------
+%	TITLE PAGE
+%----------------------------------------------------------------------------------------
+
+\title[Computation \& optimization]{Computation \& optimization for Lasso - part 2} % The short title appears at the bottom of every slide, the full title is only on the title page
+
+\author{Luyang Han \& Janosch Ott} % Your name
+\institute[] % Your institution as it will appear on the bottom of every slide, may be shorthand to save space
+{
+ETH Zurich \\ % Your institution for the title page
+%\medskip
+%\textit{john@smith.com} % Your email address
+}
+\date{22 October 2018} % Date, can be changed to a custom date
+
+\setbeamercovered{transparent} % else hidden elements are gray, this way they are invisible
+\setbeamertemplate{navigation symbols}{} %comment to have a lot of navigating symbols
+\setbeamertemplate{section in toc}[sections numbered] % removes the ugly balls
+%\setbeameroption{show notes}
+\setbeameroption{show notes on second screen=right}
+\setbeamertemplate{enumerate items}[default] % to get rid of some more ugly balls
+
+
+%%%%%%%% ------------%%%%%%%%%%-----------%%%%%%%%%%%------------%%%%%%%%%%-----------
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\Norm}[1]{\left\lVert#1\right\rVert}
+\newcommand{\norm}[1]{\left\lvert#1\right\rvert}
+\DeclareMathOperator*{\argmin}{arg\,min}
+\DeclareMathOperator*{\argmax}{arg\,max}
+
+
+
+%%%%%%%%%%% ----------%%%%%%%%%%-----------%%%%%%%%%%------------%%%%%%%%%--------------
+
+
+\usepackage{hyperref}
+
+
+\begin{document}
+<<setup, include=FALSE>>=
+  # smaller font size for chunks
+  opts_chunk$set(size = 'footnotesize')
+@
+
+
+% very important to use option [fragile] for frames containing code output!
+  
+  \begin{frame}[fragile]
+You can test if \textbf{knitr} works with this minimal demo. OK, let's
+get started with some boring random numbers:
+
+<<boring-random>>=
+set.seed(1121)
+(x=rnorm(20))
+mean(x);var(x)
+@
+\end{frame}
+
+\begin{frame}[fragile]
+The first element of \texttt{x} is \Sexpr{x[1]}. Boring boxplots
+and histograms recorded by the PDF device:
+
+<<boring-plots, fig.width=5, fig.height=5, out.width='.45\\linewidth', fig.show='hold'>>=
+## two plots side by side (option fig.show='hold')
+boxplot(x)
+hist(x,main='')
+@
+\end{frame}
+
+\end{document}
