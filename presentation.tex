@@ -210,9 +210,11 @@ Terms: Primal problem, Lagrange function with dual variables/Lagrange-multiplier
 Dual problem is always convex! - I don't know much about optimization yet, but
 they really like convexity.
 
+(Convexity confers two advantages. The first is that, in a constrained problem, a convex feasible region makes it easier to ensure that you do not generate infeasible solutions while searching for an optimum.)
+
 The second advantage is that all local optima are global optima. That allows local search algorithms to guarantee optimal solutions. And local search is often faster.
 
-(Convexity confers two advantages. The first is that, in a constrained problem, a convex feasible region makes it easier to ensure that you do not generate infeasible solutions while searching for an optimum.)
+
 
 }
 
@@ -224,24 +226,43 @@ The second advantage is that all local optima are global optima. That allows loc
 
 \begin{frame}
 \frametitle{Alternating Direction Method of Multipliers (ADMM)}
-Problem 
-\[\underset{\beta\in\R^m, \theta\in\R^n}{\text{minimize}}f(\beta)+g(\theta)\quad\text{subject to}\ \mathbf{A}\beta+\mathbf{B}\theta=c\]
-Lagrangian 
-\[f(\beta)+g(\theta)+\rho||\mathbf{A}\beta+\mathbf{B}\theta-c||_2^2\]
-Augmented Lagrangian
+Problem\only<2->{ - decomposable ! }
+\only<2>{\note{decomposable problem and constraints!}
+}
+\[\underset{\beta\in\R^m, \theta\in\R^n}{\text{minimize}}f(\beta)+g(\theta)\quad\text{subject to}\ \mathbf{A}\beta+\mathbf{B}\theta-c=0\]
+%\note{decomposable problem and constraints!\\}
+Lagrangian\only<3->{ - decomposable !}
+\only<3>{\note{Lagrangian problem can still be decomposed into $\beta$ and $\mu$ terms
+
+this has nice algorithm where we can execute some stuff in parallel, because we can decompose the Lagrangian}
+}
+\[f(\beta)+g(\theta)+\left\langle\mu,\mathbf{A}\beta+\mathbf{B}\theta-c\right\rangle\]
+Augmented Lagrangian\only<4->{ - NOT decomposable !}
+\only<4>{
+\note{
+Augmented: scalar product with $\rho$ gets added, 
+
+Method of Multipliers: is a way to make the algorithm more robust 
+
+advantage: better convergence
+
+disadvantage: no longer parallel execution of subtasks due to l2-term, no longer decomposable in beta and theta terms, as l2 norm dquares every entry of the vector
+
+alternating direction: semi-decomposable, i.e. keeping one variable fixed while updating the other
+
+$\rho$ is step length of iterative algorithm
+
+All notes on this slide: see the slides by \cite{boyd}
+
+}
+}
 \[L_{\rho}(\beta,\theta,\mu):=f(\beta)+g(\theta)+\left\langle\mu,\mathbf{A}\beta+\mathbf{B}\theta-c\right\rangle+\frac{\rho}{2}||\mathbf{A}\beta+\mathbf{B}\theta-c||_2^2\]
 \end{frame}
 
-\note{
-Method of Multipliers b/c $\rho$ und $\mu$
 
-Augmented: scalar product with $\mu$ gets added
-
-
-}
 
 \begin{frame}
-\frametitle{Dual Ascent Step}
+\frametitle{Dual Variable Update}
 \framesubtitle{Alternating Direction Method of Multipliers}
 \begin{align*}
 \beta^{t+1}&=\argmin_{\beta\in\R^m}L_{\rho}(\beta,\theta^t,\mu^t)\\
@@ -251,19 +272,25 @@ Augmented: scalar product with $\mu$ gets added
 
 \begin{figure}
 \includegraphics{img/dualascentstep.pdf}
-\caption{My own illustration of the dual ascent step in the ADMM algorithm utilising dual decomposition according to \cite{GT12}.}
+\caption{My own illustration of the dual ascent step in the ADMM algorithm utilising dual decomposition based on \cite{GT12}.}
 \end{figure}
 
 \end{frame}
 
 \note{
-first two steps is why it is called alternating direction ... cause once we do it in the $\beta$ and once we do it in the $\theta$ direction
+Method of Multipliers: is a way to make the algorithm more robust, (if in second line $\beta^t$ statt $\beta^{t+1}$)
+
+alternating direction: semi-decomposable, i.e. keeping one variable fixed while updating the other
 
 last step is called a dual variable update, this dual has nothing to do with two, but is connected to what is called a dual problem
 
-dual ascent step, we are working in the dual problem as "min L", thus convex problem, thus "dual decomposition" into subproblems which is possible by "18-dual-uses.pdf",p. 22, 
+dual variable update, we are working in the dual problem as "min L", thus convex problem, thus "dual decomposition" into subproblems which is possible by \cite{GT12} 
 
 think of it as only the last line, sending $\mu$ to the updaters for $\beta$ and $\theta$
+
+$\rho$ in last line can be thought of as "step length"
+
+All notes on this slide: see the slides by \cite{boyd}
 }
 
 \begin{frame}
@@ -279,7 +306,7 @@ think of it as only the last line, sending $\mu$ to the updaters for $\beta$ and
 \end{frame}
 
 \note{
-Detailsfor blockwise computation in Exercise 5.12.
+Details for blockwise computation in Exercise 5.12.
 }
 
 \begin{frame}
@@ -453,9 +480,9 @@ generalizations
 \bibitem[de Leeuw, 2015]{DL15} Jan De Leeuw (2015)
 \newblock Block Relaxation Methods in Statistics
 \newblock \url{doi.org/10.13140/RG.2.1.3101.9607} (last accessed: 02.10.18)
-%\bibitem[de Leeuw, 2015]{DL15} Jan De Leeuw (2015)
-%\newblock Block Relaxation Methods in Statistics
-%\newblock \url{doi.org/10.13140/RG.2.1.3101.9607} (last accessed: 02.10.18)
+\bibitem[Boyd]{boyd} S. Boyd 
+\newblock Alternating Direction Method of Multipliers
+\newblock \url{https://web.stanford.edu/~boyd/papers/pdf/admm_slides.pdf} (last accessed: 14.10.18)
 \bibitem[Gordon and Tibshirani, 2012]{GT12} Geoff Gordon and Ryan Tibshirani (2012)
 \newblock Uses of Duality
 \newblock \url{https://www.cs.cmu.edu/~ggordon/10725-F12/slides/18-dual-uses.pdf} (last accessed: 14.10.18) 
