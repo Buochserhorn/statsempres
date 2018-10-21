@@ -150,165 +150,8 @@ ETH Zurich \\ % Your institution for the title page
 
 
 \usepackage{hyperref}
-\hypersetup{pageanchor=true}
 \IfFileExists{upquote.sty}{\usepackage{upquote}}{}
 \begin{document}
-
-
-
-\begin{frame}
-\titlepage % Print the title page as the first slide
-\end{frame}
-
-\begin{frame}
-\frametitle{Overview} % Table of contents slide, comment this block out to remove it
-\tableofcontents % Throughout your presentation, if you choose to use \section{} and \subsection{} commands, these will automatically be printed on this slide as an overview of your presentation
-\end{frame}
-
-%----------------------------------------------------------------------------------------
-%	PRESENTATION SLIDES
-%----------------------------------------------------------------------------------------
-
-%------------------------------------------------
-\section{Coordinate Descent}
-%------------------------------------------------
-
-
-
-%------------------------------------------------
-\section{A Simulation Study}
-%------------------------------------------------
-
-
-
-%------------------------------------------------
-\section{Least Angle Regression}
-%------------------------------------------------
-
-
-
-
-%------------------------------------------------
-\section{Digression: Duality}
-%------------------------------------------------
-
-
-\begin{frame}
-\frametitle{Digression: Duality in optimization}
-
-%\begin{tabular}{lcc}
-%\toprule
-%&Primal&Dual\\\midrule
-%Optimize&$\min f(x)$&$\max q(\lambda,\mu)$\\\midrule
-%Constraints&$g_i(x)\le0, h_j(x)=0, x\in X$&$\lambda\ge0$\\\midrule
-%Function&$L(x,\lambda,\mu):=f(x)+\sum_i\lambda_i g_i(x)+\sum_j\mu_j h_j(x)$&$q(\lambda,\mu)=\inf\limits_{x\in X} L(x,\lambda,\mu)$\\
-%&$L(x,\lambda,\mu):=f(x)+\lambda^Tg(x)+\mu^T h(x)$&\\\midrule
-%\end{tabular}
-
-
-
-%\vspace{15pt}
-%Why though? - \textbf{Dual problem is always convex!}
-
-\end{frame}
-\note{In various section, I came across terms like "dual" and "dual problem"}
-
-\begin{frame}
-\begin{tabular}{ll}
-\toprule[1.5pt]
-\multicolumn{2}{c}{Primal}\\\midrule
-Optimize&$\min f(x)$\\\midrule
-Constraints&$g_i(x)\le0, h_j(x)=0, x\in X$\\\midrule
-Function&$L(x,\lambda,\mu):=f(x)+\sum_i\lambda_i g_i(x)+\sum_j\mu_j h_j(x)$\\\midrule
-%&$L(x,\lambda,\mu):=f(x)+\lambda^Tg(x)+\mu^T h(x)$\\\midrule
-\multicolumn{2}{c}{Dual}\\\midrule
-Function&$q(\lambda,\mu)=\inf\limits_{x\in X} L(x,\lambda,\mu)$\\\midrule
-Constraints&$\lambda\ge0$\\\midrule
-Optimize&$\max q(\lambda,\mu)$\\\midrule
-\end{tabular}
-\vspace{15pt}
-
-Why though? - \textbf{Dual problem is always convex!}
-
-\end{frame}
-
-\note{
-$x\in X$ for e.g. solutions in a cone or integer solutions
-
-%$g$ and $h$ are now in vector notation
-
-Terms: Primal problem, Lagrange function with dual variables/Lagrange-multipliers, dual function, dual problem
-
-
-Dual problem is always convex! - I don't know much about optimization yet, but
-they really like convexity.
-
-"(Convexity confers two advantages. The first is that, in a constrained problem, a convex feasible region makes it easier to ensure that you do not generate infeasible solutions while searching for an optimum.)
-
-The second advantage is that all local optima are global optima. That allows local search algorithms to guarantee optimal solutions. And local search is often faster." \cite{Ru16})
-}
-
-
-
-%------------------------------------------------
-\section{ADMM}
-%------------------------------------------------
-
-
-%------------------------------------------------
-\section{Screening Rules}
-%------------------------------------------------
-
-
-\begin{frame}[allowframebreaks]
-\frametitle{References}
-\footnotesize{
-\begin{thebibliography}{99} % Beamer does not support BibTeX so references must be inserted manually as below
-\bibitem[Hastie et al., 2015]{Has15} Trevor Hastie, Robert Tibshirani, and Martin Wainwright (2015)
-\newblock Statistical learning with sparsity: the Lasso and
-generalizations
-\newblock \emph{CRC Press;} Boca Raton, FL%12(3), 45 -- 678.
-\bibitem[de Leeuw, 2015]{DL15} Jan De Leeuw (2015)
-\newblock Block Relaxation Methods in Statistics
-\newblock \url{doi.org/10.13140/RG.2.1.3101.9607} (last accessed: 02.10.18)
-\bibitem[Boyd]{boyd} S. Boyd 
-\newblock Alternating Direction Method of Multipliers
-\newblock \url{https://web.stanford.edu/~boyd/papers/pdf/admm_slides.pdf} (last accessed: 14.10.18)
-\bibitem[Gordon and Tibshirani, 2012]{GT12} Geoff Gordon and Ryan Tibshirani (2012)
-\newblock Uses of Duality
-\newblock \url{https://www.cs.cmu.edu/~ggordon/10725-F12/slides/18-dual-uses.pdf} (last accessed: 14.10.18) 
-\bibitem[Rubin, 2016]{Ru16} Paul Rubin (2016)
-\newblock What are the advantages of convex optimization compared to more general optimization problems?
-\newblock \url{https://www.quora.com/What-are-the-advantages-of-convex-optimization-compared-to-more-general-optimization-problems} (last accessed: 14.10.18) 
-\end{thebibliography}
-}
-\end{frame}
-%Source: Trevor Hastie, Robert Tibshirani, and Martin Wainwright. Statistical learning with sparsity: the Lasso and generalizations. CRC Press, 2015.
-%@unknown{unknown,
-%author = {De Leeuw, Jan},
-%year = {2015},
-%month = {12},
-%pages = {},
-%title = {Block Relaxation Methods in Statistics - Part II}
-%}
-
-%------------------------------------------------
-\begin{frame}
-\Huge{\centerline{Comments \dots}}
-\Huge{\centerline{Questions \dots}}
-\Huge{\centerline{Suggestions \dots}}
-\end{frame}
-
-
-\begin{frame}
-\Huge{\centerline{That's it.}}
-\Huge{\centerline{Thanks for listening.}}
-\vspace{20pt}
-\large{\centerline{Fill out your feedback sheets!}}
-%\Huge{\centerline{The End}}
-\end{frame}
-
-%----------------------------------------------------------------------------------------
 
 
 
@@ -337,6 +180,25 @@ get started with some boring random numbers:
 ## [1] 0.3217385
 ## [1] 0.5714534
 \end{verbatim}
+\begin{alltt}
+\hlcom{# n = 100}
+\hlcom{# par(mfrow=c(1,3))}
+\hlcom{# r = 0.1}
+\hlcom{# x1 = rnorm(n)}
+\hlcom{# x2 = rnorm(n)}
+\hlcom{# y1 = r*x2+sqrt(1-r*r)*x1}
+\hlcom{# plot(y1,x2, main = "rho = 0.1", xlab = "x_j", ylab = "y")}
+\hlcom{# r = 0.5}
+\hlcom{# x1 = rnorm(n)}
+\hlcom{# x2 = rnorm(n)}
+\hlcom{# y1 = r*x2+sqrt(1-r*r)*x1}
+\hlcom{# plot(y1,x2, main = "rho = 0.5", xlab = "x_j", ylab = "y")}
+\hlcom{# r = 0.9}
+\hlcom{# x1 = rnorm(n)}
+\hlcom{# x2 = rnorm(n)}
+\hlcom{# y1 = r*x2+sqrt(1-r*r)*x1}
+\hlcom{# plot(y1,x2, main = "rho = 0.9", xlab = "x_j", ylab = "y")}
+\end{alltt}
 \end{kframe}
 \end{knitrout}
 \end{frame}
@@ -346,15 +208,10 @@ The first element of \texttt{x} is 0.1449583. Boring boxplots
 and histograms recorded by the PDF device:
 
 \begin{knitrout}\footnotesize
-\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
-\begin{alltt}
-\hlcom{## two plots side by side (option fig.show='hold')}
-\hlkwd{boxplot}\hlstd{(x)}
-\hlkwd{hist}\hlstd{(x,}\hlkwc{main}\hlstd{=}\hlstr{''}\hlstd{)}
-\end{alltt}
-\end{kframe}
-\includegraphics[width=.45\linewidth]{figure/boring-plots-1} 
-\includegraphics[width=.45\linewidth]{figure/boring-plots-2} 
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}
+\includegraphics[width=.30\linewidth]{figure/boring-plots-1} 
+\includegraphics[width=.30\linewidth]{figure/boring-plots-2} 
+\includegraphics[width=.30\linewidth]{figure/boring-plots-3} 
 
 \end{knitrout}
 \end{frame}

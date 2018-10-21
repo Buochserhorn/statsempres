@@ -1,5 +1,4 @@
 n = 100
-
 par(mfrow=c(1,3))
 r = 0.1
 x1 = rnorm(n)

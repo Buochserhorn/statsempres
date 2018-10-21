@@ -82,6 +82,7 @@
 \usepackage{amsmath}
 \usepackage{pgfplots}
 \usepackage{tikz}
+\usepackage{xcolor}
 
 %----------------------------------------------------------------------------------------
 %	TITLE PAGE
@@ -103,6 +104,8 @@ ETH Zürich \\ % Your institution for the title page
 \setbeamertemplate{section in toc}[sections numbered] % removes the ugly balls
 %\setbeameroption{show notes}
 \setbeameroption{show notes on second screen=right}
+%\setbeameroption{show only notes}
+
 \setbeamertemplate{enumerate items}[default] % to get rid of some more ugly balls
 
 
@@ -161,7 +164,7 @@ ETH Zürich \\ % Your institution for the title page
 %------------------------------------------------
 
 \begin{frame}
-\frametitle{Digression: Duality in optimization}
+\frametitle{Recall: Duality in optimization}
 
 %\begin{tabular}{lcc}
 %\toprule
@@ -204,7 +207,7 @@ $x\in X$ for e.g. solutions in a cone or integer solutions
 
 %$g$ and $h$ are now in vector notation
 
-Terms: Primal problem, Lagrange function with dual variables/Lagrange-multipliers, dual function, dual problem
+Terms: Primal problem, Lagrange function with dual variables/Lagrange-multipliers, dual function ($\lambda$ and $\mu$ now in vector notation), dual problem (max q)
 
 
 Dual problem is always convex! - I don't know much about optimization yet, but
@@ -269,11 +272,15 @@ All notes on this slide: see the slides by \cite{boyd}
 \theta^{t+1}&=\argmin_{\theta\in\R^m}L_{\rho}(\beta^{t+1},\theta,\mu^t)\\
 \mu^{t+1}&=\mu^t+\rho(\mathbf{A}\beta^{t+1}+\mathbf{B}\theta^{t+1}-c)
 \end{align*}
-
+\pause
+%\only<2>{
+\visible<2>{
 \begin{figure}
 \includegraphics{img/dualascentstep.pdf}
 \caption{My own illustration of the dual ascent step in the ADMM algorithm utilising dual decomposition based on \cite{GT12}.}
 \end{figure}
+}
+%}
 
 \end{frame}
 
@@ -282,13 +289,9 @@ Method of Multipliers: is a way to make the algorithm more robust, (if in second
 
 alternating direction: semi-decomposable, i.e. keeping one variable fixed while updating the other
 
-last step is called a dual variable update, this dual has nothing to do with two, but is connected to what is called a dual problem
-
-dual variable update, we are working in the dual problem as "min L", thus convex problem, thus "dual decomposition" into subproblems which is possible by \cite{GT12} 
-
 think of it as only the last line, sending $\mu$ to the updaters for $\beta$ and $\theta$
 
-$\rho$ in last line can be thought of as "step length"
+in this context $\rho$ in last line can be thought of as "step length"
 
 All notes on this slide: see the slides by \cite{boyd}
 }
@@ -327,7 +330,6 @@ the problem itself and the constraints,
 
 A and B are unit matrices here
 
-Computational cost: Initially $\mathcal{O}(p^3)$, which is a lot, for the SVD(singular value decomposition of $\mathbf{X}$), after that comparable to coordinate descent or composite gradient from earlier
 }
 
 
@@ -359,15 +361,19 @@ Computational cost: Initially $\mathcal{O}(p^3)$, which is a lot, for the SVD(si
 \frametitle{Screening Rules}
 
 \begin{itemize}
-	\item very big data set, esp. huge number of predictors
-	\item maybe too big to load into memory
-	\item Screening rules eliminate predictors with minor calculation
-	\item and very high / safe certainty (i.e. eliminated predictors would not show up in lasso model based on full data)
+	\item[-] Pre-processing to eliminate features
+	\item[-] very big data set, esp. huge number of predictors
+	\item[-] maybe too big to load into memory
+	\item[-] Screening rules eliminate predictors with minor calculation
+	\item[-] and very high / safe certainty (i.e. eliminated predictors would not show up in lasso model based on full data)
 \end{itemize}
 
-\note{Imagine a big data set, a very big data set, with such a huge design matrix, that you cannot load it into memory (RAM). Wh}
 
+They achieve a reduction in the number of variables, typically by an order of mgnitude
 
+\note{Imagine a big data set, a very big data set, with such a huge design matrix, that you cannot load it into memory (RAM).}
+
+% add stuff from notes
 
 
 \end{frame}
@@ -375,22 +381,108 @@ Computational cost: Initially $\mathcal{O}(p^3)$, which is a lot, for the SVD(si
 \begin{frame}
 \frametitle{What is a good predictor?}
 
-includegraphics
+\includegraphics[width=\linewidth]{img/differentCorrelationPlots}
 
-correlation is covariance with some factors
+correlation is an inner product
 
-covariance is an inner product on a vector space
+high absolute correlation (=large absolute inner product) 
 
-high absolute correlation (=large absolute inner product) => high predictive power (see plots) => xj with largest inner product has predictive power, thus for that j we are most willing to accept some penalty from lambda
+$->$ high predictive power (compare plots) 
 
+$->$ $x_j$ with largest inner product has highest predictive power, thus for that j we are most willing to accept some penalty from $\lambda$
 
 \end{frame}
 
 \begin{frame}
-\frametitle{SAFE Rules}
+\frametitle{Lasso - a different perspective I}
+Let $\mathcal{A}$ be the active set of predictors. Let $\lambda$ take values on a decreasing sequence.
 
+\vspace{15pt}
+
+iterate
+
+\begin{enumerate}
+	\item order predictors $x_j$ not in $\mathcal{A}$ by their "effectiveness" using $\norm{x_j^Ty}$ or better $\norm{x_j^T(y-\hat{y}_{\lambda})}$, call the best predictor $x_{j_{\max}}$
+	\item move $\lambda$ such that the positive effect from the best predictor $x_{j_{\max}}$ compensates the penalty by $\lambda$
+	\item calculate solution for chosen $\lambda$
+\end{enumerate}
 
 \end{frame}
+
+\note{
+this is just a formalisation of the previous slide
+
+or better b/c we want to focus on the residuals once we have a preliminary solution
+}
+
+\begin{frame}
+\frametitle{Lasso - a different perspective II}
+
+\includegraphics[width=\linewidth]{img/lassodifferentperspective.pdf}
+
+\note{
+visualisation of step 2 of the previous slide
+
+these lines are not linear, neither is usually the spacing on the lambda axis
+
+we are walking along the lambda axis until we find a good point / the intersection between the penalty and the profit}
+\end{frame}
+
+\begin{frame}
+\frametitle{Back to screening rules}
+Let $\lambda$ take values on a decreasing sequence. Let $\lambda_{\max}$ be the $\lambda$ where the first predictor has a non-zero coefficient.
+\[\lambda_{\max}=\max_j\norm{x_j^Ty}\]
+Let $\mathcal{A}$ be the active set of predictors.
+\[\forall j \in\mathcal{A}\ \ \lambda=\norm{x_j^T(y-\hat y)}\]
+
+\only<1>{\[\forall j \notin\mathcal{A}\ \ \lambda\ge\norm{x_j^T(y-\hat y)}\]
+
+\note{
+for those wondering why in first equation not y-yhat? anybody?
+
+yhat would come from the empty/intercept model, i.e. yhat=mean(y)
+
+we assume standardised data (i.e. mean 0 and unit variance)
+
+thus yhat = 0
+}
+}
+\only<2>{
+\vspace{5pt}
+
+\centering\colorbox{red!40}{$\forall j \notin\mathcal{A}\ \ \lambda\ge\norm{x_j^T(y-\hat y)}$}
+
+\note{
+this is the essential equation for screening rules, if, for a given lambda, a predictor does not fulfil this equation, we kick it out
+
+\textbf{SHOW R STUFF SCREENINGRULES 2}
+}
+}
+
+\end{frame}
+
+\begin{frame}
+\frametitle{Global vs. Sequential}
+
+
+Global (one-time screening): 
+
+Suppose we want to calculate a lasso solution at $\lambda<\lambda_{\max}$. 
+
+\vspace{25pt}
+Sequential (iterative screening): 
+
+Suppose we have the lasso solution $\hat\beta(\lambda')$ at $\lambda'$ and want to screen variables for solutions at $\lambda<\lambda'$.
+
+\end{frame}
+
+\note{There are two main classes of Screening rules}
+
+%\begin{frame}
+%\frametitle{SAFE Rules}
+%
+%
+%\end{frame}
 
 \begin{frame}
 \frametitle{Dual Polytope Projection (DPP)}
@@ -418,7 +510,18 @@ Suppose we have the lasso solution $\hat\beta(\lambda')$ at $\lambda'$ and want 
 \[\norm{\mathbf{x}_j^T(\mathbf{y}-\mathbf{X}\hat{\beta}(\lambda'))}<2\lambda-\lambda'\]
 \end{frame}
 
+\begin{frame}
+\begin{figure}
 
+\caption{From \cite{Has15}}
+\end{figure}
+\includegraphics[width=\linewidth]{img/screeningrulesoverview.png}
+\end{frame}
+
+\note{
+Lasso regression: Results of different rules applied to a simulated
+dataset. There are N = 200 observations and p = 5000 uncorrelated Gaussian predictors; one-quarter of the true coefficients are nonzero. Shown are the number of predictors left after screening at each stage, plotted against the number of predictors in the model for a given value of $\lambda$. The value of  $\lambda$ is decreasing as we move from left  to right. In the plots, we are fitting along a path of 100 decreasing $\lambda$ values equally spaced on the log-scale, A broken line with unit slope is added for reference. The proportion of variance explained by the model is shown along the top of the plot. There were no violations for either of the strong rules.
+}
 
 %------------------------------------------------
 \section{Minor-Max Algorithms}

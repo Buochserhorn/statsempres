@@ -3,6 +3,6 @@
 \beamer@sectionintoc {3}{Least Angle Regression}{3}{0}{3}
 \beamer@sectionintoc {4}{Digression: Duality}{3}{0}{4}
 \beamer@sectionintoc {5}{ADMM}{5}{0}{5}
-\beamer@sectionintoc {6}{Screening Rules}{13}{0}{6}
-\beamer@sectionintoc {7}{Minor-Max Algorithms}{18}{0}{7}
-\beamer@sectionintoc {8}{Alternating Minimizations}{22}{0}{8}
+\beamer@sectionintoc {6}{Screening Rules}{14}{0}{6}
+\beamer@sectionintoc {7}{Minor-Max Algorithms}{24}{0}{7}
+\beamer@sectionintoc {8}{Alternating Minimizations}{28}{0}{8}

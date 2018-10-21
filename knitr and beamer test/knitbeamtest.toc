@@ -1,6 +1,0 @@
-\beamer@sectionintoc {1}{Coordinate Descent}{3}{0}{1}
-\beamer@sectionintoc {2}{A Simulation Study}{3}{0}{2}
-\beamer@sectionintoc {3}{Least Angle Regression}{3}{0}{3}
-\beamer@sectionintoc {4}{Digression: Duality}{3}{0}{4}
-\beamer@sectionintoc {5}{ADMM}{5}{0}{5}
-\beamer@sectionintoc {6}{Screening Rules}{5}{0}{6}
