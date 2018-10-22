@@ -103,7 +103,7 @@ ETH Zürich \\ % Your institution for the title page
 \setbeamertemplate{navigation symbols}{} %comment to have a lot of navigating symbols
 \setbeamertemplate{section in toc}[sections numbered] % removes the ugly balls
 %\setbeameroption{show notes}
-\setbeameroption{show notes on second screen=right}
+%\setbeameroption{show notes on second screen=right}
 %\setbeameroption{show only notes}
 
 \setbeamertemplate{enumerate items}[default] % to get rid of some more ugly balls
@@ -543,7 +543,7 @@ Function&$L(x,\lambda,\mu):=f(x)+\sum_i\lambda_i g_i(x)+\sum_j\mu_j h_j(x)$\\\mi
 \multicolumn{2}{c}{Dual}\\\midrule
 Function&$q(\lambda,\mu)=\inf\limits_{x\in X} L(x,\lambda,\mu)$\\\midrule
 Constraints&$\lambda\ge0$\\\midrule
-Optimize&$\max q(\lambda,\mu)$\\\midrule
+Optimize&$\max\limits_{\lambda\ge0,\mu} q(\lambda,\mu)$\\\midrule
 \end{tabular}
 \vspace{15pt}
 
@@ -718,7 +718,7 @@ Computational cost: Initially $\mathcal{O}(p^3)$, which is a lot, for the SVD(si
 \end{itemize}
 
 
-They achieve a reduction in the number of variables, typically by an order of mgnitude
+They achieve a reduction in the number of variables, typically by an order of magnitude
 
 \note{Imagine a big data set, a very big data set, with such a huge design matrix, that you cannot load it into memory (RAM).}
 
@@ -743,7 +743,7 @@ $->$ $x_j$ with largest inner product has highest predictive power, thus for tha
 \end{frame}
 
 \begin{frame}
-\frametitle{Lasso - a different perspective I}
+\frametitle{Lasso - an iterative algorithm}
 Let $\mathcal{A}$ be the active set of predictors. Let $\lambda$ take values on a decreasing sequence.
 
 \vspace{15pt}
@@ -765,7 +765,7 @@ or better b/c we want to focus on the residuals once we have a preliminary solut
 }
 
 \begin{frame}
-\frametitle{Lasso - a different perspective II}
+\frametitle{Lasso - a visual intepretation}
 
 \includegraphics[width=\linewidth]{img/lassodifferentperspective.pdf}
 
@@ -799,7 +799,11 @@ thus yhat = 0
 \only<2>{
 \vspace{5pt}
 
-\centering\colorbox{red!40}{$\forall j \notin\mathcal{A}\ \ \lambda\ge\norm{x_j^T(y-\hat y)}$}
+{\centering\colorbox{red!40}{$\forall j \notin\mathcal{A}\ \ \lambda\ge\norm{x_j^T(y-\hat y)}$}
+
+\vspace{10pt}}
+
+R example
 
 \note{
 this is the essential equation for screening rules, if, for a given lambda, a predictor does not fulfil this equation, we kick it out
