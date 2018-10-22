@@ -140,27 +140,376 @@ ETH Zürich \\ % Your institution for the title page
 %	PRESENTATION SLIDES
 %----------------------------------------------------------------------------------------
 
+
 %------------------------------------------------
 \section{Coordinate Descent}
 %------------------------------------------------
+\begin{frame}
+\frametitle{Coordinate Descent Algorithm}
+\begin{block}{What is Coordinate Descent (CD) Algorithm?}
+\begin{equation}    % <--- deleted empty lines
+            \beta^{t+1}_{k} = \underset{\beta_k}{\mathrm{argmin}}\ f(\beta^{t}_{1}\ ,\beta^{t}_{2}\ ,...\beta_{k}\ ,\beta^{t}_{k+1}\ , ...\beta^{t}_{p})
+    \end{equation}
+    \; and $\beta^{t+1}_j =\ \beta^{t}_j$ for $j \neq k$
+    \vspace*{6mm}
+\begin{itemize}
+\item  An iterative algorithm that updates from $\beta^t$ \ to \   $\beta^{t+1}$ \  by choosing a single coordinate, and minimizing over this coordinate.
+\end{itemize}
+\end{block}
+\end{frame}
+
+\begin{frame}
+\frametitle{Separability Condition}
+\textbf{Motivation} 
+\vspace*{6mm}
+\begin{block}{Does CD procedure converge to the global minimum of a convex function? }
+\vspace*{3mm}
+\only<2> {
+\begin{itemize}
+    \item \textbf{Sufficient Condition:}\  the function is continuously differentiable and strictly convex in each coordinate. 
+\end{itemize}
+$\Rightarrow$  restrictive 
+
+}
+
+\end{block}
+\note{restrictive regarding its application to Lasso, regularizers leads to optimization problems that need not be differentiable.}
+    
+\end{frame}
+
+\begin{frame}{Separability Condition}
+Suppose the cost function \(f\) has the additive decomposition:
+\begin{equation}
+    f(\beta_1,...,\beta_p)=g(\beta_1,...,\beta_p)+\displaystyle\sum_{j=1}^{p} h_j(\beta_j)
+\end{equation}
+where \(g:\mathbb{R}^p \rightarrow \mathbb{R}\) is differentiable and convex, and the univariate functions  \(h_j:\mathbb{R} \rightarrow \mathbb{R}\) is convex. 
+\vspace*{6mm}
+\begin{itemize}
+    \item \underline{Lasso}: \(g(\beta)=\frac{1}{2N}{\lVert\textbf{y}-\textbf{X}\beta\rVert}^2_2 \) and \(h_j(\beta_j)=\lambda\lvert\beta_j\lvert\) satisfies the condition
+\end{itemize}
+    
+\end{frame}
+
+
+\begin{frame}{Separability Condition: Example}
+An Example of failure of Coordinate Descent 
+
+
+\vspace*{6mm}
+\(\underset{\beta\in\mathbb{R}^p}{\mathrm{argmin}}\ \frac{1}{2N}{\lVert\textbf{y}-\textbf{X}\beta\rVert}^2_2 + \ \lambda_{1}\sum_{j=1}^{p}\lvert\beta_j\lvert+\ \lambda_{2}\sum_{j=2}^{p}\lvert\beta_j-\beta_{j-1}\lvert\)
+
+\vspace*{6mm}
+\begin{itemize}
+    \item \(h(\beta)\) is not separable
+\end{itemize}
+\begin{itemize}
+    \item Fused Lasso: coordinate descent procedure is not guaranteed to find the global minimum
+\end{itemize}
+
+
+    
+\end{frame}
+
+
+\begin{frame}{Separability Condition: Example}
+\begin{figure}[h]
+\centering
+\includegraphics[width=10cm]{img/Fused}
+\caption{ Fused Lasso: CD fail to reach the global minimum}
+\end{figure}
+ \footnote{Picture taken from \textit{Statistical Learning with Sparsity}  page 111 }
+\end{frame}
+
+\begin{frame}{Lasso \& Coordinate Descent}
+
+\textbf{Optimality Condition:}
+\vspace*{4mm}
+
+\(-\frac{1}{2N}\sum_{i=1}^{N}(y_{i}-\beta_0-\sum_{k=1}^{p}x_{ik}\beta_k)x_{ij}+ \lambda s_j=0\)
+\vspace*{4mm}
+ \\where \(s_j \in sign(\beta_j)\) for \(j=1,2,...p\)
+ \vspace*{6mm}
+ \begin{itemize}
+     \item Define the \textbf{partial residual}: \(r_{i}^{(j)}=y_i-\sum_{k\neq j}x_{ik}\hat{\beta}_k\)
+    \item Then the solution for \(\hat{\beta_j}\) satisfies:\\
+\vspace*{4mm}
+    \(\hat{\beta_j}=\frac{S_{\lambda}(\frac{1}{N}\sum_{i=1}^{N}r_i^{(j)}       x_{ij} )}{\frac{1}{N}\sum_{i=1}^{N}x_{ij}^2}\)\\
+\vspace*{4mm}
+    where \(S_{\lambda}(\theta) =sign(\theta)(\lvert\theta\lvert-\lambda)_{+}\)
+\end{itemize}
+    
+\end{frame}
 
 
 
-%------------------------------------------------
-\section{A Simulation Study}
-%------------------------------------------------
+
+\begin{frame}{Lasso \& Coordinate Descent}
+\begin{itemize}
+    \item Illustration of Coordinate Descent in R
+\end{itemize}
+\begin{block}{Strategies to make the operation efficient: }
+\vspace*{3mm}  
+\textbf{Naive Updating} \\
+\vspace*{1.5mm}
+\(r_i^{(j)}=y_i-\sum_{k\neq j}x_{ik} \hat{\beta}_k = r_i + x_{ij}\hat{\beta }_j\) \\
+\vspace*{1.5mm}
+\(\frac{1}{N} \sum_{i=1}^{N}x_{ij}r_i^{(j)} = \frac{1}{N} \sum_{i=1}^{N} x_{ij}r_i + \hat{\beta}_j\) \\
+\vspace*{3mm}  
+\textbf{Covariance Updating} \\
+\vspace*{1.5mm}
+
+        \(\sum_{i=1}^{N}x_{ij}r_{i}= \big \langle x_j,y\big\rangle -  \sum_{k\lvert \lvert \beta_{\hat{k}}\rvert >0}\big \langle x_j,x_k\big\rangle \beta_{\hat{k}}\) \\
+\vspace*{3mm}      
+\textbf{Warm Starts}:  For a decreasing sequence of values $\{\lambda_{0}^{L}\}$, \(\hat{ \beta}(\lambda_l)\) is typically a
+very good warm start for the solution $\hat{ \beta}(\lambda_{l+1})$. \\
+We set $\lambda_0 = \frac{1}{N} max|\langle x_j, y \rangle|$ and $\lambda_L \approx 0 $
+\end{block}
+    
+\note{\textbf{Covariance updating}: In this approach, we compute inner products of each feature with y initially,and then each time a new feature xk enters the model for the first time, wecompute and store its inner product with all the rest of the features, requiringO(Np) operations. We also store the p gradient components. If one of the coefficients currently in the model changes, we can update each gradient in O(p) operations. Hence with k nonzero terms in the model, a complete cycle costs O(pk) operations if no new variables become nonzero, and costs O(Np) for each new variable entered. Importantly, each step does not require making.
+O(N) calculations; \textbf{Warm Starts}: sequence of lambda values; double number of L, would not double the computational time; fewer iteration for each lambda. }
+\end{frame}
+
+\begin{frame}{Lasso \& Coordinate Descent }
+
+\textbf{Active-set Convergence:} Define the
+active set $A$ and iterate the algorithm using only  variables in $A$.\\
+\vspace*{3mm}
+\textbf{Strong-set Convergence:}  Define the strong set $S$ and iterate the algorithm using only variables in $S$.\\
+\vspace*{3mm}
+\textbf{Sparsity:} Sparsity of the design matrix $X$ makes the operation of inner product efficient.\\
+\vspace*{3mm}
+Details in page 113 and page 114. 
+
+\note{\textbf{Convergence criterion; covered in the following section of screening rule covered by Janosch}\textbf{Sparsity:}sparsity matrices can be stored efficiently in
+sparse-column format, where we store only the nonzero entries and the coordinates
+where they occur. Now when we compute inner products, we sum only
+over the nonzero entries.}
+\end{frame}
+
+\begin{frame}{Elastic Net \& Coordinate Descent}
+\(minimize_{\beta_0,\beta_p}\frac{1}{2}\sum_{i=1}^{N}(y_{i}-\beta_{0}-x_i^{T}\beta)^2+\lambda \big[\frac{1}{2}(1-\alpha)\lvert\lvert\beta\rvert\rvert_2^2 + \alpha\lvert\lvert\beta \rvert\rvert\big]_1\)
+\vspace*{4mm}
+\begin{itemize}
+    \item Combination of L1 and L2 penaLty 
+   \vspace*{3mm}
+    \item Satisfy the separability condition
+    \vspace*{3mm}
+    \item The solution satisfies:\\
+    \vspace*{3mm}
+    \(\hat{\beta_j}=\frac{S_{\alpha\lambda}(\frac{1}{N}\sum_{i=1}^{N}r_i^{(j)} x_{ij} )}{\frac{1}{N}\sum_{i=1}^{N}x_{ij}^2+(1-\alpha)\lambda}\)\\
+\end{itemize}
 
 
 
+\end{frame}
+
+\begin{frame}{Logistic Regression \& Coordinate Descent}
+\textbf{Background}
+\vspace*{3mm}
+
+    \begin{itemize}
+        \item \textbf{Class Label G}: Take values 1 and -1 \\
+         \vspace*{1mm}
+          \textbf{Denote} \(p(x_{i};\beta_0,\beta) = Pr(G=1\lvert x_{i})\) \\
+          \vspace*{1mm}
+     \textbf{Define} log odds: \(log\frac{Pr(G=-1 \lvert x)}{Pr(G=1 \lvert x)} = \beta_0 +x^T \beta\) \\
+
+    \end{itemize}
+\only<2>{
+  \begin{itemize}
+        \item \textbf{Maximize penalized log-likelihood:}\\
+          \vspace*{3mm}
+\(\frac{1}{N}\sum_{i=1}^{N}\{I(g_i=1)\cdot logp(x_i;\beta_0,\beta)+I(g_i=-1)\cdot log(1-p(x_{i};\beta_0,\beta))\}-\lambda \lvert\lvert\beta\lvert\lVert_{1}  \) \\
+    \vspace*{1mm}
+    \textbf{Denote} \(y_i = I(g_i=-1)\) \\
+    \vspace*{2mm}
+    \end{itemize}
+}
+\only<2> {
+\textbf{Explicit form} of log likelihood (without penalty): \(l(\beta_0,\beta)=\frac{1}{N}\sum_{i=1}^{N}\big[ y_i \cdot(\beta_0 +x_i^T \beta) -log(1+e^{\beta_0 +x_i^T \beta})\big]\)
+}
+ 
+\end{frame}
+
+\begin{frame}{Logistic Regression \& Coordinate Descent}
+\textbf{Background}
+\vspace*{3mm}
+\begin{itemize}
+    \item Form a \textbf{quadratic objective function} using Taylor expansion about current estimates \((\Tilde{\beta_0},\Tilde{\beta})\): Idea of Newton method, Iterated Weighted Least Square problem  
+\vspace*{3mm}
+    
+\(l_Q(\beta_0,\beta)=-\frac{1}{2N}\sum_{i=1}^{N}(w_i(z_i-\beta_0-x_i^T\beta)^2+C(\Tilde{\beta_0},\Tilde{\beta})\) 
+
+\vspace*{3mm}
+
+\item Use Coordinate Descent to solve the problem  \\ 
+\vspace*{2mm}
+\(minimize_{(\beta_0 , \beta)} \big\{ l_Q \{\beta_0,\beta)+\lambda \lvert \lvert \beta \lvert\lvert_{1} \big\} \)
+
+\end{itemize}
+\note{By analogy with Section 5.3.3, this is known as a generalized Newton algorithm,and the solution to the minimization problem (5.56)) defines a proximal Newton map}
+\end{frame}
+
+\begin{frame}{Logistic Regression \& Coordinate Descent}
+\textbf{Algorithm}\\
+\vspace*{3mm}
+OUTER LOOP: Decrement $\lambda$ \\
+\vspace*{3mm}
+MIDDLE LOOP: Update the \textbf{quadratic approximation} $l_{Q}$ using the current parameters \(\Tilde{(\beta_0},\Tilde{\beta)}\)\\
+\vspace*{3mm}
+INNER LOOP: Run the coordinate descent algorithm on the penalized weighted least squares problem
+
+
+\end{frame}
 %------------------------------------------------
 \section{Least Angle Regression}
 %------------------------------------------------
+\begin{frame}{Least Angle Regression}
 
+\textbf{Introduction}
+\vspace*{3mm}
+\begin{itemize}
+    \item Relates to Forward Selection method
+    \vspace*{3mm}
+    \item Relates to Lasso method 
+     \vspace*{3mm}
+    \item Able to deliver the entire solution path of the lasso problem with squared-error loss as a function of the regularization parameter $\lambda$
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Least Angle Regression: Algorithm}
+    \begin{itemize}
+        \item Start with all coefficients \(\beta_j\) equal to zero
+        \item Find the predictor $X_j$ \textbf{most correlated} with $y$
+        \item  \textbf{Increase} the coefficient \(\beta_j\) in the direction of the \textbf{sign} of its \textbf{correlation} with $y$
+        \item Take \textbf{residuals} \(r=y-\hat{y}\) along the way; Stop when some other predictor \(X_k\) has \textbf{ as much correlation} with $r$ as \(X_j\) has
+        \item \textbf{Increase} \(\beta_j,\beta_k\) in their \textbf{joint least squares direction}, until some other predictor has as much correlation with the residual $r$
+    \end{itemize}
+Continue until: all predictors are in the model
+\end{frame}
+
+\begin{frame}{Least Angle Regression: Algorithm}
+\begin{figure}[h]
+\centering
+\includegraphics[width=10cm,height=6.5cm]{img/LARS}
+\end{figure}
+\footnote{Picture taken from \textit{Statistical Learning with Sparsity}  page 119 }
+\end{frame}
+
+\begin{frame}{Least Angle Regression: Geometric Representation}
+\begin{figure}[h]
+\centering
+\includegraphics[width=8cm,height=5cm]{img/Geometric}
+\end{figure}
+\footnote{Figure taken from Efron, Hastie, Johnstore and Tibschirani (2004)}
+\note{The LARS algorithm in the case of $m = 2$ covariates; $y_2$ is the projection of $y$ into $L(x1, x2)$. Beginning at $\mu_0 = 0$, the residual vector $y_2 -\mu_0$ has greater correlation with $x_1$ than $x_2$;the next LARS estimate is $\mu_1 =\mu_0 + \gamma_1x_1$, where $\gamma_1$ is chosen such that $y_2 - \mu_1$ bisects the angle
+between $x_1$ and $x_2$; then $\mu_2 =\mu_1 + \gamma_2 u_2$, where $u_2$ is the unit bisector; $\mu_2 = y_2$ in the case $m = 2$,but not for the case $m>2$; see Figure 4. The staircase indicates a typical Stagewise path. Here LARS gives the Stagewise track as $\epsilon \to 0$, but a modification is necessary to guarantee agreement in higher dimensions.}
+\end{frame}
+
+
+
+------------------------------------------------
+\section{Comparison of Optimization Methods} %------------------------------------------------
+\begin{frame}{Connection between LAR and Lasso}
+
+\begin{block}{LAR}
+\vspace*{2mm}
+\(\textbf{x}_j^T (\textbf{y}-\textbf{X}\beta(\lambda))=\lambda \cdot s_j,\ 
+\forall j \in \mathbb{A}\) \ where \(s_j\) is the sign of inner product \(\lambda\). [3(c)]\\
+\end{block} 
+
+\vspace*{3mm}
+
+\only<2>{
+\begin{block}{LASSO}
+Let \(\mathbb{B}\) be the active set of variables in the solution for a given value of \(\lambda\). \\
+\(R(\beta)=\frac{1}{2}\lvert\lvert\textbf{y}-\textbf{X}\beta\rvert\rvert_2^2 + \lambda \lvert\lvert\beta \lvert\lvert_1\) \\
+\end{block}
+\vspace*{2mm}
+For differentiable \(R(\beta)\) , the stationary conditions give: \\
+\(\textbf{x}_{j}^{T}  (\textbf{y}-\textbf{X}\beta) =
+\lambda \cdot sign(\beta_j), \forall j \in \mathbb{B}\) \\
+\vspace*{3mm}
+If sign (\(\beta_j\)) matches $s_j$, the coefficient would be identical.
+
+}
+\end{frame}
+
+\begin{frame}{Connection between LAR and Lasso}
+\begin{itemize}
+    \item  R Example
+    \vspace*{3mm}
+    \item LAR algorithm explains that the coefficient paths for the lasso are \textbf{piecewise linear}
+    \vspace*{3mm}
+    \item Coefficient paths differ if sign(\(\beta_j\)) is different from $s_j$ 
+    \vspace*{3mm}
+    
+    \item \textbf{Modification} of LAR for computing Lasso solution [3(c)+]: \\
+If a \textbf{nonzero} coefficient \textbf{crosses zero} before the next
+variable enters, \textbf{drop} it from \(\mathbb{A}\) and recompute the current joint least squares
+direction.
+    
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Connection between LAR and Lasso}
+\begin{figure}[h]
+\centering
+\includegraphics[width=8cm,height=5cm]{img/LARLasso}
+\caption{Cases where signs of \(\lambda\) and \(\beta\) disagree}
+\end{figure}
+\footnote{Picture taken from \textit{Statistical Learning with Sparsity}  page 120 }
+\end{frame}
+
+\begin{frame}{Algorithm Performance}
+\begin{block} {Simulation: Comparison of computation efficiency between CD and LAR}
+\vspace*{3mm}
+    Set Up: \footnote{Friedman,Hastie, Tibshirani (2010)}
+    \begin{itemize}
+        \item Generate Gaussian data with N observations and p predictors, with each pair of predictors \(X_j,X_k\) having the same population correlation \(\rho\).
+        \item  Try different combination of $N$ and $p$; Range \(\rho\) from 0 to 0.95.\\
+        \(Y=\sum_{j=1}^{p}X_j\beta{j}+kZ\) \ where \( \beta_j= (-1)^j exp(\frac{-2(j-1)}{20}), Z \sim N(0,1)\) and $k$ is a constant.
+    \end{itemize}
+\end{block}  
+
+\note{Timings (secs) for glmnet and lars algorithms for linear regression with lasso penalty. The first line is glmnet using naive updating while the second uses covariance updating. Total time for 100 \(\lambda\) values, averaged over 3 runs.}
+\end{frame}
+
+\begin{frame}{Algorithm Performance}
+\begin{figure}[h]
+\centering
+\includegraphics[width=6.5cm,height=7cm]{img/table1}
+\caption{Comparison of computing time}
+\end{figure}
+\footnote{Table taken from the appendix in Friedman,Hastie, Tibshirani (2010) }
+\end{frame}
+
+\begin{frame}{Algorithm Performance}
+\begin{block}{Simulation: Comparison of computation efficiency between Coordinate Descent, Proximal Gradient Descent and Nestrov Method}
+\vspace*{3mm}
+Set Up: \footnote{\textit{Statistical Learning with Sparsity} Page 117}
+\begin{itemize}
+    \item Generated an \(N \times p\) predictor matrix $X$ with standard Gaussian entries and pairwise correlation 0 or 0.5 between the features.
+    \vspace*{3mm}
+    \item \(\lvert \beta_j \rvert =exp \big[ -0.5(u(j-1))^2\big] \) and \ 
+    \(u=\sqrt{\frac{\pi}{20}}\) and alternating signs -1,+1,-1...
+\end{itemize}
+\end{block}
+\end{frame}
+
+\begin{frame}{Algorithm Performance}
+\begin{figure}[h]
+\centering
+\includegraphics[width=7cm,height=3cm]{img/table2}
+\caption{Comparison of computing efficiency between 3 methods}
+\end{figure}
+ \footnote{\textit{Statistical Learning with Sparsity} Page 117}  
+\end{frame}
 
 
 
 %------------------------------------------------
-\section{Digression: Duality}
+\section{Recall: Duality}
 %------------------------------------------------
 
 \begin{frame}
@@ -511,6 +860,20 @@ Suppose we have the lasso solution $\hat\beta(\lambda')$ at $\lambda'$ and want 
 \end{frame}
 
 \begin{frame}
+\frametitle{Screening Rules - Example Setup}
+
+\begin{itemize}
+	\item simulated dataset
+	\item $N = 200, p = 5000$ uncorrelated Gaussian predictors, 
+	\item $1/4$ true non-zero coefficients 
+	\item 100 decreassing lambda values equally spaced on the log-scale
+	\item Compare Global DPP, Global Strong, Sequential DDP, Sequential Strong
+	\item no violations for either of the strong rules
+\end{itemize}
+
+\end{frame}
+
+\begin{frame}
 \begin{figure}
 
 \caption{From \cite{Has15}}
@@ -520,8 +883,53 @@ Suppose we have the lasso solution $\hat\beta(\lambda')$ at $\lambda'$ and want 
 
 \note{
 Lasso regression: Results of different rules applied to a simulated
-dataset. There are N = 200 observations and p = 5000 uncorrelated Gaussian predictors; one-quarter of the true coefficients are nonzero. Shown are the number of predictors left after screening at each stage, plotted against the number of predictors in the model for a given value of $\lambda$. The value of  $\lambda$ is decreasing as we move from left  to right. In the plots, we are fitting along a path of 100 decreasing $\lambda$ values equally spaced on the log-scale, A broken line with unit slope is added for reference. The proportion of variance explained by the model is shown along the top of the plot. There were no violations for either of the strong rules.
+dataset. There are N = 200 observations and p = 5000 uncorrelated Gaussian predictors; one-quarter of the true coefficients are nonzero. Shown are the number of predictors left after screening at each stage, plotted against the number of predictors in the model for a given value of $\lambda$. The value of  $\lambda$ is decreasing as we move from left  to right. In the plots, we are fitting along a path of 100 decreasing $\lambda$ values equally spaced on the log-scale, \textbf{A broken line with unit slope is added for reference.} The proportion of variance explained by the model is shown along the top of the plot. There were no violations for either of the strong rules.
 }
+
+\begin{frame}{Summary I}
+\begin{block}{Coordinate Descent}
+\begin{itemize}
+    \item An efficient algorithm implemented in glmnet but requires separability condition
+    \item Application: Ridge, Lasso, Elastic Net, Logistic Regression, etc.
+\end{itemize}
+\begin{block}{Least Angle Regression }
+\begin{itemize}
+    \item Similar to the idea of Forward Selection 
+    \item Computationally efficient but does not scale well to large problems
+\end{itemize}
+\begin{block}{Connection between LASSO and LAR}
+\begin{itemize}
+    \item LAR could be modified to obtain Lasso solution 
+    \item Explains the fact that Lasso coefficient solution path is piece-wise linear
+\end{itemize}
+
+\end{block}
+
+\end{block}
+
+\end{block}
+\end{frame}
+
+\begin{frame}
+\frametitle{Summary II}
+\begin{block}{ADMM}
+\begin{itemize}
+	\item Use duality to your advantage
+	\item Limitations in speed for Lasso, but useful in more complex settings
+\end{itemize}
+\begin{block}{Screening Rules}
+\begin{itemize}
+    \item Promising for very large $p$'s 
+    \item Difficult to find best rule, field in development
+\end{itemize}
+
+
+\end{block}
+
+
+\end{block}
+
+\end{frame}
 
 %------------------------------------------------
 \section{Minor-Max Algorithms}
