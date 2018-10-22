@@ -146,7 +146,7 @@ ETH Zürich \\ % Your institution for the title page
 %------------------------------------------------
 \begin{frame}
 \frametitle{Coordinate Descent Algorithm}
-\begin{block}{What is Coordinate Descent (CD) Algorithm?}
+\begin{block}{What is the Coordinate Descent (CD) Algorithm?}
 \begin{equation}    % <--- deleted empty lines
             \beta^{t+1}_{k} = \underset{\beta_k}{\mathrm{argmin}}\ f(\beta^{t}_{1}\ ,\beta^{t}_{2}\ ,...\beta_{k}\ ,\beta^{t}_{k+1}\ , ...\beta^{t}_{p})
     \end{equation}
@@ -402,8 +402,8 @@ Continue until: all predictors are in the model
 \includegraphics[width=8cm,height=5cm]{img/Geometric}
 \end{figure}
 \footnote{Figure taken from Efron, Hastie, Johnstore and Tibschirani (2004)}
-\note{The LARS algorithm in the case of $m = 2$ covariates; $y_2$ is the projection of $y$ into $L(x1, x2)$. Beginning at $\mu_0 = 0$, the residual vector $y_2 -\mu_0$ has greater correlation with $x_1$ than $x_2$;the next LARS estimate is $\mu_1 =\mu_0 + \gamma_1x_1$, where $\gamma_1$ is chosen such that $y_2 - \mu_1$ bisects the angle
-between $x_1$ and $x_2$; then $\mu_2 =\mu_1 + \gamma_2 u_2$, where $u_2$ is the unit bisector; $\mu_2 = y_2$ in the case $m = 2$,but not for the case $m>2$; see Figure 4. The staircase indicates a typical Stagewise path. Here LARS gives the Stagewise track as $\epsilon \to 0$, but a modification is necessary to guarantee agreement in higher dimensions.}
+%\note{The LARS algorithm in the case of $m = 2$ covariates; $y_2$ is the projection of $y$ into $L(x1, x2)$. Beginning at $\mu_0 = 0$, the residual vector $y_2 -\mu_0$ has greater correlation with $x_1$ than $x_2$;the next LARS estimate is $\mu_1 =\mu_0 + \gamma_1x_1$, where $\gamma_1$ is chosen such that $y_2 - \mu_1$ bisects the angle
+%between $x_1$ and $x_2$; then $\mu_2 =\mu_1 + \gamma_2 u_2$, where $u_2$ is the unit bisector; $\mu_2 = y_2$ in the case $m = 2$,but not for the case $m>2$; see Figure 4. The staircase indicates a typical Stagewise path. Here LARS gives the Stagewise track as $\epsilon \to 0$, but a modification is necessary to guarantee agreement in higher dimensions.}
 \end{frame}
 
 
@@ -478,7 +478,7 @@ direction.
 \begin{frame}{Algorithm Performance}
 \begin{figure}[h]
 \centering
-\includegraphics[width=6.5cm,height=7cm]{img/table1}
+\includegraphics[width=5.5cm,height=7cm]{img/table1}
 \caption{Comparison of computing time}
 \end{figure}
 \footnote{Table taken from the appendix in Friedman,Hastie, Tibshirani (2010) }
@@ -936,7 +936,7 @@ dataset. There are N = 200 observations and p = 5000 uncorrelated Gaussian predi
 \end{frame}
 
 %------------------------------------------------
-\section{Minor-Max Algorithms}
+\section*{Minor-Max Algorithms}
 %------------------------------------------------
 
 \begin{frame}
@@ -995,7 +995,7 @@ for inequalities: show previous slide
 
 
 %------------------------------------------------
-\section{Alternating Minimizations}
+\section*{Alternating Minimizations}
 %------------------------------------------------
 
 

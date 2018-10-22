@@ -167,12 +167,13 @@ matrix(cbind(number_n, iteration_conv),
 
 ## Case 3: Vary the number of predictors p; Check how many iterations are needed for convergence
 
-  number_p <- c(5,10,20,30,50,60)
-  
+#  number_p <- c(5,10,20,30,50,60)
+number_p <- c(5,10,20,30,40)  
   ## Fix n=10000, max_iteration=1000, lambda=0.05
   
   iteration_conv <- c()
-  
+
+
   for (p in number_p){
     X_new <- simulate_X(n = 10000, p)
     Y_new <- simulate_Y(X = X_new, n = 10000,p)
@@ -234,7 +235,7 @@ lambda_lar <- lar.fit$lambda
 ## Compare solution for corresponding lambda value 
 lasso.fit1 <-
   glmnet(diabetes_X, diabetes_Y, intercept = TRUE, alpha = 1,
-         standardize = FALSE,thres=1e-18, 
+         standardize = FALSE, thres = 1e-18, 
          lambda = lambda_lar/nrow(diabetes_X))
   
 ## Calculate the difference in estimation of parmameters

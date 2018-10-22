@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6800 64-bit) (preloaded format=pdflatex 2018.9.24)  22 OCT 2018 10:29
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6800 64-bit) (preloaded format=pdflatex 2018.9.24)  22 OCT 2018 11:31
 entering extended mode
 **./presentation.tex
 (presentation.tex
@@ -1236,7 +1236,7 @@ thkerncmss.
 ] [7
 
 ]
-<img/Fused.jpg, id=173, 735.87422pt x 288.7036pt>
+<img/Fused.jpg, id=171, 735.87422pt x 288.7036pt>
 File: img/Fused.jpg Graphic file (type jpg)
 <use img/Fused.jpg>
 Package pdftex.def Info: img/Fused.jpg  used on input line 221.
@@ -1265,7 +1265,7 @@ Package pdftex.def Info: img/Fused.jpg  used on input line 221.
 ] [18
 
 ]
-<img/LARS.jpg, id=332, 443.03015pt x 331.99031pt>
+<img/LARS.jpg, id=330, 443.03015pt x 331.99031pt>
 File: img/LARS.jpg Graphic file (type jpg)
 <use img/LARS.jpg>
 Package pdftex.def Info: img/LARS.jpg  used on input line 397.
@@ -1273,7 +1273,7 @@ Package pdftex.def Info: img/LARS.jpg  used on input line 397.
  [19
 
  <./img/LARS.jpg>]
-<img/Geometric.png, id=348, 628.3475pt x 342.27875pt>
+<img/Geometric.png, id=346, 628.3475pt x 342.27875pt>
 File: img/Geometric.png Graphic file (type png)
 <use img/Geometric.png>
 Package pdftex.def Info: img/Geometric.png  used on input line 407.
@@ -1296,7 +1296,7 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 ] [24
 
 ]
-<img/LARLasso.jpg, id=418, 749.04843pt x 375.65344pt>
+<img/LARLasso.jpg, id=416, 749.04843pt x 375.65344pt>
 File: img/LARLasso.jpg Graphic file (type jpg)
 <use img/LARLasso.jpg>
 Package pdftex.def Info: img/LARLasso.jpg  used on input line 462.
@@ -1306,11 +1306,11 @@ Package pdftex.def Info: img/LARLasso.jpg  used on input line 462.
  <./img/LARLasso.jpg>] [26
 
 ]
-<img/table1.jpg, id=448, 290.20921pt x 537.50812pt>
+<img/table1.jpg, id=446, 290.20921pt x 537.50812pt>
 File: img/table1.jpg Graphic file (type jpg)
 <use img/table1.jpg>
 Package pdftex.def Info: img/table1.jpg  used on input line 485.
-(pdftex.def)             Requested size: 184.94502pt x 199.17015pt.
+(pdftex.def)             Requested size: 156.48923pt x 199.17015pt.
 
 Overfull \vbox (24.81647pt too high) detected at line 485
  []
@@ -1320,7 +1320,7 @@ Overfull \vbox (24.81647pt too high) detected at line 485
  <./img/table1.jpg>] [28
 
 ]
-<img/table2.jpg, id=477, 608.2725pt x 195.73125pt>
+<img/table2.jpg, id=475, 608.2725pt x 195.73125pt>
 File: img/table2.jpg Graphic file (type jpg)
 <use img/table2.jpg>
 Package pdftex.def Info: img/table2.jpg  used on input line 507.
@@ -1341,7 +1341,7 @@ Package pdftex.def Info: img/table2.jpg  used on input line 507.
 ] [35
 
 ]
-<img/dualascentstep.pdf, id=575, 150.64983pt x 66.65001pt>
+<img/dualascentstep.pdf, id=573, 150.64983pt x 66.65001pt>
 File: img/dualascentstep.pdf Graphic file (type pdf)
 <use img/dualascentstep.pdf>
 Package pdftex.def Info: img/dualascentstep.pdf  used on input line 634.
@@ -1379,7 +1379,7 @@ Overfull \hbox (1.46446pt too wide) detected at line 673
 ] [41
 
 ]
-<img/differentCorrelationPlots.png, id=676, 664.58287pt x 230.96288pt>
+<img/differentCorrelationPlots.png, id=674, 664.58287pt x 230.96288pt>
 File: img/differentCorrelationPlots.png Graphic file (type png)
 <use img/differentCorrelationPlots.png>
 Package pdftex.def Info: img/differentCorrelationPlots.png  used on input line 
@@ -1390,7 +1390,7 @@ Package pdftex.def Info: img/differentCorrelationPlots.png  used on input line
  <./img/differentCorrelationPlots.png>] [43
 
 ]
-<img/lassodifferentperspective.pdf, id=708, 195.40001pt x 100.33786pt>
+<img/lassodifferentperspective.pdf, id=706, 195.40001pt x 100.33786pt>
 File: img/lassodifferentperspective.pdf Graphic file (type pdf)
 <use img/lassodifferentperspective.pdf>
 Package pdftex.def Info: img/lassodifferentperspective.pdf  used on input line 
@@ -1411,7 +1411,7 @@ Package pdftex.def Info: img/lassodifferentperspective.pdf  used on input line
 ] [50
 
 ]
-<img/screeningrulesoverview.png, id=828, 409.53pt x 429.40425pt>
+<img/screeningrulesoverview.png, id=826, 409.53pt x 429.40425pt>
 File: img/screeningrulesoverview.png Graphic file (type png)
 <use img/screeningrulesoverview.png>
 Package pdftex.def Info: img/screeningrulesoverview.png  used on input line 886
@@ -1434,7 +1434,7 @@ Overfull \vbox (13.2981pt too high) detected at line 915
 ] [54
 
 ]
-<img/minmaxalgo2.png, id=886, 474.573pt x 431.81325pt>
+<img/minmaxalgo2.png, id=884, 474.573pt x 431.81325pt>
 File: img/minmaxalgo2.png Graphic file (type png)
 <use img/minmaxalgo2.png>
 Package pdftex.def Info: img/minmaxalgo2.png  used on input line 963.
@@ -1526,9 +1526,9 @@ s/type1/public/amsfonts/cm/cmsy8.pfb><C:/Users/Janosch Ott/AppData/Local/Progra
 ms/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmtt9.pfb><C:/Users/Janosch Ott/Ap
 pData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
 
-Output written on presentation.pdf (64 pages, 1681623 bytes).
+Output written on presentation.pdf (64 pages, 1681118 bytes).
 PDF statistics:
- 1154 PDF objects out of 1200 (max. 8388607)
+ 1152 PDF objects out of 1200 (max. 8388607)
  142 named destinations out of 1000 (max. 500000)
  162 words of extra memory for PDF output out of 10000 (max. 10000000)
 

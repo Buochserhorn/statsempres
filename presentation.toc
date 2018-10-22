@@ -4,5 +4,3 @@
 \beamer@sectionintoc {4}{Recall: Duality}{30}{0}{4}
 \beamer@sectionintoc {5}{ADMM}{32}{0}{5}
 \beamer@sectionintoc {6}{Screening Rules}{41}{0}{6}
-\beamer@sectionintoc {7}{Minor-Max Algorithms}{54}{0}{7}
-\beamer@sectionintoc {8}{Alternating Minimizations}{58}{0}{8}
