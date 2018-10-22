@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6800 64-bit) (preloaded format=pdflatex 2018.9.24)  22 OCT 2018 14:48
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6800 64-bit) (preloaded format=pdflatex 2018.9.24)  22 OCT 2018 17:16
 entering extended mode
 **./presentation.tex
 (presentation.tex
@@ -1233,17 +1233,17 @@ thkerncmss.
 
 ] [6
 
-] [7
-
 ]
-<img/Fused.jpg, id=171, 735.87422pt x 288.7036pt>
+<img/Fused.jpg, id=156, 735.87422pt x 288.7036pt>
 File: img/Fused.jpg Graphic file (type jpg)
 <use img/Fused.jpg>
 Package pdftex.def Info: img/Fused.jpg  used on input line 221.
 (pdftex.def)             Requested size: 284.52756pt x 111.6292pt.
- [8
+ [7
 
- <./img/Fused.jpg>] [9
+ <./img/Fused.jpg>] [8
+
+] [9
 
 ] [10
 
@@ -1260,53 +1260,47 @@ Package pdftex.def Info: img/Fused.jpg  used on input line 221.
 
 ] [16
 
-] [17
-
-] [18
-
 ]
-<img/LARS.jpg, id=330, 443.03015pt x 331.99031pt>
+<img/LARS.jpg, id=303, 443.03015pt x 331.99031pt>
 File: img/LARS.jpg Graphic file (type jpg)
 <use img/LARS.jpg>
 Package pdftex.def Info: img/LARS.jpg  used on input line 397.
 (pdftex.def)             Requested size: 284.54558pt x 184.94574pt.
- [19
+ [17
 
  <./img/LARS.jpg>]
-<img/Geometric.png, id=346, 628.3475pt x 342.27875pt>
+<img/Geometric.png, id=317, 628.3475pt x 342.27875pt>
 File: img/Geometric.png Graphic file (type png)
 <use img/Geometric.png>
 Package pdftex.def Info: img/Geometric.png  used on input line 407.
 (pdftex.def)             Requested size: 227.61433pt x 142.2676pt.
- [20
+ [18
 
  <./img/Geometric.png>]
 Overfull \hbox (14.6pt too wide) in paragraph at lines 411--436
-[][][][][][]      []  
+[][][][][][]      [][][]  
  []
 
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [21
+ [19
 
 ]
-[22] [23
-
-] [24
+[20] [21
 
 ]
-<img/LARLasso.jpg, id=416, 749.04843pt x 375.65344pt>
+<img/LARLasso.jpg, id=374, 749.04843pt x 375.65344pt>
 File: img/LARLasso.jpg Graphic file (type jpg)
 <use img/LARLasso.jpg>
 Package pdftex.def Info: img/LARLasso.jpg  used on input line 462.
 (pdftex.def)             Requested size: 227.61937pt x 142.26256pt.
- [25
+ [22
 
- <./img/LARLasso.jpg>] [26
+ <./img/LARLasso.jpg>] [23
 
 ]
-<img/table1.jpg, id=446, 290.20921pt x 537.50812pt>
+<img/table1.jpg, id=403, 290.20921pt x 537.50812pt>
 File: img/table1.jpg Graphic file (type jpg)
 <use img/table1.jpg>
 Package pdftex.def Info: img/table1.jpg  used on input line 485.
@@ -1315,33 +1309,26 @@ Package pdftex.def Info: img/table1.jpg  used on input line 485.
 Overfull \vbox (24.81647pt too high) detected at line 485
  []
 
-[27
+[24
 
- <./img/table1.jpg>] [28
+ <./img/table1.jpg>] [25
 
 ]
-<img/table2.jpg, id=475, 608.2725pt x 188.57953pt>
+<img/table2.jpg, id=433, 608.2725pt x 188.57953pt>
 File: img/table2.jpg Graphic file (type jpg)
 <use img/table2.jpg>
 Package pdftex.def Info: img/table2.jpg  used on input line 507.
 (pdftex.def)             Requested size: 199.16197pt x 85.3578pt.
- [29
+ [26
 
- <./img/table2.jpg>] [30
+ <./img/table2.jpg>] [27
 
-] [31
+] [28
 
-] [32
-
-] [33
+] [29
 
 ]
-[34
-
-] [35
-
-]
-<img/dualascentstep.pdf, id=573, 150.64983pt x 66.65001pt>
+<img/dualascentstep.pdf, id=490, 150.64983pt x 66.65001pt>
 File: img/dualascentstep.pdf Graphic file (type pdf)
 <use img/dualascentstep.pdf>
 Package pdftex.def Info: img/dualascentstep.pdf  used on input line 634.
@@ -1350,20 +1337,9 @@ Package pdftex.def Info: img/dualascentstep.pdf  used on input line 634.
 Overfull \vbox (9.4477pt too high) detected at line 634
  []
 
-[36
+[30
 
- <./img/dualascentstep.pdf>]
-File: img/dualascentstep.pdf Graphic file (type pdf)
-<use img/dualascentstep.pdf>
-Package pdftex.def Info: img/dualascentstep.pdf  used on input line 634.
-(pdftex.def)             Requested size: 150.64944pt x 66.64983pt.
-
-Overfull \vbox (9.4477pt too high) detected at line 634
- []
-
-[37
-
-] [38
+ <./img/dualascentstep.pdf>] [31
 
 ]
 Overfull \hbox (1.46446pt too wide) detected at line 673
@@ -1372,46 +1348,44 @@ Overfull \hbox (1.46446pt too wide) detected at line 673
   \OMS/cmsy/m/n/10.95   \OML/cmm/m/it/10.95 \OMS/cmsy/m/n/10.95 jj[]
  []
 
-[39
+[32
 
-] [40
+] [33
 
-] [41
+] [34
 
 ]
-<img/differentCorrelationPlots.png, id=674, 664.58287pt x 230.96288pt>
+<img/differentCorrelationPlots.png, id=574, 664.58287pt x 230.96288pt>
 File: img/differentCorrelationPlots.png Graphic file (type png)
 <use img/differentCorrelationPlots.png>
 Package pdftex.def Info: img/differentCorrelationPlots.png  used on input line 
 745.
 (pdftex.def)             Requested size: 290.74263pt x 101.04248pt.
- [42
+ [35
 
- <./img/differentCorrelationPlots.png>] [43
+ <./img/differentCorrelationPlots.png>] [36
 
 ]
-<img/lassodifferentperspective.pdf, id=706, 195.40001pt x 100.33786pt>
+<img/lassodifferentperspective.pdf, id=605, 195.40001pt x 100.33786pt>
 File: img/lassodifferentperspective.pdf Graphic file (type pdf)
 <use img/lassodifferentperspective.pdf>
 Package pdftex.def Info: img/lassodifferentperspective.pdf  used on input line 
 780.
 (pdftex.def)             Requested size: 290.74263pt x 149.31372pt.
- [44
+ [37
 
- <./img/lassodifferentperspective.pdf>] [45
+ <./img/lassodifferentperspective.pdf>] [38
 
-] [46
+] [39
 
-] [47
+] [40
 
-] [48
+] [41
 
-] [49
-
-] [50
+] [42
 
 ]
-<img/screeningrulesoverview.png, id=826, 409.53pt x 429.40425pt>
+<img/screeningrulesoverview.png, id=710, 409.53pt x 429.40425pt>
 File: img/screeningrulesoverview.png Graphic file (type png)
 <use img/screeningrulesoverview.png>
 Package pdftex.def Info: img/screeningrulesoverview.png  used on input line 896
@@ -1421,35 +1395,33 @@ Package pdftex.def Info: img/screeningrulesoverview.png  used on input line 896
 Overfull \vbox (89.92598pt too high) detected at line 896
  []
 
-[51
+[43
 
  <./img/screeningrulesoverview.png>]
 Overfull \vbox (13.2981pt too high) detected at line 925
  []
 
-[52
+[44
 
-] [53
+] [45
 
-] [54
+] [46
 
 ]
-<img/minmaxalgo2.png, id=884, 474.573pt x 431.81325pt>
+<img/minmaxalgo2.png, id=770, 474.573pt x 431.81325pt>
 File: img/minmaxalgo2.png Graphic file (type png)
 <use img/minmaxalgo2.png>
 Package pdftex.def Info: img/minmaxalgo2.png  used on input line 973.
 (pdftex.def)             Requested size: 164.85751pt x 150.0pt.
- [55
+ [47
 
- <./img/minmaxalgo2.png>] [56
+ <./img/minmaxalgo2.png>] [48
 
-] [57
+] [49
 
-] [58
+] [50
 
-] [59
-
-] [60
+] [51
 
 ]
 Overfull \hbox (174.15227pt too wide) in paragraph at lines 1071--1071
@@ -1457,15 +1429,15 @@ Overfull \hbox (174.15227pt too wide) in paragraph at lines 1071--1071
 mpared-[]to-[]more-[]general-[]optimization-[]problems$[] 
  []
 
-[61
+[52
 
  <C:/Users/Janosch Ott/AppData/Local/Programs/MiKTeX 2.9/tex/latex/beamer/beame
-riconarticle.pdf>] [62
+riconarticle.pdf>] [53
 
 
-] [63
+] [54
 
-] [64
+] [55
 
 ]
 \tf@nav=\write6
@@ -1487,48 +1459,53 @@ Package rerunfilecheck Info: File `presentation.out' has not changed.
 (rerunfilecheck)             Checksum: 904CE1029331CDD6477478563CBBB1AE;441.
  ) 
 Here is how much of TeX's memory you used:
- 30382 strings out of 492972
- 749584 string characters out of 3123956
- 967765 words of memory out of 3000000
- 33497 multiletter control sequences out of 15000+200000
+ 30360 strings out of 492972
+ 749307 string characters out of 3123956
+ 967752 words of memory out of 3000000
+ 33491 multiletter control sequences out of 15000+200000
  20231 words of font info for 73 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
  64i,15n,98p,781b,863s stack positions out of 5000i,500n,10000p,200000b,50000s
-<C:/Users/Janosch Ott/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/am
-sfonts/cm/cmex10.pfb><C:/Users/Janosch Ott/AppData/Local/Programs/MiKTeX 2.9/fo
-nts/type1/public/amsfonts/cmextra/cmex8.pfb><C:/Users/Janosch Ott/AppData/Local
-/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/Janosc
-h Ott/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi5.pf
-b><C:/Users/Janosch Ott/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/am
-sfonts/cm/cmmi6.pfb><C:/Users/Janosch Ott/AppData/Local/Programs/MiKTeX 2.9/fon
-ts/type1/public/amsfonts/cm/cmmi7.pfb><C:/Users/Janosch Ott/AppData/Local/Progr
-ams/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Users/Janosch Ott/A
-ppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi9.pfb><C:/U
-sers/Janosch Ott/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/
-cm/cmr10.pfb><C:/Users/Janosch Ott/AppData/Local/Programs/MiKTeX 2.9/fonts/type
-1/public/amsfonts/cm/cmr5.pfb><C:/Users/Janosch Ott/AppData/Local/Programs/MiKT
-eX 2.9/fonts/type1/public/amsfonts/cm/cmr9.pfb><C:/Users/Janosch Ott/AppData/Lo
-cal/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmss10.pfb><C:/Users/Jan
-osch Ott/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmss1
-2.pfb><C:/Users/Janosch Ott/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/publi
-c/amsfonts/cm/cmss17.pfb><C:/Users/Janosch Ott/AppData/Local/Programs/MiKTeX 2.
-9/fonts/type1/public/amsfonts/cm/cmss8.pfb><C:/Users/Janosch Ott/AppData/Local/
-Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmss9.pfb><C:/Users/Janosch 
-Ott/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmssbx10.p
-fb><C:/Users/Janosch Ott/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/a
-msfonts/cm/cmssi10.pfb><C:/Users/Janosch Ott/AppData/Local/Programs/MiKTeX 2.9/
-fonts/type1/public/amsfonts/cm/cmssi8.pfb><C:/Users/Janosch Ott/AppData/Local/P
-rograms/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmssi9.pfb><C:/Users/Janosch 
-Ott/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb
-><C:/Users/Janosch Ott/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/ams
-fonts/cm/cmsy7.pfb><C:/Users/Janosch Ott/AppData/Local/Programs/MiKTeX 2.9/font
-s/type1/public/amsfonts/cm/cmsy8.pfb><C:/Users/Janosch Ott/AppData/Local/Progra
-ms/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmtt9.pfb><C:/Users/Janosch Ott/Ap
-pData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
+pdfTeX warning (dest): name{Navigation58} has been referenced but does not ex
+ist, replaced by a fixed one
 
-Output written on presentation.pdf (64 pages, 1735395 bytes).
+pdfTeX warning (dest): name{Navigation64} has been referenced but does not exis
+t, replaced by a fixed one
+
+<C:/Users/Janosch Ott/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsf
+onts/cm/cmex10.pfb><C:/Users/Janosch Ott/AppData/Local/Programs/MiKTeX 2.9/font
+s/type1/public/amsfonts/cmextra/cmex8.pfb><C:/Users/Janosch Ott/AppData/Local/P
+rograms/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/Janosch 
+Ott/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi5.pfb>
+<C:/Users/Janosch Ott/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsf
+onts/cm/cmmi6.pfb><C:/Users/Janosch Ott/AppData/Local/Programs/MiKTeX 2.9/fonts
+/type1/public/amsfonts/cm/cmmi7.pfb><C:/Users/Janosch Ott/AppData/Local/Program
+s/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Users/Janosch Ott/App
+Data/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi9.pfb><C:/Use
+rs/Janosch Ott/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm
+/cmr10.pfb><C:/Users/Janosch Ott/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/
+public/amsfonts/cm/cmr5.pfb><C:/Users/Janosch Ott/AppData/Local/Programs/MiKTeX
+ 2.9/fonts/type1/public/amsfonts/cm/cmr9.pfb><C:/Users/Janosch Ott/AppData/Loca
+l/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmss10.pfb><C:/Users/Janos
+ch Ott/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmss12.
+pfb><C:/Users/Janosch Ott/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/
+amsfonts/cm/cmss17.pfb><C:/Users/Janosch Ott/AppData/Local/Programs/MiKTeX 2.9/
+fonts/type1/public/amsfonts/cm/cmss8.pfb><C:/Users/Janosch Ott/AppData/Local/Pr
+ograms/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmss9.pfb><C:/Users/Janosch Ot
+t/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmssbx10.pfb
+><C:/Users/Janosch Ott/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/ams
+fonts/cm/cmssi10.pfb><C:/Users/Janosch Ott/AppData/Local/Programs/MiKTeX 2.9/fo
+nts/type1/public/amsfonts/cm/cmssi8.pfb><C:/Users/Janosch Ott/AppData/Local/Pro
+grams/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmssi9.pfb><C:/Users/Janosch Ot
+t/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><
+C:/Users/Janosch Ott/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfo
+nts/cm/cmsy7.pfb><C:/Users/Janosch Ott/AppData/Local/Programs/MiKTeX 2.9/fonts/
+type1/public/amsfonts/cm/cmsy8.pfb><C:/Users/Janosch Ott/AppData/Local/Programs
+/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmtt9.pfb><C:/Users/Janosch Ott/AppD
+ata/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
+Output written on presentation.pdf (55 pages, 1703598 bytes).
 PDF statistics:
- 1152 PDF objects out of 1200 (max. 8388607)
- 142 named destinations out of 1000 (max. 500000)
+ 1021 PDF objects out of 1200 (max. 8388607)
+ 126 named destinations out of 1000 (max. 500000)
  162 words of extra memory for PDF output out of 10000 (max. 10000000)
 

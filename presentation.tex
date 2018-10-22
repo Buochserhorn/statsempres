@@ -15,7 +15,7 @@
 %	PACKAGES AND THEMES
 %----------------------------------------------------------------------------------------
 
-\documentclass{beamer}
+\documentclass[handout]{beamer}
 
 \mode<presentation> {
 
@@ -258,7 +258,7 @@ An Example of failure of Coordinate Descent
 \textbf{Covariance Updating} \\
 \vspace*{1.5mm}
 
-        \(\sum_{i=1}^{N}x_{ij}r_{i}= \big \langle x_j,y\big\rangle -  \sum_{k\lvert \lvert \beta_{\hat{k}}\rvert >0}\big \langle x_j,x_k\big\rangle \beta_{\hat{k}}\) \\
+        \(\sum_{i=1}^{N}x_{ij}r_{i}= \big \langle x_j,y\big\rangle -  \sum_{k}\big \langle x_j,x_k\big\rangle \beta_{\hat{k}}\) \\
 \vspace*{3mm}      
 \textbf{Warm Starts}:  For a decreasing sequence of values $\{\lambda_{0}^{L}\}$, \(\hat{ \beta}(\lambda_l)\) is typically a
 very good warm start for the solution $\hat{ \beta}(\lambda_{l+1})$. \\
@@ -485,7 +485,7 @@ direction.
 \end{frame}
 
 \begin{frame}{Algorithm Performance}
-\begin{block}{Simulation: Comparison of computation efficiency between Coordinate Descent, Proximal Gradient Descent and Nestrov Method}
+\begin{block}{Simulation: Comparison of computation efficiency between Coordinate Descent, Proximal Gradient Descent and Nesterov Method}
 \vspace*{3mm}
 Set Up: \footnote{\textit{Statistical Learning with Sparsity} Page 117}
 \begin{itemize}
@@ -786,7 +786,7 @@ Let $\lambda$ take values on a decreasing sequence. Let $\lambda_{\max}$ be the 
 Let $\mathcal{A}$ be the active set of predictors.
 \[\forall j \in\mathcal{A}\ \ \lambda=\norm{x_j^T(y-\hat y)}\]
 
-\only<1>{\[\forall j \notin\mathcal{A}\ \ \lambda\ge\norm{x_j^T(y-\hat y)}\]
+\only<1>{\[\forall j \notin\mathcal{A}\ \ \lambda>\norm{x_j^T(y-\hat y)}\]
 
 \note{
 for those wondering why in first equation not y-yhat? anybody?
@@ -801,7 +801,7 @@ thus yhat = 0
 \only<2>{
 \vspace{5pt}
 
-{\centering\colorbox{red!40}{$\forall j \notin\mathcal{A}\ \ \lambda\ge\norm{x_j^T(y-\hat y)}$}
+{\centering\colorbox{red!40}{$\forall j \notin\mathcal{A}\ \ \lambda>\norm{x_j^T(y-\hat y)}$}
 
 \vspace{10pt}}
 

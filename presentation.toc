@@ -1,6 +1,6 @@
 \beamer@sectionintoc {1}{Coordinate Descent}{3}{0}{1}
-\beamer@sectionintoc {2}{Least Angle Regression}{17}{0}{2}
-\beamer@sectionintoc {3}{Comparison of Optimization Methods}{21}{0}{3}
-\beamer@sectionintoc {4}{Recall: Duality}{30}{0}{4}
-\beamer@sectionintoc {5}{ADMM}{32}{0}{5}
-\beamer@sectionintoc {6}{Screening Rules}{41}{0}{6}
+\beamer@sectionintoc {2}{Least Angle Regression}{15}{0}{2}
+\beamer@sectionintoc {3}{Comparison of Optimization Methods}{19}{0}{3}
+\beamer@sectionintoc {4}{Recall: Duality}{27}{0}{4}
+\beamer@sectionintoc {5}{ADMM}{29}{0}{5}
+\beamer@sectionintoc {6}{Screening Rules}{34}{0}{6}

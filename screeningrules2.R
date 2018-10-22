@@ -11,7 +11,7 @@ Hitters <- na.omit(Hitters)
 # define x and y, as we cannot use y~x notation in glmnet
 x <- model.matrix(Salary~., Hitters)[, -1]
 y <- Hitters$Salary
-
+dim(x)
 #standardisation
 x <- apply(x, 2, function(k) (k - mean(k)) / 
              sqrt(sum((k - mean(k))^2) / length(k)))
