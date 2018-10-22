@@ -215,7 +215,7 @@ An Example of failure of Coordinate Descent
 \begin{figure}[h]
 \centering
 \includegraphics[width=10cm]{img/Fused}
-\caption{ Fused Lasso: CD fail to reach the global minimum}
+\caption{ Fused Lasso: CD fails to reach the global minimum}
 \end{figure}
  \footnote{Picture taken from \textit{Statistical Learning with Sparsity}  page 111 }
 \end{frame}
@@ -290,7 +290,7 @@ over the nonzero entries.}
 \(minimize_{\beta_0,\beta_p}\frac{1}{2}\sum_{i=1}^{N}(y_{i}-\beta_{0}-x_i^{T}\beta)^2+\lambda \big[\frac{1}{2}(1-\alpha)\lvert\lvert\beta\rvert\rvert_2^2 + \alpha\lvert\lvert\beta \rvert\rvert\big]_1\)
 \vspace*{4mm}
 \begin{itemize}
-    \item Combination of L1 and L2 penaLty 
+    \item Combination of L1 and L2 penalty 
    \vspace*{3mm}
     \item Satisfy the separability condition
     \vspace*{3mm}
@@ -326,7 +326,7 @@ over the nonzero entries.}
     \end{itemize}
 }
 \only<2> {
-\textbf{Explicit form} of log likelihood (without penalty): \(l(\beta_0,\beta)=\frac{1}{N}\sum_{i=1}^{N}\big[ y_i \cdot(\beta_0 +x_i^T \beta) -log(1+e^{\beta_0 +x_i^T \beta})\big]\)
+\textbf{Explicit form} of log likelihood (without penalty): \(L(\beta_0,\beta)=\frac{1}{N}\sum_{i=1}^{N}\big[ y_i \cdot(\beta_0 +x_i^T \beta) -log(1+e^{\beta_0 +x_i^T \beta})\big]\)
 }
  
 \end{frame}
@@ -338,13 +338,13 @@ over the nonzero entries.}
     \item Form a \textbf{quadratic objective function} using Taylor expansion about current estimates \((\Tilde{\beta_0},\Tilde{\beta})\): Idea of Newton method, Iterated Weighted Least Square problem  
 \vspace*{3mm}
     
-\(l_Q(\beta_0,\beta)=-\frac{1}{2N}\sum_{i=1}^{N}(w_i(z_i-\beta_0-x_i^T\beta)^2+C(\Tilde{\beta_0},\Tilde{\beta})\) 
+\(L_Q(\beta_0,\beta)=-\frac{1}{2N}\sum_{i=1}^{N}w_i(z_i-\beta_0-x_i^T\beta)^2+C(\Tilde{\beta_0},\Tilde{\beta})\) 
 
 \vspace*{3mm}
 
 \item Use Coordinate Descent to solve the problem  \\ 
 \vspace*{2mm}
-\(minimize_{(\beta_0 , \beta)} \big\{ l_Q \{\beta_0,\beta)+\lambda \lvert \lvert \beta \lvert\lvert_{1} \big\} \)
+\(minimize_{(\beta_0 , \beta)} \big\{ -L_Q (\beta_0,\beta)+\lambda \lvert \lvert \beta \lvert\lvert_{1} \big\} \)
 
 \end{itemize}
 \note{By analogy with Section 5.3.3, this is known as a generalized Newton algorithm,and the solution to the minimization problem (5.56)) defines a proximal Newton map}
@@ -734,11 +734,13 @@ They achieve a reduction in the number of variables, typically by an order of ma
 
 correlation is an inner product
 
-high absolute correlation (=large absolute inner product) 
+high absolute correlation ( = large absolute inner product) 
 
-$->$ high predictive power (compare plots) 
+$>$ high predictive power (compare plots) 
 
-$->$ $x_j$ with largest inner product has highest predictive power, thus for that j we are most willing to accept some penalty from $\lambda$
+$>$ $x_j$ with largest inner product has highest predictive power 
+
+$>$ thus for that j we are most willing to accept some penalty from $\lambda$
 
 \end{frame}
 
@@ -838,6 +840,10 @@ Suppose we have the lasso solution $\hat\beta(\lambda')$ at $\lambda'$ and want 
 %\end{frame}
 
 \begin{frame}
+
+{\hspace{5pt}\Large Global DPP Rule}
+\vspace{15pt}
+
 \frametitle{Dual Polytope Projection (DPP)}
 Suppose we want to calculate a lasso solution at $\lambda<\lambda_{\max}$. The DPP rule discards the $j^{th}$ variable if 
 \[\norm{\mathbf{x}_j^T\mathbf{y}}<\lambda_{\max}-\Norm{\mathbf{x}_j}_2\Norm{\mathbf{y}}_2\frac{\lambda_{\max}-\lambda}{\lambda}\]
@@ -851,7 +857,11 @@ Suppose we have the lasso solution $\hat\beta(\lambda')$ at $\lambda'$ and want 
 \end{frame}
 
 \begin{frame}
-\frametitle{Global Strong Rule}
+\frametitle{Strong Rule}
+
+{\hspace{5pt}\Large Global Strong Rule}
+\vspace{15pt}
+
 Suppose we want to calculate a lasso solution at $\lambda<\lambda_{\max}$. The global strong rule discards the $j^{th}$ variable if 
 \[\norm{\mathbf{x}_j^T\mathbf{y}}<\lambda-(\lambda_{\max}-\lambda)=2\lambda-\lambda_{\max}\]
 

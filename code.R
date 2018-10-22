@@ -90,7 +90,7 @@ for (i in iteration_value) {
                                 Y,
                                 iteration = i,
                                 lambda = 0.05,
-                                p=10,
+                                p = 10,
                                 n = 10000)
   beta_diff <- beta_CD - coef(glm_lasso)[-1]
   beta_diff_max <- c(beta_diff_max, max(abs(beta_diff)))
@@ -238,7 +238,7 @@ lasso.fit1 <-
          standardize = FALSE, thres = 1e-18, 
          lambda = lambda_lar/nrow(diabetes_X))
   
-## Calculate the difference in estimation of parmameters
+## Calculate the difference in estimation of parameters
 
 max_diff <- c()
 
