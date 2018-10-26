@@ -147,9 +147,9 @@ ETH Zürich \\ % Your institution for the title page
 \begin{frame}
 \frametitle{Coordinate Descent Algorithm}
 \begin{block}{What is the Coordinate Descent (CD) Algorithm?}
-\begin{equation}    % <--- deleted empty lines
-            \beta^{t+1}_{k} = \underset{\beta_k}{\mathrm{argmin}}\ f(\beta^{t}_{1}\ ,\beta^{t}_{2}\ ,...\beta_{k}\ ,\beta^{t}_{k+1}\ , ...\beta^{t}_{p})
-    \end{equation}
+\begin{equation*}    % <--- deleted empty lines
+            \beta^{t+1}_{k} = \underset{\beta_k}{\mathrm{argmin}}\ f(\beta^{t}_{1}\ ,\beta^{t}_{2}\ ,\dots,\beta_{k}\ ,\beta^{t}_{k+1}\ , \dots,\beta^{t}_{p})
+    \end{equation*}
     \; and $\beta^{t+1}_j =\ \beta^{t}_j$ for $j \neq k$
     \vspace*{6mm}
 \begin{itemize}
@@ -179,10 +179,10 @@ $\Rightarrow$  restrictive
 
 \begin{frame}{Separability Condition}
 Suppose the cost function \(f\) has the additive decomposition:
-\begin{equation}
+\begin{equation*}
     f(\beta_1,...,\beta_p)=g(\beta_1,...,\beta_p)+\displaystyle\sum_{j=1}^{p} h_j(\beta_j)
-\end{equation}
-where \(g:\mathbb{R}^p \rightarrow \mathbb{R}\) is differentiable and convex, and the univariate functions  \(h_j:\mathbb{R} \rightarrow \mathbb{R}\) is convex. 
+\end{equation*}
+where \(g:\mathbb{R}^p \rightarrow \mathbb{R}\) is differentiable and convex, and the univariate functions  \(h_j:\mathbb{R} \rightarrow \mathbb{R}\) are convex. 
 \vspace*{6mm}
 \begin{itemize}
     \item \underline{Lasso}: \(g(\beta)=\frac{1}{2N}{\lVert\textbf{y}-\textbf{X}\beta\rVert}^2_2 \) and \(h_j(\beta_j)=\lambda\lvert\beta_j\lvert\) satisfies the condition
@@ -215,9 +215,9 @@ An Example of failure of Coordinate Descent
 \begin{figure}[h]
 \centering
 \includegraphics[width=10cm]{img/Fused}
-\caption{ Fused Lasso: CD fails to reach the global minimum}
+\caption{ Fused Lasso: CD fails to reach the global minimum from Trevor Hastie, Robert Tibshirani, and Martin Wainwright (2015), Statistical learning with sparsity: the Lasso and generalizations, p111.}
 \end{figure}
- \footnote{Picture taken from \textit{Statistical Learning with Sparsity}  page 111 }
+% \footnote{Picture taken from \textit{Statistical Learning with Sparsity}  page 111 }
 \end{frame}
 
 \begin{frame}{Lasso \& Coordinate Descent}
@@ -227,7 +227,7 @@ An Example of failure of Coordinate Descent
 
 \(-\frac{1}{2N}\sum_{i=1}^{N}(y_{i}-\beta_0-\sum_{k=1}^{p}x_{ik}\beta_k)x_{ij}+ \lambda s_j=0\)
 \vspace*{4mm}
- \\where \(s_j \in sign(\beta_j)\) for \(j=1,2,...p\)
+ \\where \(s_j \in sign(\beta_j)\) for \(j=1,2,...,p\)
  \vspace*{6mm}
  \begin{itemize}
      \item Define the \textbf{partial residual}: \(r_{i}^{(j)}=y_i-\sum_{k\neq j}x_{ik}\hat{\beta}_k\)
@@ -262,7 +262,7 @@ An Example of failure of Coordinate Descent
 \vspace*{3mm}      
 \textbf{Warm Starts}:  For a decreasing sequence of values $\{\lambda_{0}^{L}\}$, \(\hat{ \beta}(\lambda_l)\) is typically a
 very good warm start for the solution $\hat{ \beta}(\lambda_{l+1})$. \\
-We set $\lambda_0 = \frac{1}{N} max|\langle x_j, y \rangle|$ and $\lambda_L \approx 0 $
+We set $\lambda_0 = \frac{1}{N} max|\langle x_j, y \rangle|$ and $\lambda_L \approx 0 $.
 \end{block}
     
 \note{\textbf{Covariance updating}: In this approach, we compute inner products of each feature with y initially,and then each time a new feature xk enters the model for the first time, wecompute and store its inner product with all the rest of the features, requiringO(Np) operations. We also store the p gradient components. If one of the coefficients currently in the model changes, we can update each gradient in O(p) operations. Hence with k nonzero terms in the model, a complete cycle costs O(pk) operations if no new variables become nonzero, and costs O(Np) for each new variable entered. Importantly, each step does not require making.
@@ -278,7 +278,7 @@ active set $A$ and iterate the algorithm using only  variables in $A$.\\
 \vspace*{3mm}
 \textbf{Sparsity:} Sparsity of the design matrix $X$ makes the operation of inner product efficient.\\
 \vspace*{3mm}
-Details in page 113 and page 114. 
+Details in page 113 and page 114 of Trevor Hastie, Robert Tibshirani, and Martin Wainwright (2015) Statistical learning with sparsity: the Lasso and generalizations. 
 
 \note{\textbf{Convergence criterion; covered in the following section of screening rule covered by Janosch}\textbf{Sparsity:}sparsity matrices can be stored efficiently in
 sparse-column format, where we store only the nonzero entries and the coordinates
@@ -287,7 +287,7 @@ over the nonzero entries.}
 \end{frame}
 
 \begin{frame}{Elastic Net \& Coordinate Descent}
-\(minimize_{\beta_0,\beta_p}\frac{1}{2}\sum_{i=1}^{N}(y_{i}-\beta_{0}-x_i^{T}\beta)^2+\lambda \big[\frac{1}{2}(1-\alpha)\lvert\lvert\beta\rvert\rvert_2^2 + \alpha\lvert\lvert\beta \rvert\rvert\big]_1\)
+\(minimize_{\beta_0,\beta}\frac{1}{2}\sum_{i=1}^{N}(y_{i}-\beta_{0}-x_i^{T}\beta)^2+\lambda \big[\frac{1}{2}(1-\alpha)\lvert\lvert\beta\rvert\rvert_2^2 + \alpha\lvert\lvert\beta \rvert\rvert_2\big]_1\)
 \vspace*{4mm}
 \begin{itemize}
     \item Combination of L1 and L2 penalty 
@@ -312,21 +312,23 @@ over the nonzero entries.}
          \vspace*{1mm}
           \textbf{Denote} \(p(x_{i};\beta_0,\beta) = Pr(G=1\lvert x_{i})\) \\
           \vspace*{1mm}
-     \textbf{Define} log odds: \(log\frac{Pr(G=-1 \lvert x)}{Pr(G=1 \lvert x)} = \beta_0 +x^T \beta\) \\
+     \textbf{Define} log odds: \(\log\frac{Pr(G=-1 \lvert x)}{Pr(G=1 \lvert x)} = \beta_0 +x^T \beta\) \\
 
     \end{itemize}
 \only<2>{
   \begin{itemize}
         \item \textbf{Maximize penalized log-likelihood:}\\
           \vspace*{3mm}
-\(\frac{1}{N}\sum_{i=1}^{N}\{I(g_i=1)\cdot logp(x_i;\beta_0,\beta)+I(g_i=-1)\cdot log(1-p(x_{i};\beta_0,\beta))\}-\lambda \lvert\lvert\beta\lvert\lVert_{1}  \) \\
+\(\frac{1}{N}\sum_{i=1}^{N}\{I(g_i=1)\cdot \log(p(x_i;\beta_0,\beta))\)
+
+\(+I(g_i=-1)\cdot \log(1-p(x_{i};\beta_0,\beta))\}-\lambda \lvert\lvert\beta\lvert\lVert_{1}  \) \\
     \vspace*{1mm}
     \textbf{Denote} \(y_i = I(g_i=-1)\) \\
     \vspace*{2mm}
     \end{itemize}
 }
 \only<2> {
-\textbf{Explicit form} of log likelihood (without penalty): \(L(\beta_0,\beta)=\frac{1}{N}\sum_{i=1}^{N}\big[ y_i \cdot(\beta_0 +x_i^T \beta) -log(1+e^{\beta_0 +x_i^T \beta})\big]\)
+\textbf{Explicit form} of log likelihood (without penalty): \(L(\beta_0,\beta)=\frac{1}{N}\sum_{i=1}^{N}\big[ y_i \cdot(\beta_0 +x_i^T \beta) -\log(1+e^{\beta_0 +x_i^T \beta})\big]\)
 }
  
 \end{frame}
@@ -355,7 +357,7 @@ over the nonzero entries.}
 \vspace*{3mm}
 OUTER LOOP: Decrement $\lambda$ \\
 \vspace*{3mm}
-MIDDLE LOOP: Update the \textbf{quadratic approximation} $l_{Q}$ using the current parameters \(\Tilde{(\beta_0},\Tilde{\beta)}\)\\
+MIDDLE LOOP: Update the \textbf{quadratic approximation} $L_{Q}$ using the current parameters \(\Tilde{(\beta_0},\Tilde{\beta)}\)\\
 \vspace*{3mm}
 INNER LOOP: Run the coordinate descent algorithm on the penalized weighted least squares problem
 
@@ -373,7 +375,7 @@ INNER LOOP: Run the coordinate descent algorithm on the penalized weighted least
     \vspace*{3mm}
     \item Relates to Lasso method 
      \vspace*{3mm}
-    \item Able to deliver the entire solution path of the lasso problem with squared-error loss as a function of the regularization parameter $\lambda$
+    \item Able to deliver the entire solution path of the Lasso problem with squared-error loss as a function of the regularization parameter $\lambda$
 \end{itemize}
 \end{frame}
 
@@ -392,30 +394,32 @@ Continue until: all predictors are in the model
 \begin{figure}[h]
 \centering
 \includegraphics[width=10cm,height=6.5cm]{img/LARS}
+\caption{From Trevor Hastie, Robert Tibshirani, and Martin Wainwright (2015) Statistical learning with sparsity: the Lasso and generalizations, p119, Algorithm 5.1.}
 \end{figure}
-\footnote{Picture taken from \textit{Statistical Learning with Sparsity}  page 119 }
+%\footnote{Picture taken from \textit{Statistical Learning with Sparsity}  page 119 }
 \end{frame}
 
 \begin{frame}{Least Angle Regression: Geometric Representation}
 \begin{figure}[h]
 \centering
-\includegraphics[width=8cm,height=5cm]{img/Geometric}
+\includegraphics[width=6.5cm,height=4cm]{img/Geometric}
+\caption{From Bradely Efron,Trevor Hastie, Iain Johnstone And Robert Tibshirani (2004),  Least Angle Regression, The Annual of Statistics, p412, Figure 2.}
 \end{figure}
-\footnote{Figure taken from Efron, Hastie, Johnstore and Tibschirani (2004)}
+%\footnote{Figure taken from Efron, Hastie, Johnstore and Tibschirani (2004)}
 %\note{The LARS algorithm in the case of $m = 2$ covariates; $y_2$ is the projection of $y$ into $L(x1, x2)$. Beginning at $\mu_0 = 0$, the residual vector $y_2 -\mu_0$ has greater correlation with $x_1$ than $x_2$;the next LARS estimate is $\mu_1 =\mu_0 + \gamma_1x_1$, where $\gamma_1$ is chosen such that $y_2 - \mu_1$ bisects the angle
 %between $x_1$ and $x_2$; then $\mu_2 =\mu_1 + \gamma_2 u_2$, where $u_2$ is the unit bisector; $\mu_2 = y_2$ in the case $m = 2$,but not for the case $m>2$; see Figure 4. The staircase indicates a typical Stagewise path. Here LARS gives the Stagewise track as $\epsilon \to 0$, but a modification is necessary to guarantee agreement in higher dimensions.}
 \end{frame}
 
 
 
-------------------------------------------------
+%------------------------------------------------
 \section{Comparison of Optimization Methods} %------------------------------------------------
 \begin{frame}{Connection between LAR and Lasso}
 
 \begin{block}{LAR}
 \vspace*{2mm}
-\(\textbf{x}_j^T (\textbf{y}-\textbf{X}\beta(\lambda))=\lambda \cdot s_j,\ 
-\forall j \in \mathbb{A}\) \ where \(s_j\) is the sign of inner product \(\lambda\). [3(c)]\\
+Let \(\mathbb{A}\) be the active set of variables for the LAR algorithm. \(\textbf{x}_j^T (\textbf{y}-\textbf{X}\beta(\lambda))=\lambda \cdot s_j,\ 
+\forall j \in \mathbb{A}\) \ where \(s_j\) is the sign of inner product \(\lambda\).\\
 \end{block} 
 
 \vspace*{3mm}
@@ -439,12 +443,12 @@ If sign (\(\beta_j\)) matches $s_j$, the coefficient would be identical.
 \begin{itemize}
     \item  R Example
     \vspace*{3mm}
-    \item LAR algorithm explains that the coefficient paths for the lasso are \textbf{piecewise linear}
+    \item LAR algorithm explains that the coefficient paths for the Lasso are \textbf{piecewise linear}
     \vspace*{3mm}
     \item Coefficient paths differ if sign(\(\beta_j\)) is different from $s_j$ 
     \vspace*{3mm}
     
-    \item \textbf{Modification} of LAR for computing Lasso solution [3(c)+]: \\
+    \item \textbf{Modification} of LAR for computing Lasso solution: \\
 If a \textbf{nonzero} coefficient \textbf{crosses zero} before the next
 variable enters, \textbf{drop} it from \(\mathbb{A}\) and recompute the current joint least squares
 direction.
@@ -456,38 +460,38 @@ direction.
 \begin{figure}[h]
 \centering
 \includegraphics[width=8cm,height=5cm]{img/LARLasso}
-\caption{Cases where signs of \(\lambda\) and \(\beta\) disagree}
+\caption{Cases where signs of \(\lambda\) and \(\beta\) disagree, from Trevor Hastie, Robert Tibshirani, and Martin Wainwright (2015) Statistical learning with sparsity: the Lasso and generalizations, p120, Figure 5.9.}
 \end{figure}
-\footnote{Picture taken from \textit{Statistical Learning with Sparsity}  page 120 }
+%\footnote{Picture taken from \textit{Statistical Learning with Sparsity}  page 120 }
 \end{frame}
 
 \begin{frame}{Algorithm Performance}
 \begin{block} {Simulation: Comparison of computation efficiency between CD and LAR}
 \vspace*{3mm}
-    Set Up: \footnote{Friedman,Hastie, Tibshirani (2010)}
+    Set Up: \footnote{Jerome Friedman, Trevor Hastie, and Rob Tibshirani (2010) Regularization Paths for Generalized Linear Models via Coordinate Descent, p12.}
     \begin{itemize}
         \item Generate Gaussian data with N observations and p predictors, with each pair of predictors \(X_j,X_k\) having the same population correlation \(\rho\).
         \item  Try different combination of $N$ and $p$; Range \(\rho\) from 0 to 0.95.\\
-        \(Y=\sum_{j=1}^{p}X_j\beta{j}+kZ\) \ where \( \beta_j= (-1)^j exp(\frac{-2(j-1)}{20}), Z \sim N(0,1)\) and $k$ is a constant.
+        \(Y=\sum_{j=1}^{p}X_j\beta_{j}+kZ\) \ where \( \beta_j= (-1)^j exp(\frac{-2(j-1)}{20}), Z \sim N(0,1)\) and $k$ is a constant.
     \end{itemize}
 \end{block}  
 
-\note{Timings (secs) for glmnet and lars algorithms for linear regression with lasso penalty. The first line is glmnet using naive updating while the second uses covariance updating. Total time for 100 \(\lambda\) values, averaged over 3 runs.}
+\note{Timings (secs) for glmnet and lars algorithms for linear regression with Lasso penalty. The first line is glmnet using naive updating while the second uses covariance updating. Total time for 100 \(\lambda\) values, averaged over 3 runs.}
 \end{frame}
 
 \begin{frame}{Algorithm Performance}
 \begin{figure}[h]
 \centering
-\includegraphics[width=5.5cm,height=7cm]{img/table1}
-\caption{Comparison of computing time}
+\includegraphics[width=5cm,height=6cm]{img/table1}
+\caption{Comparison of computing time, from Jerome Friedman, Trevor Hastie, and Rob Tibshirani (2010) Regularization Paths for Generalized Linear Models via Coordinate Descent,  Appendix 1.}
 \end{figure}
-\footnote{Table taken from the appendix in Friedman,Hastie, Tibshirani (2010) }
+%\footnote{Table taken from the appendix in Friedman,Hastie, Tibshirani (2010) }
 \end{frame}
 
 \begin{frame}{Algorithm Performance}
 \begin{block}{Simulation: Comparison of computation efficiency between Coordinate Descent, Proximal Gradient Descent and Nesterov Method}
 \vspace*{3mm}
-Set Up: \footnote{\textit{Statistical Learning with Sparsity} Page 117}
+Set Up: \footnote{Trevor Hastie, Robert Tibshirani, and Martin Wainwright (2015) Statistical learning with sparsity: the Lasso and generalizations, p117.}
 \begin{itemize}
     \item Generated an \(N \times p\) predictor matrix $X$ with standard Gaussian entries and pairwise correlation 0 or 0.5 between the features.
     \vspace*{3mm}
@@ -501,9 +505,9 @@ Set Up: \footnote{\textit{Statistical Learning with Sparsity} Page 117}
 \begin{figure}[h]
 \centering
 \includegraphics[width=7cm,height=3cm]{img/table2}
-\caption{Comparison of computing efficiency between 3 methods}
+\caption{Comparison of computing efficiency between 3 methods, from Trevor Hastie, Robert Tibshirani, and Martin Wainwright (2015) Statistical learning with sparsity: the Lasso and generalizations, p117, Table 5.1.}
 \end{figure}
- \footnote{\textit{Statistical Learning with Sparsity} Page 117}  
+% \footnote{\textit{Statistical Learning with Sparsity} Page 117}  
 \end{frame}
 
 
@@ -515,24 +519,6 @@ Set Up: \footnote{\textit{Statistical Learning with Sparsity} Page 117}
 \begin{frame}
 \frametitle{Recall: Duality in optimization}
 
-%\begin{tabular}{lcc}
-%\toprule
-%&Primal&Dual\\\midrule
-%Optimize&$\min f(x)$&$\max q(\lambda,\mu)$\\\midrule
-%Constraints&$g_i(x)\le0, h_j(x)=0, x\in X$&$\lambda\ge0$\\\midrule
-%Function&$L(x,\lambda,\mu):=f(x)+\sum_i\lambda_i g_i(x)+\sum_j\mu_j h_j(x)$&$q(\lambda,\mu)=\inf\limits_{x\in X} L(x,\lambda,\mu)$\\
-%&$L(x,\lambda,\mu):=f(x)+\lambda^Tg(x)+\mu^T h(x)$&\\\midrule
-%\end{tabular}
-
-
-
-%\vspace{15pt}
-%Why though? - \textbf{Dual problem is always convex!}
-
-\end{frame}
-\note{In various section, I came across terms like "dual" and "dual problem"}
-
-\begin{frame}
 \begin{tabular}{ll}
 \toprule[1.5pt]
 \multicolumn{2}{c}{Primal}\\\midrule
@@ -549,7 +535,11 @@ Optimize&$\max\limits_{\lambda\ge0,\mu} q(\lambda,\mu)$\\\midrule
 
 Why though? - \textbf{Dual problem is always convex!}
 
+
 \end{frame}
+\note{In various section, I came across terms like "dual" and "dual problem"}
+
+
 
 \note{
 $x\in X$ for e.g. solutions in a cone or integer solutions
@@ -622,11 +612,10 @@ All notes on this slide: see the slides by \cite{boyd}
 \mu^{t+1}&=\mu^t+\rho(\mathbf{A}\beta^{t+1}+\mathbf{B}\theta^{t+1}-c)
 \end{align*}
 \pause
-%\only<2>{
 \visible<2>{
 \begin{figure}
-\includegraphics{img/dualascentstep.pdf}
-\caption{My own illustration of the dual ascent step in the ADMM algorithm utilising dual decomposition based on \cite{GT12}.}
+\includegraphics[height=2cm]{img/dualascentstep.pdf}
+\caption{Own illustration of the dual ascent step in the ADMM algorithm utilising dual decomposition based on Geoff Gordon and Ryan Tibshirani (2012), Uses of Duality, \url{https://www.cs.cmu.edu/~ggordon/10725-F12/slides/18-dual-uses.pdf.}}
 \end{figure}
 }
 %}
@@ -662,8 +651,8 @@ Details for blockwise computation in Exercise 5.12.
 }
 
 \begin{frame}
-\frametitle{ADMM for the Lasso}
-\framesubtitle{Problem}
+\frametitle{ADMM for the Lasso - Problem}
+%\framesubtitle{Problem}
 Problem in Lagrangian form
 \[\underset{\beta\in\R^p,\theta\in\R^p}{\text{minimize}}\left\{\frac{1}{2}\Norm{\mathbf{y}-\mathbf{X}\beta}_2^2+\lambda\Norm{\theta}_1\right\}\quad \text{such that}\ \beta-\theta=0 \]
 \vspace{15pt}
@@ -683,8 +672,8 @@ A and B are unit matrices here
 
 
 \begin{frame}
-\frametitle{ADMM for the Lasso}
-\framesubtitle{Update}
+\frametitle{ADMM for the Lasso - Update}
+%\framesubtitle{Update}
 Update
 \begin{align*}
 \beta^{t+1}&=(\mathbf{X}^T\mathbf{X}+\rho\mathbf{I})^{-1}(\mathbf{X}^T\mathbf{y}+\rho\theta^t-\mu^t)\\
@@ -711,10 +700,10 @@ Computational cost: Initially $\mathcal{O}(p^3)$, which is a lot, for the SVD(si
 
 \begin{itemize}
 	\item[-] Pre-processing to eliminate features
-	\item[-] very big data set, esp. huge number of predictors
-	\item[-] maybe too big to load into memory
+	\item[-] Very big data set, esp. large number of predictors
+	\item[-] Maybe too big to load into memory
 	\item[-] Screening rules eliminate predictors with minor calculation
-	\item[-] and very high / safe certainty (i.e. eliminated predictors would not show up in lasso model based on full data)
+	\item[-] And very high / safe certainty (i.e. eliminated predictors would not show up in Lasso model based on full data)
 \end{itemize}
 
 
@@ -822,12 +811,12 @@ this is the essential equation for screening rules, if, for a given lambda, a pr
 
 Global (one-time screening): 
 
-Suppose we want to calculate a lasso solution at $\lambda<\lambda_{\max}$. 
+Suppose we want to calculate a Lasso solution at $\lambda<\lambda_{\max}$. 
 
 \vspace{25pt}
 Sequential (iterative screening): 
 
-Suppose we have the lasso solution $\hat\beta(\lambda')$ at $\lambda'$ and want to screen variables for solutions at $\lambda<\lambda'$.
+Suppose we have the Lasso solution $\hat\beta(\lambda')$ at $\lambda'$ and want to screen variables for solutions at $\lambda<\lambda'$.
 
 \end{frame}
 
@@ -845,14 +834,14 @@ Suppose we have the lasso solution $\hat\beta(\lambda')$ at $\lambda'$ and want 
 \vspace{15pt}
 
 \frametitle{Dual Polytope Projection (DPP)}
-Suppose we want to calculate a lasso solution at $\lambda<\lambda_{\max}$. The DPP rule discards the $j^{th}$ variable if 
+Suppose we want to calculate a Lasso solution at $\lambda<\lambda_{\max}$. The DPP rule discards the $j^{th}$ variable if 
 \[\norm{\mathbf{x}_j^T\mathbf{y}}<\lambda_{\max}-\Norm{\mathbf{x}_j}_2\Norm{\mathbf{y}}_2\frac{\lambda_{\max}-\lambda}{\lambda}\]
 
 \vspace{5pt}
 {\hspace{5pt}\Large Sequential DPP rule}
 \vspace{15pt}
 
-Suppose we have the lasso solution $\hat\beta(\lambda')$ at $\lambda'$ and want to screen variables for solutions at $\lambda<\lambda'$. We discard the $j^{th}$ variable if 
+Suppose we have the Lasso solution $\hat\beta(\lambda')$ at $\lambda'$ and want to screen variables for solutions at $\lambda<\lambda'$. We discard the $j^{th}$ variable if 
 \[\norm{\mathbf{x}_j^T(\mathbf{y}-\mathbf{X}\hat{\beta}(\lambda'))}<\lambda'-\Norm{\mathbf{x}_j}_2\Norm{\mathbf{y}}_2\frac{\lambda_{\max}-\lambda}{\lambda}\]
 \end{frame}
 
@@ -862,14 +851,14 @@ Suppose we have the lasso solution $\hat\beta(\lambda')$ at $\lambda'$ and want 
 {\hspace{5pt}\Large Global Strong Rule}
 \vspace{15pt}
 
-Suppose we want to calculate a lasso solution at $\lambda<\lambda_{\max}$. The global strong rule discards the $j^{th}$ variable if 
+Suppose we want to calculate a Lasso solution at $\lambda<\lambda_{\max}$. The global strong rule discards the $j^{th}$ variable if 
 \[\norm{\mathbf{x}_j^T\mathbf{y}}<\lambda-(\lambda_{\max}-\lambda)=2\lambda-\lambda_{\max}\]
 
 \vspace{5pt}
 {\hspace{5pt}\Large Sequential Strong Rule}
 \vspace{15pt}
 
-Suppose we have the lasso solution $\hat\beta(\lambda')$ at $\lambda'$ and want to screen variables for solutions at $\lambda<\lambda'$. We discard the $j^{th}$ variable if 
+Suppose we have the Lasso solution $\hat\beta(\lambda')$ at $\lambda'$ and want to screen variables for solutions at $\lambda<\lambda'$. We discard the $j^{th}$ variable if 
 \[\norm{\mathbf{x}_j^T(\mathbf{y}-\mathbf{X}\hat{\beta}(\lambda'))}<2\lambda-\lambda'\]
 \end{frame}
 
@@ -878,7 +867,7 @@ Suppose we have the lasso solution $\hat\beta(\lambda')$ at $\lambda'$ and want 
 
 \begin{itemize}
 	\item simulated dataset
-	\item $N = 200, p = 5000$ uncorrelated Gaussian predictors, 
+	\item $N = 200, p = 5000$ uncorrelated Gaussian predictor
 	\item $1/4$ true non-zero coefficients 
 	\item 100 decreassing lambda values equally spaced on the log-scale
 	\item Compare Global DPP, Global Strong, Sequential DDP, Sequential Strong
@@ -889,10 +878,9 @@ Suppose we have the lasso solution $\hat\beta(\lambda')$ at $\lambda'$ and want 
 
 \begin{frame}
 \begin{figure}
-
-\caption{From \cite{Has15}}
-\end{figure}
 \includegraphics[width=\linewidth]{img/screeningrulesoverview.png}
+\caption{From Trevor Hastie, Robert Tibshirani, and Martin Wainwright (2015), Statistical learning with sparsity: the Lasso and generalizations, \emph{CRC Press;} Boca Raton, FL, 12(3), 45 -- 678.}
+\end{figure}
 \end{frame}
 
 \note{
@@ -904,7 +892,7 @@ dataset. There are N = 200 observations and p = 5000 uncorrelated Gaussian predi
 \begin{block}{Coordinate Descent}
 \begin{itemize}
     \item An efficient algorithm implemented in glmnet but requires separability condition
-    \item Application: Ridge, Lasso, Elastic Net, Logistic Regression, etc.
+    \item Application: Ridge, Lasso, Elastic Net, Logistic Regression, etc.; Failure: Fused Lasso
 \end{itemize}
 \begin{block}{Least Angle Regression }
 \begin{itemize}
@@ -933,7 +921,7 @@ dataset. There are N = 200 observations and p = 5000 uncorrelated Gaussian predi
 \end{itemize}
 \begin{block}{Screening Rules}
 \begin{itemize}
-    \item Promising for very large $p$'s 
+    \item Promising for very large $p$s 
     \item Difficult to find best rule, field in development
 \end{itemize}
 
@@ -950,7 +938,7 @@ dataset. There are N = 200 observations and p = 5000 uncorrelated Gaussian predi
 %------------------------------------------------
 
 \begin{frame}
-\frametitle{Minorization-Maximization Algorithms (MMA)}
+\frametitle{Additional slides: \\ Minorization-Maximization Algorithms (MMA)}
 \begin{itemize}
 \item[-] Problem: minimize $f(\beta)$ over $\beta\in\R^p$\\ for $f$ possibly non-convex
 \item[-] Introduce additional variable $\theta$
@@ -967,7 +955,7 @@ dataset. There are N = 200 observations and p = 5000 uncorrelated Gaussian predi
 %\includegraphics[width=\textwidth]{img/minmaxalgo.png}
 %\caption{Figure 5.10 from \cite{Has15}}
 \includegraphics[height=150pt]{img/minmaxalgo2.png}
-\caption{Figure from \cite{DL15}}
+\caption{Figure from Jan De Leeuw (2015), Block Relaxation Methods in Statistics, \url{doi.org/10.13140/RG.2.1.3101.9607} (last accessed: 02.10.18)}
 \end{figure}
 
 \end{frame}
@@ -979,7 +967,7 @@ $\Psi:\R^p\times\R^p\to\R$ {\color{blue}majorizes} $f$ at $\beta\in\R^p$ if \[\f
 with equality for $\theta=\beta$.
 \vspace{10pt}
 
-Minor-Maxxalgorithm
+Minor-Max algorithm
 \begin{itemize}
 \item[-] initialize $\beta^0$
 \item[-] update with $\beta^{t+1}=\argmin\limits_{\beta\in\R^p}\Psi(\beta,\beta^t)$
@@ -988,7 +976,7 @@ Minor-Maxxalgorithm
 
 \begin{frame}
 \frametitle{MMA analytically II}
-This scheme generates a sequence of $\beta$'s for which the cost $f(\beta^t)$ is nonincreasing, because
+This scheme generates a sequence of $\beta$s for which the cost $f(\beta^t)$ is nonincreasing, because
 \[f(\beta^t)\stackrel{(i)}{=}\Psi(\beta^t,\beta^t)\stackrel{(ii)}{\ge}\Psi(\beta^{t+1},\beta^t)\stackrel{(iii)}{\ge} f(\beta^{t+1})\]
 
 where 
@@ -1024,9 +1012,9 @@ The formula is a link.
 }
 
 \vspace{30pt}
-\only<2>{Def. A function $f(\alpha,\beta):\R^m\times\R^n\to\R$ is {\color{gray}biconvex}, if for each $\alpha\in\R^m$ the function $\alpha\mapsto f(\alpha,\beta)$ is convex  and for each $\beta\in\R^n$ the function $\beta\mapsto f(\alpha,\beta)$ is convex.
+\only<2>{Def. A function $f(\alpha,\beta):\R^m\times\R^n\to\R$ is biconvex, if for each $\alpha\in\R^m$ the function $\alpha\mapsto f(\alpha,\beta)$ is convex  and for each $\beta\in\R^n$ the function $\beta\mapsto f(\alpha,\beta)$ is convex.
 \vspace{5pt}
-Analoguosly, a set $\mathcal{C}\subseteq\mathcal{A}\times\mathcal{B}$, for $\mathcal{A, B}$ convex sets, is called \underline{biconvex}, if it is convex}
+Analoguosly, a set $\mathcal{C}\subseteq\mathcal{A}\times\mathcal{B}$, for $\mathcal{A, B}$ convex sets, is called biconvex, if it is convex in both directions.}
 \end{frame}
 
 \begin{frame}
@@ -1046,29 +1034,29 @@ Block coordinate descent applied to $\alpha$ and $\beta$ blocks
 For a function bounded from below, the algorithm converges to a partial optimum (i.e. as biconvexity, only optimal in one coordinate if the other coordinate is fixed).
 \end{frame}
 
-\begin{frame}[allowframebreaks]
-\frametitle{References}
-\footnotesize{
-\begin{thebibliography}{99} % Beamer does not support BibTeX so references must be inserted manually as below
-\bibitem[Hastie et al., 2015]{Has15} Trevor Hastie, Robert Tibshirani, and Martin Wainwright (2015)
-\newblock Statistical learning with sparsity: the Lasso and
-generalizations
-\newblock \emph{CRC Press;} Boca Raton, FL%12(3), 45 -- 678.
-\bibitem[de Leeuw, 2015]{DL15} Jan De Leeuw (2015)
-\newblock Block Relaxation Methods in Statistics
-\newblock \url{doi.org/10.13140/RG.2.1.3101.9607} (last accessed: 02.10.18)
-\bibitem[Boyd]{boyd} S. Boyd 
-\newblock Alternating Direction Method of Multipliers
-\newblock \url{https://web.stanford.edu/~boyd/papers/pdf/admm_slides.pdf} (last accessed: 14.10.18)
-\bibitem[Gordon and Tibshirani, 2012]{GT12} Geoff Gordon and Ryan Tibshirani (2012)
-\newblock Uses of Duality
-\newblock \url{https://www.cs.cmu.edu/~ggordon/10725-F12/slides/18-dual-uses.pdf} (last accessed: 14.10.18) 
-\bibitem[Rubin, 2016]{ru16} Paul Rubin (2016)
-\newblock What are the advantages of convex optimization compared to more general optimization problems?
-\newblock \url{https://www.quora.com/What-are-the-advantages-of-convex-optimization-compared-to-more-general-optimization-problems} (last accessed: 14.10.18) 
-\end{thebibliography}
-}
-\end{frame}
+%\begin{frame}[allowframebreaks]
+%\frametitle{References}
+%\footnotesize{
+%\begin{thebibliography}{99} % Beamer does not support BibTeX so references must be inserted manually as below
+%\bibitem[Hastie et al., 2015]{Has15} Trevor Hastie, Robert Tibshirani, and Martin Wainwright (2015)
+%\newblock Statistical learning with sparsity: the Lasso and
+%generalizations
+%\newblock \emph{CRC Press;} Boca Raton, FL%12(3), 45 -- 678.
+%\bibitem[de Leeuw, 2015]{DL15} Jan De Leeuw (2015)
+%\newblock Block Relaxation Methods in Statistics
+%\newblock \url{doi.org/10.13140/RG.2.1.3101.9607} (last accessed: 02.10.18)
+%\bibitem[Boyd]{boyd} S. Boyd 
+%\newblock Alternating Direction Method of Multipliers
+%\newblock \url{https://web.stanford.edu/~boyd/papers/pdf/admm_slides.pdf} (last accessed: 14.10.18)
+%\bibitem[Gordon and Tibshirani, 2012]{GT12} Geoff Gordon and Ryan Tibshirani (2012)
+%\newblock Uses of Duality
+%\newblock \url{https://www.cs.cmu.edu/~ggordon/10725-F12/slides/18-dual-uses.pdf} (last accessed: 14.10.18) 
+%\bibitem[Rubin, 2016]{ru16} Paul Rubin (2016)
+%\newblock What are the advantages of convex optimization compared to more general optimization problems?
+%\newblock \url{https://www.quora.com/What-are-the-advantages-of-convex-optimization-compared-to-more-general-optimization-problems} (last accessed: 14.10.18) 
+%\end{thebibliography}
+%}
+%\end{frame}
 %Source: Trevor Hastie, Robert Tibshirani, and Martin Wainwright. Statistical learning with sparsity: the Lasso and generalizations. CRC Press, 2015.
 %@unknown{unknown,
 %author = {De Leeuw, Jan},
@@ -1089,8 +1077,8 @@ generalizations
 \begin{frame}
 \Huge{\centerline{That's it.}}
 \Huge{\centerline{Thanks for listening.}}
-\vspace{20pt}
-\large{\centerline{Fill out your feedback sheets!}}
+%\vspace{20pt}
+%\large{\centerline{Fill out your feedback sheets!}}
 %\Huge{\centerline{The End}}
 \end{frame}
 
